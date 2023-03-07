@@ -3,6 +3,7 @@ import { Button } from 'shared/ui/Button'
 import { Logo } from 'shared/ui/Logo'
 import { useTheme } from 'shared/lib/hooks/useTheme/useTheme'
 import { Avatar } from 'shared/ui/Avatar'
+import { Input } from 'shared/ui/Input'
 
 const MainPage = () => {
   const { toggleTheme } = useTheme()
@@ -16,7 +17,14 @@ const MainPage = () => {
       <Button size='small'>Кнопка</Button>
       <Button disabled={true}>Кнопка</Button>
       <Button isLoading={true}>Кнопка</Button>
-      <Avatar size={25} />
+      <Avatar online={true} size={65} src={'aboa'} alt='user' />
+      <Avatar
+        online={true}
+        size={65}
+        src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3KyTmrTPHz1dzy5U_WBl-lSGPLpdxyauzQw&usqp=CAU'}
+        alt='USER'
+      />
+      <Input type='password' required={true} label='Aboba' />
     </Page>
   )
 }
