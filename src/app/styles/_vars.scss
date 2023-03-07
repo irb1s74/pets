@@ -1,8 +1,14 @@
 :root {
   --font-family: "Rubik", sans-serif;
-  --content-width: 1170px;
-  --container-offset: 15px;
-  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  //palette
+  --succes-color: #66CB9F;
+  --danger-color: #F16063;
+  --purple-gradient: linear-gradient(60deg, rgba(214, 101, 255, 1) 0%, rgba(76, 111, 255, 1) 100%);
+  --green-gradient: linear-gradient(60deg, rgba(103, 233, 241, 1) 0%, rgba(36, 231, 149, 1) 100%);
+  --pink-gradient: linear-gradient(60deg, rgba(255,146,174,1) 0%, rgba(255,61,154,1) 100%);
+  --yellow-gradient: linear-gradient(60deg, rgba(255,239,94,1) 0%, rgba(247,147,111,1) 100%);
+  --orange-gradient: linear-gradient(60deg, rgba(255,198,86,1) 0%, rgba(241,96,99,1) 100%);;
 }
 
 
