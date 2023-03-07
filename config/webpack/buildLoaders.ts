@@ -8,6 +8,12 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     use: 'ts-loader',
     exclude: /node_modules/,
   }
+
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  }
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     exclude: /node_modules/,
@@ -28,5 +34,5 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     ],
   }
 
-  return [typescriptLoader, cssLoader]
+  return [typescriptLoader, cssLoader, svgLoader]
 }
