@@ -1,14 +1,24 @@
 :root {
   --font-family: "Rubik", sans-serif;
 
-  //palette
-  --succes-color: #66CB9F;
+  //help colors
+  --success-color: #66CB9F;
   --danger-color: #F16063;
-  --purple-gradient: linear-gradient(60deg, rgba(214, 101, 255, 1) 0%, rgba(76, 111, 255, 1) 100%);
-  --green-gradient: linear-gradient(60deg, rgba(103, 233, 241, 1) 0%, rgba(36, 231, 149, 1) 100%);
-  --pink-gradient: linear-gradient(60deg, rgba(255,146,174,1) 0%, rgba(255,61,154,1) 100%);
-  --yellow-gradient: linear-gradient(60deg, rgba(255,239,94,1) 0%, rgba(247,147,111,1) 100%);
-  --orange-gradient: linear-gradient(60deg, rgba(255,198,86,1) 0%, rgba(241,96,99,1) 100%);;
+
+  //palette
+  --pink-color: #DB2777;
+  --purple-color: #9333EA;
+  --amber-color: #F59E0B;
+  --indigo-color: #6366F1;
+  --cyan-color: #06B6D4;
+  --green-color: #22C55E;
+
+  //gradients
+  --purple-gradient: linear-gradient(60deg, rgba(214, 101, 255, 1), rgba(76, 111, 255, 1));
+  --green-gradient: linear-gradient(60deg, rgba(103, 233, 241, 1), rgba(36, 231, 149, 1));
+  --pink-gradient: linear-gradient(60deg, rgba(255, 146, 174, 1), rgba(255, 61, 154, 1));
+  --yellow-gradient: linear-gradient(60deg, rgba(255, 239, 94, 1), rgba(247, 147, 111, 1));
+  --orange-gradient: linear-gradient(60deg, rgba(255, 198, 86, 1), rgba(241, 96, 99, 1));
 }
 
 

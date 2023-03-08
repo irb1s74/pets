@@ -1,0 +1,96 @@
+$trans-time: 300ms;
+$width: 240px;
+
+.Input {
+  position: relative;
+  max-width: $width;
+  max-height: 50px;
+
+  input {
+    background: none;
+    color: var(--secondary-color);
+    font-size: 14px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: $width;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid var(--secondary-color);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus ~ .label {
+      top: -14px;
+      font-size: 10px;
+    }
+
+    &:focus ~ .bar:before {
+      width: $width;
+    }
+
+    &:not(:placeholder-shown) ~ .label {
+      top: -14px;
+      font-size: 10px;
+    }
+
+    &[type="password"] {
+      letter-spacing: 0.3em;
+    }
+  }
+
+  .label {
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: $trans-time ease all;
+  }
+
+  .bar {
+    position: relative;
+    display: block;
+    width: $width;
+
+    &:before {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 0;
+      position: absolute;
+      background: var(--primary-color);
+      transition: $trans-time ease all;
+      left: 0;
+    }
+  }
+
+  .errorText {
+    font-weight: 400;
+    line-height: 150%;
+  }
+}
+
+.invalid {
+  .label {
+    color: var(--danger-color);
+  }
+
+  .bar:before {
+    width: $width;
+    background: var(--danger-color);
+  }
+}
+
+.success {
+  .label {
+    color: var(--success-color);
+  }
+
+  .bar:before {
+    width: $width;
+    background: var(--success-color);
+  }
+}
