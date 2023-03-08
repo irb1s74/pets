@@ -5,10 +5,7 @@ import { AppRoutesProps } from '../config/types'
 
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-
-    const element = (
-      <Suspense fallback={<>loader</>}>{route.element}</Suspense>
-    )
+    const element = <Suspense fallback={<>loader</>}>{route.element}</Suspense>
 
     return (
       <Route

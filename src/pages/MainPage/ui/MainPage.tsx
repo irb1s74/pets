@@ -14,7 +14,9 @@ const MainPage = () => {
       <Logo />
       <Logo size='medium' />
       <Logo size='large' />
-      <Button onClick={toggleTheme} variant='secondary'>Кнопка</Button>
+      <Button onClick={toggleTheme} variant='secondary'>
+        Кнопка
+      </Button>
       <Button>Кнопка</Button>
       <Button size='small'>Кнопка</Button>
       <Button disabled={true}>Кнопка</Button>

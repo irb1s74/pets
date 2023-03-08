@@ -3,7 +3,6 @@ import { Text } from 'shared/ui/Text'
 import classNames from 'classnames'
 import styles from './Input.module.scss'
 
-
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 interface InputProps extends HTMLInputProps {
@@ -13,7 +12,7 @@ interface InputProps extends HTMLInputProps {
   autofocus?: boolean
   label?: string
   readonly?: boolean
-  success?: boolean;
+  success?: boolean
   error?: boolean
   helperText?: string
 }
@@ -61,7 +60,13 @@ export const Input = memo((props: InputProps) => {
       <span className={styles.bar} />
       <label className={styles.label}>{label}</label>
       {error && helperText && (
-        <Text className={styles.errorText} text={helperText} color='danger' align='right' size={8} />
+        <Text
+          className={styles.errorText}
+          text={helperText}
+          color='danger'
+          align='right'
+          size={8}
+        />
       )}
     </div>
   )

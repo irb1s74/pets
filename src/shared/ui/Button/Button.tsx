@@ -2,10 +2,9 @@ import { ButtonHTMLAttributes, memo } from 'react'
 import classNames from 'classnames'
 import styles from './Button.module.scss'
 
-
 export enum ButtonTheme {
   primary = 'primary',
-  secondary = 'secondary'
+  secondary = 'secondary',
 }
 
 export enum ButtonSize {
@@ -14,10 +13,10 @@ export enum ButtonSize {
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  className?: string;
-  variant?: string;
-  size?: string;
-  isLoading?: boolean;
+  className?: string
+  variant?: string
+  size?: string
+  isLoading?: boolean
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -44,7 +43,7 @@ export const Button = memo((props: ButtonProps) => {
       disabled={disabled}
       {...otherProps}
     >
-      {isLoading ? (<span className={styles.loader} />) : children}
+      {isLoading ? <span className={styles.loader} /> : children}
     </button>
   )
 })
