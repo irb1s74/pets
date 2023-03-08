@@ -3,6 +3,8 @@ $width: 240px;
 
 .Input {
   position: relative;
+  max-width: $width;
+  max-height: 50px;
 
   input {
     background: none;
@@ -19,12 +21,7 @@ $width: 240px;
       outline: none;
     }
 
-    &:focus ~ label {
-      top: -14px;
-      font-size: 10px;
-    }
-
-    &:valid ~ label {
+    &:focus ~ .label {
       top: -14px;
       font-size: 10px;
     }
@@ -33,12 +30,17 @@ $width: 240px;
       width: $width;
     }
 
+    &:not(:placeholder-shown) ~ .label {
+      top: -14px;
+      font-size: 10px;
+    }
+
     &[type="password"] {
       letter-spacing: 0.3em;
     }
   }
 
-  label {
+  .label {
     font-size: 14px;
     font-weight: normal;
     position: absolute;
@@ -47,20 +49,48 @@ $width: 240px;
     top: 10px;
     transition: $trans-time ease all;
   }
+
+  .bar {
+    position: relative;
+    display: block;
+    width: $width;
+
+    &:before {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 0;
+      position: absolute;
+      background: var(--primary-color);
+      transition: $trans-time ease all;
+      left: 0;
+    }
+  }
+
+  .errorText {
+    font-weight: 400;
+    line-height: 150%;
+  }
 }
 
-.bar {
-  position: relative;
-  display: block;
-  width: $width;
-  &:before {
-    content: '';
-    height: 2px;
-    width: 0;
-    bottom: 0px;
-    position: absolute;
-    background: var(--primary-color);
-    transition: $trans-time ease all;
-    left: 0%;
+.invalid {
+  .label {
+    color: var(--danger-color);
+  }
+
+  .bar:before {
+    width: $width;
+    background: var(--danger-color);
+  }
+}
+
+.success {
+  .label {
+    color: var(--success-color);
+  }
+
+  .bar:before {
+    width: $width;
+    background: var(--success-color);
   }
 }
