@@ -6,7 +6,7 @@ export const LaunchPage = () => {
   return (
     <div className={styles.LaunchPage}>
       <Logo size='large' className={styles.LaunchPage__logo} />
-      <Text text='Pets'  weight='bold' className={styles.LaunchPage__text} />
+      <Text text='Pets' weight='bold' className={styles.LaunchPage__text} />
     </div>
   )
 }
