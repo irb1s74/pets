@@ -1,0 +1,25 @@
+.LaunchPage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__logo {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  &__text {
+    margin-bottom: 2%;
+
+    p {
+      font-size: 64px !important;
+      @media (max-width: 1280px) {
+        font-size: 48px !important;
+      }
+      @media (max-width: 768px) {
+        font-size: 36px !important;
+      }
+    }
+  }
+}
