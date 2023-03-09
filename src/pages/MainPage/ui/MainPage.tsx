@@ -6,6 +6,7 @@ import { Avatar } from 'shared/ui/Avatar'
 import { Input } from 'shared/ui/Input'
 import { Switch } from 'shared/ui/Switch'
 import { Radio } from 'shared/ui/Radio'
+import { Select } from 'shared/ui/Select'
 
 const MainPage = () => {
   const { toggleTheme } = useTheme()
@@ -31,6 +32,14 @@ const MainPage = () => {
       <Input type='email' required={true} error={true} label='Aboba' helperText='Error massage' />
       <Switch />
       <Radio />
+      <Select
+        options={[
+          { label: 'ale', value: '1' },
+          { label: 'ale2', value: '2' },
+        ]}
+        label='Top Abob'
+        defaultValue='Select'
+      />
     </Page>
   )
 }
