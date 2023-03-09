@@ -1,4 +1,4 @@
-import { SelectHTMLAttributes, useState } from 'react'
+import { memo, SelectHTMLAttributes, useState } from 'react'
 import classNames from 'classnames'
 import Arrow from 'shared/assets/icons/arrow.svg'
 import styles from './Select.module.scss'
@@ -19,7 +19,7 @@ interface SelectProps extends HTMLSelectProps {
   className?: string
 }
 
-export const Select = (props: SelectProps) => {
+export const Select = memo((props: SelectProps) => {
   const { label, className, options, defaultValue, onChange } = props
   const [value, setValue] = useState(defaultValue || '')
   const [isOpen, setIsOpen] = useState(false)
@@ -65,4 +65,4 @@ export const Select = (props: SelectProps) => {
       </div>
     </ClickAwayListener>
   )
-}
+})
