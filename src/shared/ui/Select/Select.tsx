@@ -40,7 +40,12 @@ export const Select = memo((props: SelectProps) => {
       <div className={classNames(styles.Select, mod, [className])}>
         <div onClick={toggling} className={styles.Select__header}>
           <label className={classNames(styles.name, { [styles.nameTop]: value })}>{label}</label>
-          {value && <Text text={`${value}`} className={styles.text} />}
+          {value && (
+            <Text
+              text={`${options.find((option) => option.value === value)?.label || value}`}
+              className={styles.text}
+            />
+          )}
           <span className={styles.arrow}>
             <Arrow />
           </span>

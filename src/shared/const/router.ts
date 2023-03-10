@@ -3,3 +3,5 @@ export enum AppRoutes {
 }
 
 export const getRouteMain = () => '/'
+
+export const getRouteAuth = () => 'auth'

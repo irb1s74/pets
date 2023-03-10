@@ -8,15 +8,25 @@ interface TextProps {
   title?: string
   text?: string
   align?: string
+  weight?: string
   size?: number
 }
 
 export const Text = memo((props: TextProps) => {
-  const { className, color = 'default', text, title, align = 'left', size = '14' } = props
+  const {
+    className,
+    color = 'default',
+    text,
+    title,
+    align = 'left',
+    size = '14',
+    weight = 'normal',
+  } = props
 
   const mods = {
     [styles[align]]: true,
     [styles[color]]: true,
+    [styles[weight]]: true,
   }
 
   return (

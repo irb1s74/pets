@@ -10,6 +10,7 @@ import { Select } from 'shared/ui/Select'
 
 const MainPage = () => {
   const { toggleTheme } = useTheme()
+
   return (
     <Page>
       <Logo />
