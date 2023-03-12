@@ -1,8 +1,10 @@
 import { memo, Suspense, useCallback } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, RouteProps, Routes } from 'react-router-dom'
 import { routeConfig } from '../config/routeConfig'
-import { AppRoutesProps } from '../config/types'
 
+type AppRoutesProps = RouteProps & {
+  authOnly?: boolean
+}
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
     const element = <Suspense fallback={<>loader</>}>{route.element}</Suspense>

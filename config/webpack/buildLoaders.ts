@@ -34,5 +34,14 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     ],
   }
 
-  return [typescriptLoader, cssLoader, svgLoader]
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  }
+
+  return [typescriptLoader, cssLoader, svgLoader, fileLoader]
 }

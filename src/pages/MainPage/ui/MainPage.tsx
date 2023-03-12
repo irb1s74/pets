@@ -31,6 +31,7 @@ const MainPage = () => {
         alt='USER'
       />
       <Input type='email' required={true} error={true} label='Aboba' helperText='Error massage' />
+      <Input type='email' label='Aboba2' />
       <Switch />
       <Radio />
       <Select

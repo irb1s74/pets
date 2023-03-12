@@ -59,7 +59,6 @@ export const Input = memo((props: InputProps) => {
       />
       <span className={styles.bar} />
       <label className={styles.label}>{label}</label>
-      {error && helperText && (
         <Text
           className={styles.errorText}
           text={helperText}
@@ -67,7 +66,6 @@ export const Input = memo((props: InputProps) => {
           align='right'
           size={8}
         />
-      )}
     </div>
   )
 })
