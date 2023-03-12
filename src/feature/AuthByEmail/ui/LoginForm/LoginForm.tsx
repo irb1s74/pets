@@ -1,13 +1,15 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
+import { useFormik } from 'formik'
 import { Input } from 'shared/ui/Input'
 import { Button } from 'shared/ui/Button'
 import { Text } from 'shared/ui/Text'
 import { AppLink } from 'shared/ui/AppLink'
 import { Logo } from 'shared/ui/Logo'
 import { getRouteSignUp } from 'shared/const/router'
-import { useFormik } from 'formik'
-import classNames from 'classnames'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
+import { loginByEmail } from '../../api/loginByEmail'
 import { LoginValidationSchema } from '../../config/LoginValidationSchema'
+import classNames from 'classnames'
 import styles from './LoginForm.module.scss'
 
 interface LoginFormProps {
@@ -16,14 +18,22 @@ interface LoginFormProps {
 
 const LoginForm = memo((props: LoginFormProps) => {
   const { className } = props
+  const dispatch = useAppDispatch()
+  const [error, setError] = useState('')
+
   const formik = useFormik({
     initialValues: {
       email: '',
       password: '',
     },
+
     validationSchema: LoginValidationSchema,
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2))
+    isInitialValid: false,
+    onSubmit: async (values) => {
+      const result = await dispatch(loginByEmail(values))
+      if (result.payload === 'error') {
+        setError('Неправильный логин или пароль')
+      }
     },
   })
 
@@ -60,7 +70,10 @@ const LoginForm = memo((props: LoginFormProps) => {
         <AppLink className={styles.LoginForm__linkToChgPass} to=''>
           <Text align='right' text='Забыли пароль?' size={14} />
         </AppLink>
-        <Button type='submit'>Войти</Button>
+        <Button disabled={!formik.isValid} isLoading={formik.isSubmitting} type='submit'>
+          Войти
+        </Button>
+        {error && <Text align='center' text={error} color='danger' />}
         <Text
           className={styles.LoginForm__question}
           align='center'

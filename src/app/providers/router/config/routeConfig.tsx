@@ -13,6 +13,7 @@ import { SignUpPage } from 'pages/SignUpPage'
 
 type AppRoutesProps = RouteProps & {
   authOnly?: boolean
+  noAuthOnly?: boolean
 }
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.START]: {
@@ -27,9 +28,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.LOGIN]: {
     path: getRouteLogin(),
     element: <LoginPage />,
+    noAuthOnly: true,
   },
   [AppRoutes.SIGNUP]: {
     path: getRouteSignUp(),
     element: <SignUpPage />,
+    noAuthOnly: true,
   },
 }

@@ -8,7 +8,7 @@ type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onC
 interface InputProps extends HTMLInputProps {
   className?: string
   value?: string | number
-  onChange?: (value: string) => void
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void
   autofocus?: boolean
   label?: string
   readonly?: boolean
@@ -36,9 +36,6 @@ export const Input = memo((props: InputProps) => {
     [styles.invalid]: error,
     [styles.success]: success,
   }
-  const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    onChange?.(e.target.value)
-  }
 
   useEffect(() => {
     if (autofocus) {
@@ -52,20 +49,14 @@ export const Input = memo((props: InputProps) => {
         ref={ref}
         type={type}
         value={value}
-        onChange={onChangeHandler}
+        onChange={onChange}
         readOnly={readonly}
         placeholder=' '
         {...otherProps}
       />
       <span className={styles.bar} />
       <label className={styles.label}>{label}</label>
-        <Text
-          className={styles.errorText}
-          text={helperText}
-          color='danger'
-          align='right'
-          size={8}
-        />
+      <Text className={styles.errorText} text={helperText} color='danger' align='right' size={8} />
     </div>
   )
 })

@@ -17,7 +17,12 @@ const LoginPage = () => {
 
   return (
     <main className={styles.LoginPage}>
-      <img className={styles.image} src={selectImages.src} alt='image' style={{ maxWidth: selectImages.mw }} />
+      <img
+        className={styles.image}
+        src={selectImages.src}
+        alt='image'
+        style={{ maxWidth: selectImages.mw }}
+      />
       <LoginForm className={styles.form} />
     </main>
   )

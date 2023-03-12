@@ -20,7 +20,8 @@
   }
 
   &:disabled {
-    background-color: rgba(76, 111, 255, 0.6);
+    background-color: #334155;
+
     pointer-events: none;
     cursor: auto;
 
@@ -42,16 +43,7 @@
 }
 
 .secondary {
-  background-color: #334155;
-
-  &:disabled {
-    background-color: rgba(51, 65, 85, 0.6);
-    pointer-events: none;
-    cursor: auto;
-
-    :hover {
-    }
-  }
+  background-color: rgba(76, 111, 255, 0.8);
 }
 
 .loading {

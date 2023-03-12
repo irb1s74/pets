@@ -12,6 +12,9 @@
   ],
   "overrides": [
   ],
+  "globals": {
+    "__IS_DEV__": true
+  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -32,7 +35,8 @@
       "single"
     ],
     "no-duplicate-imports": "error",
-    "react/display-name": "off"
+    "react/display-name": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
   },
   "settings": {
     "import/resolver": {
