@@ -1,7 +1,10 @@
 export enum AppRoutes {
+  START = '',
   MAIN = 'main',
+  LOGIN = 'login',
+  SIGNUP = 'signUp',
 }
-
-export const getRouteMain = () => '/'
-
-export const getRouteAuth = () => 'auth'
+export const getRouteStart = () => '/'
+export const getRouteMain = () => '/home'
+export const getRouteLogin = () => '/login'
+export const getRouteSignUp = () => '/signup'

@@ -1,0 +1,37 @@
+.LoginForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    margin-top: 30px;
+  }
+
+  &__subtitle {
+    margin-top: 10px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    max-width: 325px;
+  }
+
+  &__question {
+    margin-top: 20px;
+  }
+
+  &__input {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  &__signUpLink {
+    margin-top: 5px;
+  }
+
+  &__linkToChgPass {
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+}
