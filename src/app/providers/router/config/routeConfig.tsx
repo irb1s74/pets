@@ -10,6 +10,7 @@ import { StartPage } from 'pages/StartPage'
 import { MainPage } from 'pages/MainPage'
 import { LoginPage } from 'pages/LoginPage'
 import { SignUpPage } from 'pages/SignUpPage'
+import { NotFoundPage } from 'pages/NotFoundPage'
 
 type AppRoutesProps = RouteProps & {
   authOnly?: boolean
@@ -34,5 +35,9 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     path: getRouteSignUp(),
     element: <SignUpPage />,
     noAuthOnly: true,
+  },
+  [AppRoutes.NOT_FOUND]: {
+    path: '*',
+    element: <NotFoundPage />,
   },
 }

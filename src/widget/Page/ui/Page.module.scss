@@ -1,4 +1,10 @@
 .Page {
   position: relative;
   height: 100%;
+  display: flex;
+
+  &__container {
+    flex-grow: 1;
+    height: 100%;
+  }
 }

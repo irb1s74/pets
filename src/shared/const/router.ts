@@ -3,7 +3,9 @@ export enum AppRoutes {
   MAIN = 'main',
   LOGIN = 'login',
   SIGNUP = 'signUp',
+  NOT_FOUND = 'not_found',
 }
+
 export const getRouteStart = () => '/'
 export const getRouteMain = () => '/home'
 export const getRouteLogin = () => '/login'

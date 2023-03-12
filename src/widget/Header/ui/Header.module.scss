@@ -1,0 +1,16 @@
+.Header {
+  padding: 30px 30px 0 30px;
+  max-height: 75px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+
+  }
+
+  &__actions {
+    display: flex;
+  }
+}

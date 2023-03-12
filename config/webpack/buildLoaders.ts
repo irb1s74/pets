@@ -14,6 +14,13 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     use: ['@svgr/webpack'],
   }
 
+
+  const fontLoader = {
+    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+    type: 'asset/resource',
+  }
+
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     exclude: /node_modules/,
@@ -35,7 +42,7 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
   }
 
   const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    test: /\.(png|jpe?g|gif)$/i,
     use: [
       {
         loader: 'file-loader',
@@ -43,5 +50,5 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     ],
   }
 
-  return [typescriptLoader, cssLoader, svgLoader, fileLoader]
+  return [typescriptLoader, cssLoader, svgLoader, fileLoader, fontLoader]
 }
