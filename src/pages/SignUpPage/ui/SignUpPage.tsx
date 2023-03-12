@@ -17,7 +17,12 @@ const SignUpPage = () => {
 
   return (
     <main className={styles.SignUpPage}>
-      <img className={styles.image} src={selectImages.src} alt='image' style={{ maxWidth: selectImages.mw }} />
+      <img
+        className={styles.image}
+        src={selectImages.src}
+        alt='image'
+        style={{ maxWidth: selectImages.mw }}
+      />
       <SignUpForm className={styles.form} />
     </main>
   )

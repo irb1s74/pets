@@ -1,9 +1,12 @@
 import { memo, Suspense, useCallback } from 'react'
 import { Route, RouteProps, Routes } from 'react-router-dom'
 import { routeConfig } from '../config/routeConfig'
+import { RequireAuth } from 'app/providers/router/ui/RequireAuth'
+import { RequireNoAuth } from 'app/providers/router/ui/RequireNoAuth'
 
 type AppRoutesProps = RouteProps & {
   authOnly?: boolean
+  noAuthOnly?: boolean
 }
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
@@ -15,10 +18,9 @@ const AppRouter = () => {
         path={route.path}
         element={
           route.authOnly ? (
-            <>
-              авторизация
-              {element}
-            </>
+            <RequireAuth>{element}</RequireAuth>
+          ) : route.noAuthOnly ? (
+            <RequireNoAuth>{element}</RequireNoAuth>
           ) : (
             element
           )
