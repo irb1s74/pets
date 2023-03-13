@@ -1,0 +1,38 @@
+.ThemeSwitcher {
+  position: relative;
+  width: 110px;
+  height: 46px;
+  background-color: var(--alternative-color);
+  border-radius: 20px;
+  padding: 6.7px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &__svg {
+    z-index: 3;
+    stroke: #FFF;
+    transition: stroke 300ms ease;
+  }
+
+  &__span {
+    position: absolute;
+    top: 6.7px;
+    left: 5px;
+    z-index: 2;
+    background-color: var(--primary-color);
+    width: 54px;
+    height: 33px;
+    border-radius: 16.3px;
+    transition: transform 300ms ease;
+  }
+}
+
+.sunActive {
+  transform: translateX(45px);
+}
+
+.darkSvg {
+  stroke: var(--gray-color);
+}
