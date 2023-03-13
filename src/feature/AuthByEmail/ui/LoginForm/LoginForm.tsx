@@ -30,6 +30,7 @@ const LoginForm = memo((props: LoginFormProps) => {
     validationSchema: LoginValidationSchema,
     isInitialValid: false,
     onSubmit: async (values) => {
+      setError('')
       const result = await dispatch(loginByEmail(values))
       if (result.payload === 'error') {
         setError('Неправильный логин или пароль')

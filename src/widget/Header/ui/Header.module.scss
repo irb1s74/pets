@@ -12,5 +12,13 @@
 
   &__actions {
     display: flex;
+
+    .switcher {
+      margin-right: 30px;
+    }
+
+    .alertBtn {
+      margin-right: 18px;
+    }
   }
 }
