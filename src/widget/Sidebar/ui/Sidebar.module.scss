@@ -12,7 +12,47 @@
   &__logo {
     max-height: 46px;
     max-width: 42px;
-    margin-bottom: 80px;
+  }
+
+  &__nav {
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    & > div {
+      margin-top: 14px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .item {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 13px;
+      transition: all 300ms ease;
+
+      &Active {
+        background-color: var(--primary-color);
+
+        .item__icon {
+          fill: #FFF;
+          stroke: #FFF;
+        }
+      }
+
+      &__icon {
+        fill: var(--font-color);
+        stroke: var(--font-color);
+      }
+    }
   }
 
   &__logoutBtn {

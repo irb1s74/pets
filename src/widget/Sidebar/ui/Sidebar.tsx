@@ -5,6 +5,7 @@ import styles from './Sidebar.module.scss'
 import { memo } from 'react'
 import { useDispatch } from 'react-redux'
 import { userActions } from 'entities/User'
+import { SidebarNav } from 'widget/Sidebar/ui/SidebarNav'
 
 interface SidebarProps {
   className?: string
@@ -20,6 +21,7 @@ export const Sidebar = memo((props: SidebarProps) => {
   return (
     <div className={classNames(styles.Sidebar, {}, [className])}>
       <Logo className={styles.Sidebar__logo} />
+      <SidebarNav />
       <div onClick={handleLogout} className={styles.Sidebar__logoutBtn}>
         <Logout />
       </div>
