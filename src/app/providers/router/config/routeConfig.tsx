@@ -9,7 +9,6 @@ import {
   getRouteSignUp,
   getRouteStart,
 } from 'shared/const/router'
-import { RouteProps } from 'react-router-dom'
 import { StartPage } from 'pages/StartPage'
 import { MainPage } from 'pages/MainPage'
 import { PetsPage } from 'pages/PetsPage'
@@ -19,11 +18,8 @@ import { NotFoundPage } from 'pages/NotFoundPage'
 import { BlogPage } from 'pages/BlogPage'
 import { ChatPage } from 'pages/ChatPage'
 import { ProfilePage } from 'pages/ProfilePage'
+import { AppRoutesProps } from '../config/routerTypes'
 
-type AppRoutesProps = RouteProps & {
-  authOnly?: boolean
-  noAuthOnly?: boolean
-}
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.START]: {
     path: getRouteStart(),
@@ -31,26 +27,31 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   },
   [AppRoutes.MAIN]: {
     path: getRouteMain(),
+    pageTitle: 'Home',
     element: <MainPage />,
     authOnly: true,
   },
   [AppRoutes.PETS]: {
     path: getRoutePets(),
+    pageTitle: 'Питомцы',
     element: <PetsPage />,
     authOnly: true,
   },
   [AppRoutes.BLOG]: {
     path: getRouteBlog(),
     element: <BlogPage />,
+    pageTitle: 'Новости',
     authOnly: true,
   },
   [AppRoutes.CHAT]: {
     path: getRouteChat(),
     element: <ChatPage />,
+    pageTitle: 'Чат',
     authOnly: true,
   },
   [AppRoutes.PROFILE]: {
     path: getRouteProfile(),
+    pageTitle: 'Профиль',
     element: <ProfilePage />,
     authOnly: true,
   },

@@ -1,16 +1,20 @@
 import { memo, Suspense, useCallback } from 'react'
-import { Route, RouteProps, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
+import { PageLoader } from 'widget/PageLoader'
+import { RequireAuth } from '../ui/RequireAuth'
+import { RequireNoAuth } from '../ui/RequireNoAuth'
 import { routeConfig } from '../config/routeConfig'
-import { RequireAuth } from 'app/providers/router/ui/RequireAuth'
-import { RequireNoAuth } from 'app/providers/router/ui/RequireNoAuth'
+import { AppRoutesProps } from '../config/routerTypes'
+import { AnimatePresence } from 'framer-motion'
+import { Page } from 'widget/Page'
 
-type AppRoutesProps = RouteProps & {
-  authOnly?: boolean
-  noAuthOnly?: boolean
-}
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-    const element = <Suspense fallback={<>loader</>}>{route.element}</Suspense>
+    const element = (
+      <Suspense fallback={<PageLoader />}>
+        <AnimatePresence>{route.element}</AnimatePresence>
+      </Suspense>
+    )
 
     return (
       <Route
@@ -18,7 +22,9 @@ const AppRouter = () => {
         path={route.path}
         element={
           route.authOnly ? (
-            <RequireAuth>{element}</RequireAuth>
+            <RequireAuth>
+              <Page title={route.pageTitle}>{element}</Page>
+            </RequireAuth>
           ) : route.noAuthOnly ? (
             <RequireNoAuth>{element}</RequireNoAuth>
           ) : (
