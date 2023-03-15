@@ -1,13 +1,12 @@
 import { Suspense, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import { LaunchPage } from 'pages/LaunchPage'
-import { getUserInited, userActions } from 'entities/User'
+import { getUserInited, initialAuth } from 'entities/User'
+import { AppRouter } from 'app/providers/router'
 import { useTheme } from 'shared/lib/hooks/useTheme/useTheme'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import classNames from 'classnames'
-import AppRouter from 'app/providers/router/ui/AppRouter'
-
 import './styles/index.scss'
-import { useSelector } from 'react-redux'
 
 export const App = () => {
   const { theme } = useTheme()
@@ -15,7 +14,7 @@ export const App = () => {
   const inited = useSelector(getUserInited)
 
   useEffect(() => {
-    dispatch(userActions.initAuthData())
+    dispatch(initialAuth())
   }, [dispatch])
 
   return (
