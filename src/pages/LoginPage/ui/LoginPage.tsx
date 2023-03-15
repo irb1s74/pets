@@ -4,6 +4,8 @@ import Meme from 'shared/assets/images/meme.png'
 import ThreeMouses from 'shared/assets/images/threeMouses.png'
 import TwoCats from 'shared/assets/images/twoCats.png'
 import styles from './LoginPage.module.scss'
+import { AppImage } from 'shared/ui/AppImage'
+import { Skeleton } from 'shared/ui/Skeleton'
 
 const LoginPage = () => {
   const images = [
@@ -17,12 +19,13 @@ const LoginPage = () => {
 
   return (
     <main className={styles.LoginPage}>
-      <img
+      <AppImage
+        fallback={<Skeleton height={'100%'} width={selectImages.mw} />}
         className={styles.image}
         src={selectImages.src}
-        alt='image'
         style={{ maxWidth: selectImages.mw }}
       />
+
       <LoginForm className={styles.form} />
     </main>
   )

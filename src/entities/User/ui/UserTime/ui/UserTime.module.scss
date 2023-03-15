@@ -1,0 +1,41 @@
+.UserTime {
+  max-height: 315px;
+  height: 100%;
+  max-width: 260px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &__data {
+    width: 100%;
+    padding: 30px;
+    background-color: var(--alternative-color);
+    border-radius: 16px;
+
+    .header {
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+      background-color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      margin-right: 10px;
+    }
+
+    .text {
+
+    }
+
+    .data {
+      margin-top: 13px;
+    }
+  }
+}

@@ -21,6 +21,9 @@ export const userSlice = createSlice({
       }
       state._inited = true
     },
+    setUserInited: (state, action: PayloadAction<boolean>) => {
+      state._inited = action.payload
+    },
     logout: (state) => {
       state.authData = undefined
       localStorage.removeItem(USER_LOCALSTORAGE_KEY)
