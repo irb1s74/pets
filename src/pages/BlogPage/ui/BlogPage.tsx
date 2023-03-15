@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import styles from './BlogPage.module.scss'
-import { Page } from 'widget/Page'
 
 interface BlogPageProps {
   className?: string
@@ -8,10 +7,6 @@ interface BlogPageProps {
 
 const BlogPage = (props: BlogPageProps) => {
   const { className } = props
-  return (
-    <Page title='Новости'>
-      <div className={classNames(styles.BlogPage, {}, [className])}></div>
-    </Page>
-  )
+  return <div className={classNames(styles.BlogPage, {}, [className])}></div>
 }
 export default BlogPage

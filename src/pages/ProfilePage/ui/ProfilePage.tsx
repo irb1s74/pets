@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import { Page } from 'widget/Page'
 import styles from './ProfilePage.module.scss'
 
 interface ProfilePageProps {
@@ -8,10 +7,6 @@ interface ProfilePageProps {
 
 const ProfilePage = (props: ProfilePageProps) => {
   const { className } = props
-  return (
-    <Page title='Профиль'>
-      <div className={classNames(styles.ProfilePage, {}, [className])}></div>
-    </Page>
-  )
+  return <div className={classNames(styles.ProfilePage, {}, [className])}></div>
 }
 export default ProfilePage
