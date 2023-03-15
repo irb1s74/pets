@@ -1,0 +1,20 @@
+.MainPage {
+  padding: 80px 30px 30px 30px;
+  height: calc(100% - 75px);
+  display: grid;
+  grid-template-columns: repeat(12, 110px);
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+
+  &__greetings {
+    grid-column: span 6;
+  }
+
+  &__userProgress {
+    grid-column: span 4;
+  }
+
+  &__dataTime {
+    grid-column: span 2;
+  }
+}

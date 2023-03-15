@@ -26,7 +26,7 @@ export const PageLoader = memo((props: PageLoaderProps) => {
         opacity: 1,
       }}
       transition={{
-        duration: 0.5,
+        duration: 0.75,
       }}
       exit={{
         opacity: 0,

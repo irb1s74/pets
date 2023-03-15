@@ -15,10 +15,12 @@ export const initialAuth = createAsyncThunk<User, undefined, ThunkConfig<string>
       if (!response.data) {
         throw new Error()
       }
-
-      dispatch(userActions.initAuthData())
+      dispatch(userActions.setAuthData(response.data))
+      localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data))
+      dispatch(userActions.setUserInited(true))
       return response.data
     } catch (e) {
+      dispatch(userActions.setUserInited(true))
       return rejectWithValue('error')
     }
   },
