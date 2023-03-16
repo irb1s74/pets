@@ -39,7 +39,7 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
       },
       'sass-loader',
     ],
-  }
+  };
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif)$/i,
