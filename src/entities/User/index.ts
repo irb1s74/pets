@@ -1,5 +1,6 @@
 export { UserGreetings } from './ui/UserGreetings/UserGreetings'
-export { UserTime } from './ui/UserTime'
+export { UserTime } from './ui/UserTime/UserTime'
+export { UserProgress } from './ui/UserProgress/UserProgress'
 
 export { initialAuth } from './api/initialAuth'
 
