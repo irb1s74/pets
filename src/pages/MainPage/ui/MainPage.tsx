@@ -1,7 +1,6 @@
-import styles from './MainPage.module.scss'
 import { UserGreetings, UserTime, UserProgress } from 'entities/User'
 import { ArticleRecommendationsList } from 'feature/ArticleRecommendationsList'
-
+import styles from './MainPage.module.scss'
 const MainPage = () => {
   return (
     <div className={styles.MainPage}>
