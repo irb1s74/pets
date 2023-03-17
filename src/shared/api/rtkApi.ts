@@ -13,6 +13,6 @@ export const rtkApi = createApi({
       return headers
     },
   }),
-  tagTypes: ['Articles'],
+  tagTypes: ['Articles', 'Pets'],
   endpoints: () => ({}),
 })
