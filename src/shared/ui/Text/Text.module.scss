@@ -6,19 +6,24 @@
     margin: 0;
   }
 }
-.light{
+
+.light {
   font-weight: 300;
 }
-.normal{
+
+.normal {
   font-weight: 400;
 }
-.medium{
+
+.medium {
   font-weight: 500;
 }
-.semi{
+
+.semi {
   font-weight: 600;
 }
-.bold{
+
+.bold {
   font-weight: 700;
 }
 
@@ -40,6 +45,10 @@
 
 .success {
   color: var(--success-color);
+}
+
+.gray {
+  color: var(--gray-color);
 }
 
 .danger {

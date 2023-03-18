@@ -1,2 +1,3 @@
 export { useGetPetsQuery } from './api/petService'
 export { PetList } from './ui/PetList/PetList'
+export { PetStats } from './ui/PetStats/PetStats'
