@@ -23,7 +23,7 @@
     width: 100%;
     padding: 30px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
 
     .about {
@@ -43,7 +43,22 @@
     }
 
     .actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
+    .countLikes {
+      margin-right: 5px;
+    }
+
+    .iconBtn {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
   }
 }

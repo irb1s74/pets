@@ -2,6 +2,7 @@ import { UserGreetings, UserTime, UserProgress } from 'entities/User'
 import { ArticleRecommendationsList } from 'feature/ArticleRecommendationsList'
 import styles from './MainPage.module.scss'
 import { PetsRecommendationsList } from 'feature/PetsRecommendationsList'
+import { ChatRecommendationList } from 'feature/ChatRecommendationList'
 
 const MainPage = () => {
   return (
@@ -11,6 +12,7 @@ const MainPage = () => {
       <UserTime className={styles.MainPage__dataTime} />
       <ArticleRecommendationsList className={styles.MainPage__articles} />
       <PetsRecommendationsList className={styles.MainPage__pets} />
+      <ChatRecommendationList className={styles.MainPage__chats} />
     </div>
   )
 }
