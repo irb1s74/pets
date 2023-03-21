@@ -1,3 +1,5 @@
 export { useGetPetsQuery } from './api/petService'
 export { PetList } from './ui/PetList/PetList'
+export { PetGrid } from './ui/PetGrid/PetGrid'
 export { PetStats } from './ui/PetStats/PetStats'
+export { PetTypeList } from './ui/PetTypeList/PetTypeList'

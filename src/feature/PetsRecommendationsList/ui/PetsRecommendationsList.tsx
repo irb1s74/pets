@@ -8,5 +8,5 @@ interface PetsRecommendationsListProps {
 export const PetsRecommendationsList = memo((props: PetsRecommendationsListProps) => {
   const { className } = props
   const { data, isLoading } = useGetPetsQuery()
-  return <PetList className={className} pets={data} isLoading={isLoading} />
+  return <PetList className={className} data={data} isLoading={isLoading} />
 })

@@ -1,0 +1,14 @@
+.PetsFilterList {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+
+  &__filter {
+
+  }
+
+  &__grid {
+    margin-left: 40px;
+  }
+}

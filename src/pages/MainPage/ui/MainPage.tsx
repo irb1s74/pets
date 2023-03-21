@@ -1,9 +1,9 @@
 import { UserGreetings, UserTime, UserProgress } from 'entities/User'
 import { ArticleRecommendationsList } from 'feature/ArticleRecommendationsList'
-import styles from './MainPage.module.scss'
 import { PetsRecommendationsList } from 'feature/PetsRecommendationsList'
 import { ChatRecommendationList } from 'feature/ChatRecommendationList'
 import { PetsStatisticList } from 'feature/PetsStatisticList/ui/PetsStatisticList'
+import styles from './MainPage.module.scss'
 
 const MainPage = () => {
   return (

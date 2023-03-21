@@ -17,16 +17,17 @@ export const PetListItem = memo((props: PetListItemProps) => {
 
   return (
     <div className={classNames(styles.PetListItem, {}, [className])}>
-      <AppImage
-        className={styles.PetListItem__image}
-        src={data.previewImg}
-        alt={data.name}
-        fallback={<Skeleton border='16px' height='180px' />}
-      />
+      <div className={styles.PetListItem__image}>
+        <AppImage
+          src={data.previewImg}
+          alt={data.name}
+          fallback={<Skeleton width='100%' border='16px' height='220px' />}
+        />
+      </div>
       <div className={styles.PetListItem__content}>
         <div className={styles.about}>
           <Text size={24} text={data.name} />
-          <span className={styles.type}>{data.type}</span>
+          <Text size={15} text={data.type} className={styles.type} />
         </div>
         <div className={styles.actions}>
           <Text size={15} className={styles.countLikes} text={`${data.likes} лайка`} />
