@@ -9,6 +9,8 @@
   flex-direction: column;
 
   &__data {
+    max-height: 137px;
+    height: 100%;
     width: 100%;
     padding: 30px;
     background-color: var(--alternative-color);

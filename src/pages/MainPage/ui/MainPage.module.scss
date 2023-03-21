@@ -29,6 +29,11 @@
   &__pets {
     height: 290px;
     grid-column: span 6;
+
+    & > div {
+      min-width: 410px;
+      max-height: 290px;
+    }
   }
 
   &__chats {
