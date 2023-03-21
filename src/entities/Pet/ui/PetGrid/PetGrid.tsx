@@ -13,7 +13,9 @@ interface PetGridProps {
 }
 
 const getSkeletons = () =>
-  new Array(2).fill(0).map((item, index) => <PetListItemSkeleton key={index} />)
+  new Array(2)
+    .fill(0)
+    .map((item, index) => <PetListItemSkeleton className={styles.PetGrid__item} key={index} />)
 
 export const PetGrid = memo((props: PetGridProps) => {
   const { className, isLoading, data } = props
