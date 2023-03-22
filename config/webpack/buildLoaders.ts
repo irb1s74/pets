@@ -14,14 +14,12 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     use: ['@svgr/webpack'],
   }
 
-
   const fontLoader = {
     test: /\.(woff|woff2|eot|ttf|otf)$/i,
     type: 'asset/resource',
   }
 
-
-  const cssLoader = {
+  const scssLoader = {
     test: /\.s[ac]ss$/i,
     exclude: /node_modules/,
     use: [
@@ -31,15 +29,18 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
         options: {
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes('.module.')),
-            localIdentName: isDev
-              ? '[path][name]__[local]--[hash:base64:5]'
-              : '[hash:base64:8]',
+            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
           },
         },
       },
       'sass-loader',
     ],
-  };
+  }
+
+  const cssLoader = {
+    test: /\.css$/i,
+    use: ['style-loader', 'css-loader'],
+  }
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif)$/i,
@@ -50,5 +51,5 @@ export const buildLoaders = ({ isDev }: BuildOptions): RuleSetRule[] => {
     ],
   }
 
-  return [typescriptLoader, cssLoader, svgLoader, fileLoader, fontLoader]
+  return [typescriptLoader, scssLoader, cssLoader, svgLoader, fileLoader, fontLoader]
 }

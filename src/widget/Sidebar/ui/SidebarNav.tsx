@@ -1,9 +1,10 @@
 import { memo } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import {
   getRouteBlog,
   getRouteChat,
   getRouteMain,
+  getRoutePetDetails,
   getRoutePets,
   getRouteProfile,
 } from 'shared/const/router'
@@ -23,6 +24,7 @@ export const SidebarNav = memo((props: SidebarNavProps) => {
   const { className } = props
   const navigate = useNavigate()
   const location = useLocation().pathname
+  const { id } = useParams<{ id: string }>()
   const handleToNavigate = (path: string) => () => {
     navigate(path)
   }
@@ -37,7 +39,9 @@ export const SidebarNav = memo((props: SidebarNavProps) => {
       </div>
       <div
         onClick={handleToNavigate(getRoutePets())}
-        className={classNames(styles.item, { [styles.itemActive]: getRoutePets() === location })}
+        className={classNames(styles.item, {
+          [styles.itemActive]: getRoutePets() === location || getRoutePetDetails(id) === location,
+        })}
       >
         <Pets className={styles.item__icon} />
       </div>

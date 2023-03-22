@@ -6,6 +6,8 @@ import { Pet } from '../../model/types/Pet'
 import Heart from 'shared/assets/icons/heart.svg'
 import classNames from 'classnames'
 import styles from './PetListItem.module.scss'
+import { useNavigate } from 'react-router-dom'
+import { getRoutePetDetails } from 'shared/const/router'
 
 interface PetListItemProps {
   className?: string
@@ -14,9 +16,13 @@ interface PetListItemProps {
 
 export const PetListItem = memo((props: PetListItemProps) => {
   const { className, data } = props
+  const navigate = useNavigate()
+  const handleToClick = () => {
+    navigate(getRoutePetDetails(`${data.id}`))
+  }
 
   return (
-    <div className={classNames(styles.PetListItem, {}, [className])}>
+    <div onClick={handleToClick} className={classNames(styles.PetListItem, {}, [className])}>
       <div className={styles.PetListItem__image}>
         <AppImage
           src={data.previewImg}

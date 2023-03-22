@@ -9,6 +9,7 @@ interface PetsFilterListProps {
 export const PetsFilterList = memo((props: PetsFilterListProps) => {
   const { className } = props
   const { data, isLoading } = useGetPetsQuery()
+
   return (
     <div className={styles.PetsFilterList}>
       <PetTypeList className={className} />

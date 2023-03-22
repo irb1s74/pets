@@ -17,7 +17,18 @@ const petService = rtkApi.injectEndpoints({
         { type: 'Pets' as const, id: 'LIST' },
       ],
     }),
+    getPet: build.query<Pet, string>({
+      query: (id) => ({
+        url: `pets/${id}`,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        method: 'GET',
+      }),
+      providesTags: (_result, _err, id) => [{ type: 'Pets', id }],
+    }),
   }),
 })
 
-export const { useGetPetsQuery } = petService
+export const { useGetPetsQuery, useGetPetQuery } = petService

@@ -13,8 +13,8 @@ export const Skeleton = (props: SkeletonProps) => {
   const { className, height, width, border } = props
 
   const styles: CSSProperties = {
-    width,
-    height,
+    width: width,
+    height: height,
     borderRadius: border,
   }
 
