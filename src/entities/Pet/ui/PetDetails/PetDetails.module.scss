@@ -1,0 +1,71 @@
+.PetDetails {
+  height: 100%;
+  width: 100%;
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  &__header {
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 15px;
+
+      & > * {
+        margin-right: 5px;
+      }
+    }
+
+    .type {
+      margin-bottom: 20px;
+      color: #D5D5DC;
+    }
+
+    .stats {
+      display: flex;
+      margin-bottom: 30px;
+    }
+
+    .stat {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+
+      & > *:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  &__divider {
+    width: 100%;
+    border: 1px solid var(--alternative-color);
+    margin-bottom: 30px;
+  }
+
+  &__characteristic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-bottom: 40px;
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-column-gap: 30px;
+      grid-row-gap: 15px;
+    }
+  }
+
+  &__description {
+    margin-bottom: auto;
+    & > div:first-child {
+      margin-bottom: 15px;
+    }
+
+  }
+}

@@ -2,6 +2,7 @@ export enum AppRoutes {
   START = '',
   MAIN = 'main',
   PETS = 'pets',
+  PET_DETAILS = 'PET_DETAILS',
   BLOG = 'blog',
   CHAT = 'chat',
   PROFILE = 'profile',
@@ -13,6 +14,7 @@ export enum AppRoutes {
 export const getRouteStart = () => '/'
 export const getRouteMain = () => '/home'
 export const getRoutePets = () => '/pets'
+export const getRoutePetDetails = (id: string) => `/pets/${id}`
 export const getRouteBlog = () => '/blog'
 export const getRouteChat = () => '/chat'
 export const getRouteProfile = () => '/profile'

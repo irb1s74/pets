@@ -23,7 +23,9 @@ export const AppRouter = memo(() => {
         element={
           route.authOnly ? (
             <RequireAuth>
-              <Page title={route.pageTitle}>{element}</Page>
+              <Page useGoBack={route.useGoBack} title={route.pageTitle}>
+                {element}
+              </Page>
             </RequireAuth>
           ) : route.noAuthOnly ? (
             <RequireNoAuth>{element}</RequireNoAuth>

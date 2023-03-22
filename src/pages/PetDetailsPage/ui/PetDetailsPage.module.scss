@@ -1,0 +1,13 @@
+.PetDetailsPage {
+  position: relative;
+  height: calc(100% - 75px);
+  padding: 80px 30px 30px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__image {
+    max-width: 710px;
+
+  }
+}

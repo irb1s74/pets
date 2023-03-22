@@ -13,7 +13,7 @@ interface PetGridProps {
 }
 
 const getSkeletons = () =>
-  new Array(2)
+  new Array(8)
     .fill(0)
     .map((item, index) => <PetListItemSkeleton className={styles.PetGrid__item} key={index} />)
 

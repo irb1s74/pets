@@ -4,6 +4,7 @@ import {
   getRouteChat,
   getRouteLogin,
   getRouteMain,
+  getRoutePetDetails,
   getRoutePets,
   getRouteProfile,
   getRouteSignUp,
@@ -18,6 +19,7 @@ import { NotFoundPage } from 'pages/NotFoundPage'
 import { BlogPage } from 'pages/BlogPage'
 import { ChatPage } from 'pages/ChatPage'
 import { ProfilePage } from 'pages/ProfilePage'
+import { PetDetailsPage } from 'pages/PetDetailsPage'
 import { AppRoutesProps } from '../config/routerTypes'
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
@@ -29,6 +31,13 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     path: getRouteMain(),
     pageTitle: 'Home',
     element: <MainPage />,
+    authOnly: true,
+  },
+  [AppRoutes.PET_DETAILS]: {
+    path: getRoutePetDetails(':id'),
+    pageTitle: 'Питомцы',
+    element: <PetDetailsPage />,
+    useGoBack: true,
     authOnly: true,
   },
   [AppRoutes.PETS]: {

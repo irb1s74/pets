@@ -31,6 +31,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.2",
     "recharts": "^2.5.0",
+    "swiper": "^9.1.1",
     "yup": "^1.0.2"
   },
   "devDependencies": {
@@ -50,7 +51,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.7.2",
+    "mini-css-extract-plugin": "^2.7.5",
     "prettier": "^2.8.4",
     "sass": "^1.58.3",
     "sass-loader": "^13.2.0",

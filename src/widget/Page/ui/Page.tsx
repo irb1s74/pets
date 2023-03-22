@@ -8,11 +8,12 @@ import { motion } from 'framer-motion'
 interface PageProps {
   className?: string
   title?: string
+  useGoBack?: boolean
   children: ReactNode
 }
 
 export const Page = memo((props: PageProps) => {
-  const { className, children, title } = props
+  const { className, children, title, useGoBack } = props
 
   return (
     <motion.div
@@ -29,7 +30,7 @@ export const Page = memo((props: PageProps) => {
     >
       <Sidebar />
       <div className={styles.Page__container}>
-        <Header pageTitle={title} />
+        <Header useGoBack={useGoBack} pageTitle={title} />
         {children}
       </div>
     </motion.div>
