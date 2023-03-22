@@ -1,15 +1,14 @@
 import { memo } from 'react'
+import dayjs from 'dayjs'
 import { Button } from 'shared/ui/Button'
 import { Text } from 'shared/ui/Text'
+import { Skeleton } from 'shared/ui/Skeleton'
 import Location from 'shared/assets/icons/location.svg'
 import Heart from 'shared/assets/icons/heart.svg'
 import Money from 'shared/assets/icons/money.svg'
 import { Pet } from '../../model/types/Pet'
 import classNames from 'classnames'
 import styles from './PetDetails.module.scss'
-import dayjs from 'dayjs'
-import { Skeleton } from 'shared/ui/Skeleton'
-
 interface PetDetailsProps {
   className?: string
 
