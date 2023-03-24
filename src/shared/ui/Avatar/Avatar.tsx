@@ -11,7 +11,6 @@ interface AvatarProps {
   size?: number
   alt?: string
   online?: boolean
-  fallbackInverted?: boolean
 }
 
 export const Avatar = memo(
@@ -38,7 +37,9 @@ export const Avatar = memo(
     const stylesAvatar = useMemo<CSSProperties>(
       () => ({
         width: size,
+        minWidth: size,
         height: size,
+        minHeight: size,
         borderRadius: '50%',
       }),
       [size],
