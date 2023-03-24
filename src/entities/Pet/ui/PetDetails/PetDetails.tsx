@@ -1,5 +1,4 @@
 import { memo } from 'react'
-import dayjs from 'dayjs'
 import { Button } from 'shared/ui/Button'
 import { Text } from 'shared/ui/Text'
 import { Skeleton } from 'shared/ui/Skeleton'
@@ -9,6 +8,7 @@ import Money from 'shared/assets/icons/money.svg'
 import { Pet } from '../../model/types/Pet'
 import classNames from 'classnames'
 import styles from './PetDetails.module.scss'
+
 interface PetDetailsProps {
   className?: string
 
@@ -51,7 +51,12 @@ export const PetDetails = memo((props: PetDetailsProps) => {
           <Text weight='500' size={32} text='Возраст' />
           <Text weight='500' size={32} text='Вес' />
           <Text weight='500' size={32} text='Пол' />
-          <Text weight='500' size={32} color='gray' text={`${dayjs(data?.age).get('years')}`} />
+          <Text
+            weight='500'
+            size={32}
+            color='gray'
+            text={`${new Date().getFullYear() - new Date(data?.age).getFullYear()} года`}
+          />
           <Text weight='500' size={32} color='gray' text={`${data?.weight} кг`} />
           <Text weight='500' size={32} color='gray' text={`${data?.sex ? 'Мужской' : 'Женский'}`} />
         </div>
@@ -60,7 +65,7 @@ export const PetDetails = memo((props: PetDetailsProps) => {
         <Text size={32} weight='medium' text='Описание' />
         <Text weight='light' size={32} text={data?.about} />
       </div>
-      <Button>{'Купить - 5 000 ₽'}</Button>
+      <Button>Купить - 5 000 ₽</Button>
     </div>
   )
 })

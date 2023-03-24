@@ -4,7 +4,7 @@
   justify-content: space-between;
   overflow-x: hidden;
 
-  & > div {
-    margin-right: 40px;
+  &__item {
+    max-height: 290px;
   }
 }

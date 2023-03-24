@@ -1,12 +1,12 @@
 .PetListItem {
-  width: 100%;
   height: auto;
-  border-radius: 16px;
-  background-color: var(--alternative-color);
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
+  border-radius: 16px;
+  background-color: var(--alternative-color);
   cursor: pointer;
   transition: all 300ms ease;
 
@@ -15,14 +15,14 @@
   }
 
   &__image {
-    width: 100%;
     height: auto;
+    width: 100%;
     border-radius: 16px;
     overflow: hidden;
 
     img {
-      width: 100%;
       height: 100%;
+      width: 100%;
     }
   }
 
@@ -50,7 +50,6 @@
         white-space: nowrap;
         text-overflow: ellipsis;
       }
-
     }
 
     .actions {
