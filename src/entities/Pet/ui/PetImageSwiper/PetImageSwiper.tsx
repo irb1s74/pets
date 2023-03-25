@@ -35,7 +35,7 @@ export const PetImageSwiper = memo((props: PetImageSwiperProps) => {
         ))}
         {isLoading && (
           <SwiperSlide className={styles.PetImageSwiper__slider}>
-            <Skeleton border='20px' height='65vh' />
+            <Skeleton className={styles.skeleton} border='20px' height='65vh' />
           </SwiperSlide>
         )}
       </Swiper>

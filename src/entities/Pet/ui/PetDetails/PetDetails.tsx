@@ -3,11 +3,14 @@ import { Button } from 'shared/ui/Button'
 import { Text } from 'shared/ui/Text'
 import { Skeleton } from 'shared/ui/Skeleton'
 import Location from 'shared/assets/icons/location.svg'
+import DarkLocation from 'shared/assets/icons/darkLocation.svg'
 import Heart from 'shared/assets/icons/heart.svg'
 import Money from 'shared/assets/icons/money.svg'
 import { Pet } from '../../model/types/Pet'
 import classNames from 'classnames'
 import styles from './PetDetails.module.scss'
+import { useTheme } from 'shared/lib/hooks/useTheme/useTheme'
+import { Theme } from 'shared/const/theme'
 
 interface PetDetailsProps {
   className?: string
@@ -19,6 +22,8 @@ interface PetDetailsProps {
 export const PetDetails = memo((props: PetDetailsProps) => {
   const { className, data, isLoading } = props
 
+  const { theme } = useTheme()
+
   if (isLoading) {
     return <Skeleton width='100%' height='100%' border='10px' />
   }
@@ -28,11 +33,16 @@ export const PetDetails = memo((props: PetDetailsProps) => {
       <div className={styles.PetDetails__header}>
         <div className={styles.title}>
           <Text size={72} weight='bold' color='primary' text={`${data?.name},`} />
-          <Location />
+          {theme === Theme.LIGHT ? <DarkLocation /> : <Location />}
           <Text size={72} weight='bold' text={data?.location} />
         </div>
         <div className={styles.type}>
-          <Text size={32} weight='medium' text={data?.type} />
+          <Text
+            color={theme === Theme.LIGHT ? 'dark' : 'gray'}
+            size={32}
+            weight='medium'
+            text={data?.type}
+          />
         </div>
         <div className={styles.stats}>
           <div className={styles.stat}>

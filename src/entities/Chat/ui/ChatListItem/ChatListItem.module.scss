@@ -34,4 +34,9 @@
     margin-left: auto;
     height: 100%;
   }
+
+  &Active {
+    background-color: var(--primary-color);
+    color: #FFF !important;
+  }
 }
