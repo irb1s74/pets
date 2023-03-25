@@ -4,5 +4,7 @@ export interface Article {
   time: string
   author: string
   status: string
+
+  images: string[]
   avatar: string | null
 }
