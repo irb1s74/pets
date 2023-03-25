@@ -7,11 +7,26 @@
   justify-content: flex-start;;
 
   &__text {
-
+    margin-bottom: 15px;
   }
 
   &__images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
     margin-bottom: 15px;
+
+    .img {
+      border-radius: 13px;
+      overflow: hidden;
+      margin-bottom: 15px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 
   &__stats {
