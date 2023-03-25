@@ -1,0 +1,36 @@
+.ChatSearch {
+  max-width: 355px;
+  width: 100%;
+  height: 40px;
+  padding: 8px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--alternative-color);
+  border-radius: 10px;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 15px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: var(--secondary-color);
+    }
+  }
+
+  &__input {
+    width: 100%;
+
+    input {
+      font-size: 16px;
+      font-family: var(--font-family);
+      background-color: inherit;
+      border: none;
+      width: 100%;
+      color: var(--secondary-color)
+    }
+  }
+}

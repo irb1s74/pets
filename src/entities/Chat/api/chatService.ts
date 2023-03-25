@@ -1,11 +1,11 @@
 import { rtkApi } from 'shared/api/rtkApi'
-import { User } from 'entities/User'
+import { Chat } from '../model/types/Chat'
 
 const articleService = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    getChats: build.query<User[], void>({
+    getChats: build.query<Chat[], void>({
       query: () => ({
-        url: 'users',
+        url: 'chats',
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',

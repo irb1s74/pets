@@ -12,6 +12,7 @@ import styles from './ChatRecommendationList.module.scss'
 interface ChatRecommendationListProps {
   className?: string
 }
+
 const getSkeletons = () =>
   new Array(6)
     .fill(0)
@@ -20,7 +21,7 @@ const getSkeletons = () =>
 export const ChatRecommendationList = memo((props: ChatRecommendationListProps) => {
   const { className } = props
   const navigate = useNavigate()
-  const { data: users, isLoading } = useGetChatsQuery()
+  const { data: chats, isLoading } = useGetChatsQuery()
   const handleClickToChat = () => {
     navigate(getRouteChat())
   }
@@ -28,10 +29,10 @@ export const ChatRecommendationList = memo((props: ChatRecommendationListProps) 
   return (
     <div className={classNames(styles.ChatRecommendationList, {}, [className])}>
       <div className={styles.ChatRecommendationList__users}>
-        {users && (
+        {chats && (
           <>
-            {users.map((user) => (
-              <Avatar size={60} key={user.id} src={user.avatar} alt={user.username} />
+            {chats.map((chat) => (
+              <Avatar size={60} key={chat.id} src={chat.avatar} alt={chat.title} />
             ))}
             <div className={styles.ChatRecommendationList__icon}>
               <Text align='center' text='+' />

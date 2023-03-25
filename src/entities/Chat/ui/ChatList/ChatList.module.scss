@@ -1,0 +1,13 @@
+.ChatList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  & > div {
+    margin-bottom: 15px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
