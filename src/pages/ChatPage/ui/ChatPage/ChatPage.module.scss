@@ -1,0 +1,17 @@
+.ChatPage {
+  width: 100%;
+  height: calc(100% - 75px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 25px 25px 25px;
+
+  &__chat {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
