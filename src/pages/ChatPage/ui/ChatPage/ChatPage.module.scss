@@ -7,11 +7,12 @@
   justify-content: flex-start;
   padding: 80px 25px 25px 25px;
 
+  &__menu {
+    margin-right: 40px;
+  }
+
   &__chat {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+
+
   }
 }
