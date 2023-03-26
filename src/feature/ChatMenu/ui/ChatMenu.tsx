@@ -9,8 +9,8 @@ interface ChatMenuProps {
 
 export const ChatMenu = memo((props: ChatMenuProps) => {
   const { className } = props
-
   const { data, isLoading } = useGetChatsQuery()
+
   return (
     <div className={classNames(styles.ChatMenu, {}, [className])}>
       <div className={styles.ChatMenu__header}>

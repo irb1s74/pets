@@ -1,4 +1,5 @@
 import { ChatMenu } from 'feature/ChatMenu'
+import { ChatMessages } from 'feature/ChatMessages'
 import classNames from 'classnames'
 import styles from './ChatPage.module.scss'
 
@@ -10,8 +11,8 @@ const ChatPage = (props: ChatPageProps) => {
   const { className } = props
   return (
     <div className={classNames(styles.ChatPage, {}, [className])}>
-      <ChatMenu />
-      <div className={styles.ChatPage__chat}></div>
+      <ChatMenu className={styles.ChatPage__menu} />
+      <ChatMessages />
     </div>
   )
 }
