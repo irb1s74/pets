@@ -4,13 +4,18 @@ import classNames from 'classnames'
 import styles from './ChatButtonEdit.module.scss'
 
 interface ChatButtonEditProps {
+  active?: boolean
+  onClick?: () => void
   className?: string
 }
 
 export const ChatButtonEdit = memo((props: ChatButtonEditProps) => {
-  const { className } = props
+  const { className, onClick, active } = props
+  const mod = {
+    [styles.active]: active,
+  }
   return (
-    <div className={classNames(styles.ChatButtonEdit, {}, [className])}>
+    <div onClick={onClick} className={classNames(styles.ChatButtonEdit, mod, [className])}>
       <Pen />
     </div>
   )

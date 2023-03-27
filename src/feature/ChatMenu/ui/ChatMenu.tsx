@@ -1,5 +1,5 @@
-import { memo } from 'react'
-import { ChatButtonEdit, ChatList, ChatSearch, Chat } from 'entities/Chat'
+import { memo, useCallback, useState } from 'react'
+import { ChatButtonEdit, ChatList, ChatSearch, Chat, ChatEditList } from 'entities/Chat'
 import classNames from 'classnames'
 import styles from './ChatMenu.module.scss'
 
@@ -13,19 +13,26 @@ interface ChatMenuProps {
 
 export const ChatMenu = memo((props: ChatMenuProps) => {
   const { className, chatId, handleSetChatId, chats, isLoading } = props
+  const [isEditable, setEditable] = useState(false)
+
+  const handleSetEditable = useCallback(() => setEditable((prevState) => !prevState), [])
 
   return (
     <div className={classNames(styles.ChatMenu, {}, [className])}>
       <div className={styles.ChatMenu__header}>
         <ChatSearch />
-        <ChatButtonEdit />
+        <ChatButtonEdit active={isEditable} onClick={handleSetEditable} />
       </div>
-      <ChatList
-        chats={chats}
-        chatId={chatId}
-        isLoading={isLoading}
-        handleSetChatId={handleSetChatId}
-      />
+      {isEditable ? (
+        <ChatEditList chats={chats} />
+      ) : (
+        <ChatList
+          chats={chats}
+          chatId={chatId}
+          isLoading={isLoading}
+          handleSetChatId={handleSetChatId}
+        />
+      )}
     </div>
   )
 })

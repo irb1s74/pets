@@ -5,6 +5,9 @@ export { ChatHeader } from './ui/ChatHeader/ChatHeader'
 export { ChatContent } from './ui/ChatContent/ChatContent'
 export { ChatFooter } from './ui/ChatFooter/ChatFooter'
 export { ChatEmpty } from './ui/ChatEmpty/ChatEmpty'
-export { useGetChatsQuery, useGetChatQuery } from './api/chatService'
+export { ChatEditList } from './ui/ChatEditList/ChatEditList'
+
 export { Chat } from './model/types/Chat'
 export { Message } from './model/types/Message'
+
+export { useGetChatsQuery, useGetChatQuery } from './api/chatService'
