@@ -5,4 +5,5 @@ export interface Message {
   author: User
   type: string
   content: string
+  date: string
 }
