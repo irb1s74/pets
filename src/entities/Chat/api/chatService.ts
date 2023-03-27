@@ -17,7 +17,18 @@ const articleService = rtkApi.injectEndpoints({
         { type: 'Chats' as const, id: 'LIST' },
       ],
     }),
+    getChat: build.query<Chat[], number>({
+      query: (chatId) => ({
+        url: `chats/${chatId}`,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        method: 'GET',
+      }),
+      providesTags: (_result, _err, id) => [{ type: 'Chats', id }],
+    }),
   }),
 })
 
-export const { useGetChatsQuery } = articleService
+export const { useGetChatsQuery, useGetChatQuery } = articleService

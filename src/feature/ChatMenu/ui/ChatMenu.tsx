@@ -1,15 +1,18 @@
 import { memo } from 'react'
-import { ChatButtonEdit, ChatList, ChatSearch, useGetChatsQuery } from 'entities/Chat'
+import { ChatButtonEdit, ChatList, ChatSearch, Chat } from 'entities/Chat'
 import classNames from 'classnames'
 import styles from './ChatMenu.module.scss'
 
 interface ChatMenuProps {
+  chats: Chat[]
+  isLoading?: boolean
+  chatId: number
+  handleSetChatId: (chatId: number) => () => void
   className?: string
 }
 
 export const ChatMenu = memo((props: ChatMenuProps) => {
-  const { className } = props
-  const { data, isLoading } = useGetChatsQuery()
+  const { className, chatId, handleSetChatId, chats, isLoading } = props
 
   return (
     <div className={classNames(styles.ChatMenu, {}, [className])}>
@@ -17,7 +20,12 @@ export const ChatMenu = memo((props: ChatMenuProps) => {
         <ChatSearch />
         <ChatButtonEdit />
       </div>
-      <ChatList chats={data} isLoading={isLoading} />
+      <ChatList
+        chats={chats}
+        chatId={chatId}
+        isLoading={isLoading}
+        handleSetChatId={handleSetChatId}
+      />
     </div>
   )
 })

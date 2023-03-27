@@ -7,6 +7,8 @@ import styles from './ChatList.module.scss'
 
 interface ChatListProps {
   chats: Chat[]
+  chatId: number
+  handleSetChatId: (chatId: number) => () => void
   isLoading?: boolean
   className?: string
 }
@@ -15,11 +17,16 @@ const getSkeletons = () =>
   new Array(4).fill(0).map((item, index) => <ChatListItemSkeleton key={index} />)
 
 export const ChatList = memo((props: ChatListProps) => {
-  const { className, chats, isLoading } = props
+  const { className, chats, isLoading, chatId, handleSetChatId } = props
   return (
     <div className={classNames(styles.ChatList, {}, [className])}>
       {chats?.map((chat) => (
-        <ChatListItem key={chat.id} chat={chat} />
+        <ChatListItem
+          key={chat.id}
+          chat={chat}
+          onClick={handleSetChatId}
+          active={chatId === chat.id}
+        />
       ))}
       {isLoading && getSkeletons()}
     </div>
