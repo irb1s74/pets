@@ -32,7 +32,7 @@ export const ChatListItem = memo((props: ChatListItemProps) => {
         <Text color='gray' size={14} text={chat?.lastMessage} />
       </div>
       <div className={styles.ChatListItem__time}>
-        <Text size={14} color='gray' text={chat.date} />
+        <Text size={14} color='gray' text={chat?.date} />
       </div>
     </div>
   )
