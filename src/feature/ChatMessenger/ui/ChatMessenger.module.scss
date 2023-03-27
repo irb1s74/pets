@@ -1,0 +1,15 @@
+.ChatMessenger {
+  max-width: 860px;
+  width: 100%;
+  height: 100%;
+  border-radius: 13px;
+  background-color: var(--alternative-color);
+
+  &__container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

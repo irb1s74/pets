@@ -7,20 +7,20 @@ import styles from './ChatListItem.module.scss'
 
 interface ChatListItemProps {
   chat: Chat
-
+  onClick: (chatId: number) => () => void
   active?: boolean
   className?: string
 }
 
 export const ChatListItem = memo((props: ChatListItemProps) => {
-  const { className, chat, active } = props
+  const { className, chat, active, onClick } = props
 
   const mods = {
     [styles.ChatListItemActive]: active,
   }
 
   return (
-    <div className={classNames(styles.ChatListItem, mods, [className])}>
+    <div className={classNames(styles.ChatListItem, mods, [className])} onClick={onClick(chat.id)}>
       <Avatar
         className={styles.ChatListItem__avatar}
         src={chat?.avatar}

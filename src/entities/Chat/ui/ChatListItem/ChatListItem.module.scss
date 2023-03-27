@@ -8,7 +8,7 @@
   border-radius: 16px;
   padding: 20px;
   cursor: pointer;
-  transition: box-shadow 300ms ease;
+  transition: all 300ms ease;
 
   &:hover {
     box-shadow: 0 0 11px rgba(33, 33, 33, .2);

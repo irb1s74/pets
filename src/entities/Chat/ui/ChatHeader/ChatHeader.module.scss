@@ -1,0 +1,24 @@
+.ChatHeader {
+  max-height: 50px;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  border-radius: 13px 13px 0 0;
+  padding: 15.5px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .title {
+    color: #FFF;
+  }
+
+  &__iconBtn {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
