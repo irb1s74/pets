@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { Suspense, useCallback, useState } from 'react'
 import { ProfileList } from 'entities/User'
 import { AccountForm } from 'feature/AccountForm'
 import { SettingsForm } from 'feature/SettingsForm'
@@ -34,7 +34,9 @@ const ProfilePage = (props: ProfilePageProps) => {
       ) : form === 'setting' ? (
         <SettingsForm />
       ) : (
-        <CreatePetForm />
+        <Suspense fallback=''>
+          <CreatePetForm />
+        </Suspense>
       )}
     </div>
   )
