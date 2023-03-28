@@ -1,1 +1,1 @@
-export { CreatePetForm } from './ui/CreatePetForm/CreatePetForm'
+export { CretePetFormAsync as CreatePetForm } from './ui/CreatePetForm/CretePetFormAsync'

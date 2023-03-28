@@ -14,7 +14,7 @@ interface IOptions {
 
 interface SelectProps extends HTMLSelectProps {
   onChange?: (value: string) => void
-  options?: IOptions[] | undefined
+  options: IOptions[] | undefined
   label?: string
   className?: string
 }
