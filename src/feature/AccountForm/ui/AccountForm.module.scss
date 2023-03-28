@@ -1,0 +1,43 @@
+.AccountForm {
+  max-width: 710px;
+  max-height: 680px;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+  background-color: var(--alternative-color);
+  border-radius: 16px;
+
+  &__avatarInput {
+    width: 72px;
+    height: 72px;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: box-shadow 300ms ease;
+    margin: 28px 0;
+
+    &:hover {
+      box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+    }
+  }
+
+  &__groupInput {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .input {
+      max-width: 305px;
+      width: 100%;
+      margin-bottom: 28px;
+    }
+  }
+
+  .title {
+    margin-bottom: 30px;
+  }
+}

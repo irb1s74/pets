@@ -1,3 +1,14 @@
 .ProfilePage {
+  position: relative;
+  height: calc(100% - 75px);
+  padding: 80px 30px 30px 30px;
+  display: flex;
 
+  &__menu {
+    margin-right: 40px;
+  }
+
+  &__content {
+
+  }
 }
