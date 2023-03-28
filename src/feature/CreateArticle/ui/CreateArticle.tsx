@@ -50,7 +50,14 @@ export const CreateArticle = memo((props: CreateArticleProps) => {
             <Photo />
           </div>
         )}
-        <input ref={filesInput} onChange={handleUpdateFiles} type='file' multiple hidden />
+        <input
+          ref={filesInput}
+          accept='.jpeg, .jpg, .png, .gif'
+          onChange={handleUpdateFiles}
+          type='file'
+          multiple
+          hidden
+        />
       </div>
     </div>
   )

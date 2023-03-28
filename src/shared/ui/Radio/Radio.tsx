@@ -2,10 +2,7 @@ import { InputHTMLAttributes, memo } from 'react'
 import classNames from 'classnames'
 import styles from './Radio.module.scss'
 
-type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'checked' | 'onChange' | 'readOnly'
->
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'readOnly'>
 
 interface RadioProps extends HTMLInputProps {
   className?: string

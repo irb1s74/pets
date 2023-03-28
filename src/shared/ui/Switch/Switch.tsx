@@ -2,10 +2,7 @@ import { InputHTMLAttributes, memo } from 'react'
 import classNames from 'classnames'
 import styles from './Switch.module.scss'
 
-type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'checked' | 'onChange' | 'readOnly'
->
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'readOnly'>
 
 interface SwitchProps extends HTMLInputProps {
   className?: string

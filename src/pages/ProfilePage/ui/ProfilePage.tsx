@@ -1,8 +1,10 @@
+import { useCallback, useState } from 'react'
+import { ProfileList } from 'entities/User'
+import { AccountForm } from 'feature/AccountForm'
+import { SettingsForm } from 'feature/SettingsForm'
+import { CreatePetForm } from 'feature/CreatePetForm'
 import classNames from 'classnames'
 import styles from './ProfilePage.module.scss'
-import { ProfileList } from 'entities/User'
-import { useCallback, useState } from 'react'
-import { AccountForm } from 'feature/AccountForm'
 
 interface ProfilePageProps {
   className?: string
@@ -11,7 +13,7 @@ interface ProfilePageProps {
 const ProfilePage = (props: ProfilePageProps) => {
   const { className } = props
 
-  const [form, setForm] = useState('account')
+  const [form, setForm] = useState('pets')
 
   const handleSelectForm = useCallback(
     (form: string) => () => {
@@ -27,7 +29,13 @@ const ProfilePage = (props: ProfilePageProps) => {
         selectedForm={form}
         handleSelectForm={handleSelectForm}
       />
-      {form === 'account' ? <AccountForm /> : <AccountForm />}
+      {form === 'account' ? (
+        <AccountForm />
+      ) : form === 'setting' ? (
+        <SettingsForm />
+      ) : (
+        <CreatePetForm />
+      )}
     </div>
   )
 }

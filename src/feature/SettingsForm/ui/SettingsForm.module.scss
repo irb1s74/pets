@@ -1,0 +1,41 @@
+.SettingsForm {
+  max-width: 410px;
+  max-height: 339px;
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+  background-color: var(--alternative-color);
+  border-radius: 16px;
+
+  &__title {
+    margin-bottom: 25px;
+  }
+
+  &__subtitle {
+    margin-bottom: 20px;
+  }
+
+  &__groupInputs {
+    margin-bottom: 25px;
+
+    & > * {
+      margin-bottom: 15px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .input {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      & > * {
+        &:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

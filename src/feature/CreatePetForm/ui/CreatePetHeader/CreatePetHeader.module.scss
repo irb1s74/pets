@@ -1,0 +1,49 @@
+.CreatePetHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--gray-color);
+  margin-bottom: 30px;
+
+  &__step {
+    width: 30px;
+    height: 30px;
+    background-color: #EDF2F7FF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #17171B;
+    transition: all 300ms ease;
+
+    &Active {
+      background-color: var(--primary-color);
+      color: #EDF2F7;
+    }
+  }
+
+  &__stepBar {
+    max-width: 98px;
+    width: 100%;
+    height: 6px;
+    border-radius: 40px;
+    background-color: #EDF2F7FF;
+
+    .progress {
+      width: 0;
+      height: 100%;
+      background-color: var(--primary-color);
+      border-radius: 40px;
+      transition: all 300ms ease;
+
+      &InProgress {
+        width: 50%;
+      }
+
+      &Active {
+        width: 100%;
+      }
+    }
+  }
+}
