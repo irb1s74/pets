@@ -1,0 +1,61 @@
+.CreatePetForm {
+  max-width: 710px;
+  max-height: 660px;
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  background-color: var(--alternative-color);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__form {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .groupInputSwitch {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .inputFullWidth {
+      max-width: 100%;
+      width: 100%;
+      margin-right: 40px;
+    }
+
+    .textarea {
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .groupRadio {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      .radio {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 30px;
+
+        & > *:first-child {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
