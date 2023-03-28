@@ -3,6 +3,7 @@ import styles from './ProfilePage.module.scss'
 import { ProfileList } from 'entities/User'
 import { useCallback, useState } from 'react'
 import { AccountForm } from 'feature/AccountForm'
+import { SettingsForm } from 'feature/SettingsForm'
 
 interface ProfilePageProps {
   className?: string
@@ -27,7 +28,7 @@ const ProfilePage = (props: ProfilePageProps) => {
         selectedForm={form}
         handleSelectForm={handleSelectForm}
       />
-      {form === 'account' ? <AccountForm /> : <AccountForm />}
+      {form === 'account' ? <AccountForm /> : form === 'setting' ? <SettingsForm /> : <div />}
     </div>
   )
 }
