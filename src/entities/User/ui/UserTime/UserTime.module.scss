@@ -1,5 +1,5 @@
 .UserTime {
-  max-height: 315px;
+  max-height: 100%;
   height: 100%;
   max-width: 260px;
   width: 100%;
@@ -19,25 +19,51 @@
     .header {
       display: flex;
       align-items: center;
-    }
 
-    .icon {
-      width: 32px;
-      height: 32px;
-      background-color: var(--primary-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      margin-right: 10px;
-    }
+      &__icon {
+        width: 32px;
+        height: 32px;
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin-right: 10px;
+      }
 
-    .text {
-
+      &__title {
+      }
     }
 
     .data {
       margin-top: 13px;
     }
   }
+
+  @media only screen and (max-width: 1680px) {
+    &__data {
+      max-height: 120px;
+
+
+      .data {
+        p {
+          font-size: 24px !important;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1240px) {
+    &__data {
+      border-radius: 16px 16px 0 0;
+      padding: 15px;
+
+      &:last-child {
+        border-radius: 0 0 16px 16px;
+        padding-top: 0;
+      }
+    }
+  }
 }
+
+

@@ -25,7 +25,7 @@ export const PetDetails = memo((props: PetDetailsProps) => {
   const { theme } = useTheme()
 
   if (isLoading) {
-    return <Skeleton width='100%' height='100%' border='10px' />
+    return <Skeleton className={styles.skeleton} width='100%' height='100%' border='10px' />
   }
 
   return (
