@@ -12,7 +12,7 @@ export const PetsFilterList = memo((props: PetsFilterListProps) => {
 
   return (
     <div className={styles.PetsFilterList}>
-      <PetTypeList className={className} />
+      <PetTypeList className={styles.PetsFilterList__filter} />
       <PetGrid className={styles.PetsFilterList__grid} data={data} isLoading={isLoading} />
     </div>
   )

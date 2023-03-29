@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Cell, Pie, PieChart } from 'recharts'
+import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts'
 import Close from 'shared/assets/icons/close.svg'
 import Ready from 'shared/assets/icons/ready.svg'
 import { Text } from 'shared/ui/Text'
@@ -22,13 +22,15 @@ export const UserProgress = memo((props: UserProgressProps) => {
 
   return (
     <div className={classNames(styles.UserProgress, {}, [className])}>
-      <PieChart width={234} height={234}>
-        <Pie data={data} innerRadius={60} outerRadius={80} dataKey='value'>
-          {data.map((entry, index) => (
-            <Cell r={20} strokeWidth={0} key={`cell-${index}`} fill={entry.color} />
-          ))}
-        </Pie>
-      </PieChart>
+      <ResponsiveContainer className={styles.UserProgress__chart} height={234}>
+        <PieChart>
+          <Pie data={data} innerRadius={60} outerRadius={80} dataKey='value'>
+            {data.map((entry, index) => (
+              <Cell r={20} strokeWidth={0} key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
       <div className={styles.UserProgress__tasks}>
         <Text weight='bold' size={18} text='Ежедневный прогресс' />
         {data.map((entry, index) => (
