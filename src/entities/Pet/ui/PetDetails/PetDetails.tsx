@@ -75,7 +75,7 @@ export const PetDetails = memo((props: PetDetailsProps) => {
         <Text size={32} weight='medium' text='Описание' />
         <Text weight='light' size={32} text={data?.about} />
       </div>
-      <Button>Купить - 5 000 ₽</Button>
+      <Button className={styles.PetDetails__btn}>Купить - 5 000 ₽</Button>
     </div>
   )
 })
