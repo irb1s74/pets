@@ -63,9 +63,14 @@
 
   &__description {
     margin-bottom: auto;
+
     & > div:first-child {
       margin-bottom: 15px;
     }
 
   }
+}
+
+.skeleton {
+  margin-left: 15px;
 }

@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useGetChatsQuery } from 'entities/Chat'
 import { getRouteChat } from 'shared/const/router'
@@ -8,6 +8,7 @@ import { Text } from 'shared/ui/Text'
 import { Avatar } from 'shared/ui/Avatar'
 import classNames from 'classnames'
 import styles from './ChatRecommendationList.module.scss'
+import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
 
 interface ChatRecommendationListProps {
   className?: string
@@ -21,18 +22,19 @@ const getSkeletons = () =>
 export const ChatRecommendationList = memo((props: ChatRecommendationListProps) => {
   const { className } = props
   const navigate = useNavigate()
+  const { width } = useWindowDimensions()
   const { data: chats, isLoading } = useGetChatsQuery()
   const handleClickToChat = () => {
     navigate(getRouteChat())
   }
-
+  const countUsers = useMemo(() => (width > 1680 ? 5 : 3), [width])
   return (
     <div className={classNames(styles.ChatRecommendationList, {}, [className])}>
       <div className={styles.ChatRecommendationList__users}>
         {chats && (
           <>
-            {chats.map((chat) => (
-              <Avatar size={60} key={chat.id} src={chat.avatar} alt={chat.title} />
+            {chats.slice(0, countUsers).map((chat) => (
+              <Avatar key={chat.id} size={60} src={chat.avatar} alt={chat.title} />
             ))}
             <div className={styles.ChatRecommendationList__icon}>
               <Text align='center' text='+' />

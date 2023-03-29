@@ -32,19 +32,19 @@ export const UserTime = (props: UserTimeProps) => {
     <div className={classNames(styles.UserTime, {}, [className])}>
       <div className={styles.UserTime__data}>
         <div className={styles.header}>
-          <div className={styles.icon}>
+          <div className={styles.header__icon}>
             <Clock />
           </div>
-          <Text size={16} text='На часах у нас' />
+          <Text className={styles.header__title} size={16} text='На часах у нас' />
         </div>
         <Text className={styles.data} size={32} weight='medium' text={dateTime.time} />
       </div>
       <div className={styles.UserTime__data}>
         <div className={styles.header}>
-          <div className={styles.icon}>
+          <div className={styles.header__icon}>
             <Calendar />
           </div>
-          <Text size={16} text='На календаре у нас' />
+          <Text className={styles.header__title} size={16} text='На календаре у нас' />
         </div>
         <Text className={styles.data} size={32} weight='medium' text={dateTime.date} />
       </div>

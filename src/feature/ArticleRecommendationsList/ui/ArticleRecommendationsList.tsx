@@ -1,4 +1,6 @@
 import { ArticleList, useGetArticlesQuery } from 'entities/Article'
+import { useMemo } from 'react'
+import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
 
 interface ArticleRecommendationsListProps {
   className?: string
@@ -7,5 +9,15 @@ interface ArticleRecommendationsListProps {
 export const ArticleRecommendationsList = (props: ArticleRecommendationsListProps) => {
   const { className } = props
   const { data, isLoading } = useGetArticlesQuery()
-  return <ArticleList className={className} articles={data} isLoading={isLoading} />
+  const { width } = useWindowDimensions()
+  const slidesPerView = useMemo(() => (width >= 1800 ? 4 : width > 1680 ? 3 : 2), [width])
+
+  return (
+    <ArticleList
+      className={className}
+      articles={data}
+      isLoading={isLoading}
+      slidesPerView={slidesPerView}
+    />
+  )
 }
