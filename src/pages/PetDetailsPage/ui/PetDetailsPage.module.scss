@@ -9,4 +9,13 @@
   &__image {
     max-width: 710px;
   }
+
+  @media only screen and (max-width: 1290px) {
+    flex-direction: column;
+
+    &__image {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
+  }
 }
