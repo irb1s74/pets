@@ -1,7 +1,9 @@
 .Switch {
   position: relative;
   display: inline-block;
+  max-width: 36px;
   width: 36px;
+  min-width: 36px;
   height: 18.5px;
 
   input {
