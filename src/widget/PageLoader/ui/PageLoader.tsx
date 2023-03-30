@@ -1,4 +1,4 @@
-import { memo, useEffect, useState } from 'react'
+import { memo, useState } from 'react'
 import { motion } from 'framer-motion'
 import Pet from 'shared/assets/icons/pet.svg'
 import classNames from 'classnames'
@@ -16,10 +16,7 @@ export const PageLoader = memo((props: PageLoaderProps) => {
     setPostNum((prevState) => (prevState === 6 ? 0 : prevState + 1))
   }
 
-  useEffect(() => {
-    setTimeout(walk, 500)
-  }, [])
-
+  setTimeout(walk, 500)
   return (
     <motion.div
       initial={{

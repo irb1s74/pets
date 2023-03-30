@@ -22,7 +22,7 @@ const BlogPage = (props: BlogPageProps) => {
     <div className={classNames(styles.BlogPage, {}, [className])}>
       <div className={styles.BlogPage__content}>
         <CreateArticle className={styles.createForm} />
-        <ArticleGrid isLoading={isLoading}>
+        <ArticleGrid className={styles.grid} isLoading={isLoading}>
           {data?.map((article) => (
             <Card key={article.id}>
               <ArticleHeader article={article} />

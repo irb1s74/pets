@@ -18,7 +18,7 @@ const PetDetailsPage = (props: PetDetailsPageProps) => {
         images={data?.images}
         isLoading={isLoading}
       />
-      <PetDetails data={data} isLoading={isLoading} />
+      <PetDetails className={styles.PetDetailsPage__details} data={data} isLoading={isLoading} />
     </div>
   )
 }
