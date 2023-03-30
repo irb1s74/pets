@@ -1,35 +1,60 @@
 .PetsFilterList {
-  display: flex;
-  align-items: flex-start;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: flex-start;
 
   &__filter {
     width: 100%;
-    @media only screen and (max-width: 1460px) {
+
+    @media only screen and (max-width: 1530px) {
       grid-template-columns: repeat(1, 95px);
       grid-template-rows: repeat(6, 91px);
     }
-    @media only screen and (max-width: 1080px) {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    @media only screen and (max-width: 1279px) {
+      grid-template-columns: repeat(6, 95px);
+      grid-template-rows: repeat(1, 91px);
       margin-bottom: 30px;
+    }
+
+    @media only screen and (max-width: 810px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      &> div{
+        height: 91px;
+      }
     }
   }
 
   &__grid {
     margin-left: 40px;
     flex-grow: 2;
-    @media only screen and (max-width: 1080px) {
+
+    @media only screen and (max-width: 1910px) {
+      column-count: 3;
+    }
+    @media only screen and (max-width: 1530px) {
+      column-gap: 15px;
+      margin-left: 10px;
+    }
+
+    @media only screen and (max-width: 1279px) {
+      column-count: 2;
       margin-left: 0;
+    }
+
+    @media only screen and (max-width: 810px) {
+      column-count: 1;
+
+      & > div {
+        max-width: 100%;
+        width: 100%;
+      }
     }
   }
 
-  @media only screen and (max-width: 1080px) {
+  @media only screen and (max-width: 1279px) {
     flex-direction: column;
     align-items: center;
   }
-
 }

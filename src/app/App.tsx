@@ -18,7 +18,7 @@ export const App = () => {
   }, [dispatch])
 
   return (
-    <div className={classNames('app', {}, [theme])}>
+    <div id='app' className={classNames('app', {}, [theme])}>
       <Suspense fallback={<LaunchPage />}>{inited ? <AppRouter /> : <LaunchPage />}</Suspense>
     </div>
   )
