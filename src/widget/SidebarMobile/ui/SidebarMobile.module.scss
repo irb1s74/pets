@@ -1,0 +1,131 @@
+.SidebarMobile {
+
+  &__btn {
+    width: 32px;
+    height: 32px;
+    background-color: var(--primary-color);
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 8px;
+    cursor: pointer;
+
+    .bar {
+      width: 100%;
+      height: 2px;
+      background-color: #EDF2F7;
+      border-radius: 1px;
+    }
+  }
+
+  &__menu {
+    display: none;
+    padding: 20px 25px;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--bg-color);
+
+    flex-direction: column;
+    z-index: 123;
+
+    .closeBtn {
+      width: 32px;
+      height: 32px;
+      border-radius: 7px;
+      background-color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 58px;
+    }
+
+    .nav {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      &__item {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          width: 32px;
+          height: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 8px;
+          background: var(--purple-gradient);
+          margin-right: 10px;
+
+          svg {
+            stroke: #EDF2F7;
+            fill: #EDF2F7;
+          }
+        }
+
+        &:nth-child(2) {
+          .icon {
+            background: var(--orange-gradient);
+          }
+        }
+
+        &:nth-child(3) {
+          .icon {
+            background: var(--yellow-gradient);
+          }
+        }
+
+        &:nth-child(4) {
+          .icon {
+            background: var(--pink-gradient);
+          }
+        }
+
+        &:last-child {
+          .icon {
+            background: var(--green-gradient);
+          }
+        }
+      }
+
+      & > div {
+        margin-bottom: 27px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .logout {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+
+      &__icon {
+        width: 32px;
+        height: 32px;
+        padding: 8.5px;
+        border-radius: 8px;
+        background-color: var(--primary-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+
+        svg {
+          fill: #EDF2F7;
+        }
+      }
+    }
+  }
+
+  &__menuOpen {
+    display: flex;
+  }
+}

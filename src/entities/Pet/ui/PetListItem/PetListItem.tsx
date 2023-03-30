@@ -32,7 +32,7 @@ export const PetListItem = memo((props: PetListItemProps) => {
       </div>
       <div className={styles.PetListItem__content}>
         <div className={styles.about}>
-          <Text size={24} text={data.name} />
+          <Text size={18} text={data.name} />
           <Text size={15} text={data.type} className={styles.type} />
         </div>
         <div className={styles.actions}>
