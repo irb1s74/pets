@@ -20,7 +20,7 @@
     @media only screen and (max-width: 810px) {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);
-      &> div{
+      & > div {
         height: 91px;
       }
     }
@@ -41,6 +41,10 @@
     @media only screen and (max-width: 1279px) {
       column-count: 2;
       margin-left: 0;
+
+      & > div {
+        max-height: 350px;
+      }
     }
 
     @media only screen and (max-width: 810px) {
