@@ -18,5 +18,18 @@
     .createForm {
       margin-bottom: 18px;
     }
+
+    .grid {
+      @media only screen and (max-width: 1080px) {
+        column-count: 1;
+        & > div {
+          width: 100%;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 1080px) {
+      align-items: center;
+    }
   }
 }
