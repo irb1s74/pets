@@ -18,16 +18,16 @@ export const SidebarMobile = memo((props: SidebarMobileProps) => {
   const dispatch = useDispatch()
   const [isCollapsed, setCollapsed] = useState(false)
 
-  const mod = {
-    [styles.SidebarMobile__menuOpen]: isCollapsed,
-  }
   const handleOpenMenu = () => {
     setCollapsed(true)
   }
-
   const handleCloseMenu = useCallback(() => setCollapsed(false), [])
   const handleLogout = () => {
     dispatch(userActions.logout())
+  }
+
+  const mod = {
+    [styles.SidebarMobile__menuOpen]: isCollapsed,
   }
   return (
     <div className={classNames(styles.SidebarMobile, {}, [className])}>
