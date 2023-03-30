@@ -5,10 +5,31 @@
   height: 100%;
 
   &__filter {
-
+    width: 100%;
+    @media only screen and (max-width: 1460px) {
+      grid-template-columns: repeat(1, 95px);
+      grid-template-rows: repeat(6, 91px);
+    }
+    @media only screen and (max-width: 1080px) {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
   }
 
   &__grid {
     margin-left: 40px;
+    flex-grow: 2;
+    @media only screen and (max-width: 1080px) {
+      margin-left: 0;
+    }
   }
+
+  @media only screen and (max-width: 1080px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
 }

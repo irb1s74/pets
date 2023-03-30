@@ -17,7 +17,7 @@ interface ArticleListProps {
 const getSkeletons = () =>
   new Array(4).fill(0).map((item, index) => (
     <SwiperSlide key={index}>
-      <ArticleListItemSkeleton />{' '}
+      <ArticleListItemSkeleton />
     </SwiperSlide>
   ))
 

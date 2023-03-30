@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react'
+import { memo } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pet } from '../../model/types/Pet'
 import { PetListItemSkeleton } from '../PetListItem/PetListItemSkeleton'
@@ -6,10 +6,10 @@ import { PetListItem } from '../PetListItem/PetListItem'
 import classNames from 'classnames'
 import styles from './PetList.module.scss'
 import 'swiper/css'
-import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
 
 interface PetListProps {
   className?: string
+  slidesPerView?: number
   data: Pet[]
   isLoading?: boolean
 }
@@ -22,10 +22,7 @@ const getSkeletons = () =>
   ))
 
 export const PetList = memo((props: PetListProps) => {
-  const { className, data, isLoading } = props
-  const { width } = useWindowDimensions()
-
-  const slidesPerView = useMemo(() => (width >= 1920 ? 2 : 1), [width])
+  const { className, data, isLoading, slidesPerView } = props
 
   return (
     <div className={classNames(styles.PetList, {}, [className])}>

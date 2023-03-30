@@ -8,6 +8,8 @@ import Arrow from 'shared/assets/icons/headerArrow.svg'
 import classNames from 'classnames'
 import styles from './Header.module.scss'
 import { useNavigate } from 'react-router-dom'
+import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
+import { SidebarMobile } from 'widget/SidebarMobile'
 
 interface HeaderProps {
   className?: string
@@ -23,17 +25,22 @@ export const Header = (props: HeaderProps) => {
   const handleGoBack = () => {
     navigate(-1)
   }
+  const { width } = useWindowDimensions()
 
   return (
     <header className={classNames(styles.Header, {}, [className])}>
-      <div className={styles.Header__title}>
-        {useGoBack && (
-          <div onClick={handleGoBack} className={styles.arrow}>
-            <Arrow />
-          </div>
-        )}
-        <Text size={40} weight='bold' text={pageTitle} />
-      </div>
+      {width > 768 ? (
+        <div className={styles.Header__title}>
+          {useGoBack && (
+            <div onClick={handleGoBack} className={styles.arrow}>
+              <Arrow />
+            </div>
+          )}
+          <Text size={40} weight='bold' text={pageTitle} />
+        </div>
+      ) : (
+        <SidebarMobile />
+      )}
       <div className={styles.Header__actions}>
         <ThemeSwitcher className={styles.switcher} />
         <NotificationButton className={styles.alertBtn} />

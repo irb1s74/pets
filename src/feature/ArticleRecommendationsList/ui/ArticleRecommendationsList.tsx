@@ -10,7 +10,10 @@ export const ArticleRecommendationsList = (props: ArticleRecommendationsListProp
   const { className } = props
   const { data, isLoading } = useGetArticlesQuery()
   const { width } = useWindowDimensions()
-  const slidesPerView = useMemo(() => (width >= 1800 ? 4 : width > 1680 ? 3 : 2), [width])
+  const slidesPerView = useMemo(
+    () => (width >= 1800 ? 4 : width > 1680 ? 3 : width > 768 ? 2 : 1),
+    [width],
+  )
 
   return (
     <ArticleList
