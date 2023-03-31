@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pet } from '../../model/types/Pet'
 import { PetListItemSkeleton } from '../PetListItem/PetListItemSkeleton'
@@ -14,15 +14,18 @@ interface PetListProps {
   isLoading?: boolean
 }
 
-const getSkeletons = () =>
-  new Array(2).fill(0).map((item, index) => (
-    <SwiperSlide key={index}>
-      <PetListItemSkeleton />
-    </SwiperSlide>
-  ))
-
 export const PetList = memo((props: PetListProps) => {
   const { className, data, isLoading, slidesPerView } = props
+
+  const getSkeletons = useMemo(
+    () =>
+      new Array(2).fill(0).map((item, index) => (
+        <SwiperSlide key={index}>
+          <PetListItemSkeleton className={styles.PetList__item} />
+        </SwiperSlide>
+      )),
+    [],
+  )
 
   return (
     <div className={classNames(styles.PetList, {}, [className])}>
@@ -32,7 +35,7 @@ export const PetList = memo((props: PetListProps) => {
             <PetListItem className={styles.PetList__item} data={item} />
           </SwiperSlide>
         ))}
-        {isLoading && getSkeletons()}
+        {isLoading && getSkeletons}
       </Swiper>
     </div>
   )

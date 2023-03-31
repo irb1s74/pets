@@ -9,10 +9,15 @@
 
   &__menu {
     margin-right: 40px;
+
+    @media only screen and (max-width: 1180px) {
+      width: 100%;
+      max-width: 100%;
+      margin: 0;
+    }
   }
 
   &__chat {
-
 
   }
 }
