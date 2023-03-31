@@ -4,6 +4,7 @@ import { ChatMessenger } from 'feature/ChatMessenger'
 import { useGetChatsQuery } from 'entities/Chat'
 import classNames from 'classnames'
 import styles from './ChatPage.module.scss'
+import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
 
 interface ChatPageProps {
   className?: string
@@ -12,16 +13,38 @@ interface ChatPageProps {
 const ChatPage = (props: ChatPageProps) => {
   const { className } = props
   const [chatId, setChatId] = useState(null)
+  const [slideMobile, setSlideMobile] = useState(0)
+  const { width } = useWindowDimensions()
   const { data, isLoading } = useGetChatsQuery()
 
   const handleSetChatId = useCallback(
     (chatId: number) => () => {
       setChatId(chatId)
+      setSlideMobile(1)
     },
     [],
   )
 
+  const handleSetMenu = useCallback(() => setSlideMobile(0), [])
+
   const selectedChat = useMemo(() => data?.find((chat) => chat.id === chatId), [chatId, data])
+  if (width <= 1180) {
+    return (
+      <div className={classNames(styles.ChatPage, {}, [className])}>
+        {slideMobile ? (
+          <ChatMessenger handleSetMenu={handleSetMenu} chat={selectedChat} />
+        ) : (
+          <ChatMenu
+            chats={data}
+            chatId={chatId}
+            isLoading={isLoading}
+            handleSetChatId={handleSetChatId}
+            className={styles.ChatPage__menu}
+          />
+        )}
+      </div>
+    )
+  }
 
   return (
     <div className={classNames(styles.ChatPage, {}, [className])}>

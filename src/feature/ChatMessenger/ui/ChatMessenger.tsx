@@ -5,17 +5,19 @@ import styles from './ChatMessenger.module.scss'
 
 interface ChatMessengerProps {
   chat: Chat | null
+
+  handleSetMenu?: () => void
   className?: string
 }
 
 export const ChatMessenger = memo((props: ChatMessengerProps) => {
-  const { className, chat } = props
+  const { className, chat, handleSetMenu } = props
 
   return (
     <div className={classNames(styles.ChatMessenger, {}, [className])}>
       {chat ? (
         <div className={styles.ChatMessenger__container}>
-          <ChatHeader title={chat.title} />
+          <ChatHeader handleSetMenu={handleSetMenu} title={chat.title} />
           <ChatContent messages={chat.messages} />
           <ChatFooter />
         </div>
