@@ -8,5 +8,7 @@ interface ArticleListItemProps {
 
 export const ArticleListItemSkeleton = memo((props: ArticleListItemProps) => {
   const { className } = props
-  return <Skeleton className={classNames([className])} border='16px' width={410} height={210} />
+  return (
+    <Skeleton className={classNames([className])} border='16px' width='325px' height={'100%'} />
+  )
 })

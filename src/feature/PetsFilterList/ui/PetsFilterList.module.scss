@@ -16,7 +16,6 @@
       grid-template-rows: repeat(1, 91px);
       margin-bottom: 30px;
     }
-
     @media only screen and (max-width: 810px) {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: repeat(2, 1fr);
@@ -37,7 +36,6 @@
       column-gap: 15px;
       margin-left: 10px;
     }
-
     @media only screen and (max-width: 1279px) {
       column-count: 2;
       margin-left: 0;
@@ -46,7 +44,6 @@
         max-height: 350px;
       }
     }
-
     @media only screen and (max-width: 810px) {
       column-count: 1;
 

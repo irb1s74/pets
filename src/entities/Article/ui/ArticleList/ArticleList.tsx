@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useMemo } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Article } from '../../model/types/Article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
@@ -14,15 +14,18 @@ interface ArticleListProps {
   slidesPerView?: number
 }
 
-const getSkeletons = () =>
-  new Array(4).fill(0).map((item, index) => (
-    <SwiperSlide key={index}>
-      <ArticleListItemSkeleton />
-    </SwiperSlide>
-  ))
-
 export const ArticleList = memo((props: ArticleListProps) => {
   const { className, articles, isLoading, slidesPerView = 'auto' } = props
+
+  const getSkeletons = useMemo(
+    () =>
+      new Array(slidesPerView).fill(0).map((item, index) => (
+        <SwiperSlide key={index}>
+          <ArticleListItemSkeleton />
+        </SwiperSlide>
+      )),
+    [],
+  )
 
   return (
     <div className={classNames(styles.ArticleList, {}, [className])}>
@@ -32,7 +35,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             <ArticleListItem data={item} />
           </SwiperSlide>
         ))}
-        {isLoading && getSkeletons()}
+        {isLoading && getSkeletons}
       </Swiper>
     </div>
   )

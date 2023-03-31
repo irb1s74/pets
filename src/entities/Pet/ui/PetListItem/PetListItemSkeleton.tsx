@@ -8,5 +8,5 @@ interface PetListItemSkeletonProps {
 
 export const PetListItemSkeleton = memo((props: PetListItemSkeletonProps) => {
   const { className } = props
-  return <Skeleton className={classNames([className])} border='16px' width={410} height={290} />
+  return <Skeleton className={classNames([className])} border='16px' height={290} />
 })
