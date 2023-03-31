@@ -22,7 +22,8 @@
   }
 
   &__articles {
-    height: 210px;
+    max-height: 210px;
+    min-height: 210px;
     grid-column: span 12;
   }
 
@@ -75,14 +76,14 @@
       grid-row: 2;
       grid-column: 1 / 6;
     }
-
     &__pets {
       grid-row: 2;
       grid-column: span 5;
     }
-
     &__articles {
       height: 100%;
+      max-height: 100%;
+      min-height: 210px;
       grid-column: 1 / 7;
       grid-row: 3;
     }
