@@ -145,6 +145,8 @@
 
     &__greetings {
       grid-row: 1;
+      max-height: 325px;
+      height: 325px;
       grid-column: span 5;
     }
 
