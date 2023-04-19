@@ -4,7 +4,7 @@ import { Pet } from '../../model/types/Pet'
 import { PetListItemSkeleton } from '../PetListItem/PetListItemSkeleton'
 import { PetListItem } from '../PetListItem/PetListItem'
 import classNames from 'classnames'
-import styles from './PetList.module.scss'
+import './PetList.scss'
 import 'swiper/css'
 
 interface PetListProps {
@@ -21,18 +21,18 @@ export const PetList = memo((props: PetListProps) => {
     () =>
       new Array(2).fill(0).map((item, index) => (
         <SwiperSlide key={index}>
-          <PetListItemSkeleton className={styles.PetList__item} />
+          <PetListItemSkeleton className='PetList__item' />
         </SwiperSlide>
       )),
     [],
   )
 
   return (
-    <div className={classNames(styles.PetList, {}, [className])}>
+    <div className={classNames('PetList', {}, [className])}>
       <Swiper spaceBetween={20} slidesPerView={slidesPerView}>
         {data?.map((item) => (
           <SwiperSlide key={item.id}>
-            <PetListItem className={styles.PetList__item} data={item} />
+            <PetListItem className='PetList__item' data={item} />
           </SwiperSlide>
         ))}
         {isLoading && getSkeletons}

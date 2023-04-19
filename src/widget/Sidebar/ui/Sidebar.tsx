@@ -6,7 +6,7 @@ import Logout from 'shared/assets/icons/logout.svg'
 import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
 import { SidebarNav } from './SidebarNav'
 import classNames from 'classnames'
-import styles from './Sidebar.module.scss'
+import './Sidebar.scss'
 
 interface SidebarProps {
   className?: string
@@ -26,10 +26,10 @@ export const Sidebar = memo((props: SidebarProps) => {
   }
 
   return (
-    <div className={classNames(styles.Sidebar, {}, [className])}>
-      <Logo className={styles.Sidebar__logo} />
+    <div className={classNames('Sidebar', {}, [className])}>
+      <Logo className='Sidebar__logo' />
       <SidebarNav />
-      <div onClick={handleLogout} className={styles.Sidebar__logoutBtn}>
+      <div onClick={handleLogout} className='Sidebar__logoutBtn'>
         <Logout />
       </div>
     </div>

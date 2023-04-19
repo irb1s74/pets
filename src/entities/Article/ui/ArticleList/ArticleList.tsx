@@ -4,8 +4,8 @@ import { Article } from '../../model/types/Article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import classNames from 'classnames'
-import styles from './ArticleList.module.scss'
 import 'swiper/css'
+import './ArticleList.scss'
 
 interface ArticleListProps {
   className?: string
@@ -28,7 +28,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   )
 
   return (
-    <div className={classNames(styles.ArticleList, {}, [className])}>
+    <div className={classNames('ArticleList', {}, [className])}>
       <Swiper spaceBetween={40} slidesPerView={slidesPerView}>
         {articles?.map((item) => (
           <SwiperSlide key={item.id}>

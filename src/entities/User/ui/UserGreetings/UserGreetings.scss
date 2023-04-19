@@ -13,19 +13,19 @@
   overflow: hidden;
   color: #FFF;
 
-  .texts {
+  &__texts {
 
   }
 
-  .mt20 {
+  &__firstRecommendation {
     margin-top: 20px;
   }
 
-  .mt10 {
+  &__secondRecommendation {
     margin-top: 10px;
   }
 
-  &__back {
+  &__background {
     position: absolute;
     margin: auto;
     width: 100%;

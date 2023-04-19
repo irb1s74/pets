@@ -6,9 +6,9 @@ import { Skeleton } from 'shared/ui/Skeleton'
 import { Button } from 'shared/ui/Button'
 import { Text } from 'shared/ui/Text'
 import { Avatar } from 'shared/ui/Avatar'
-import classNames from 'classnames'
-import styles from './ChatRecommendationList.module.scss'
 import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
+import classNames from 'classnames'
+import './ChatRecommendationList.scss'
 
 interface ChatRecommendationListProps {
   className?: string
@@ -27,16 +27,18 @@ export const ChatRecommendationList = memo((props: ChatRecommendationListProps) 
   const handleClickToChat = () => {
     navigate(getRouteChat())
   }
+
   const countUsers = useMemo(() => (width > 1680 ? 5 : 3), [width])
+
   return (
-    <div className={classNames(styles.ChatRecommendationList, {}, [className])}>
-      <div className={styles.ChatRecommendationList__users}>
+    <div className={classNames('ChatRecommendationList', {}, [className])}>
+      <div className='ChatRecommendationList__users'>
         {chats && (
           <>
             {chats.slice(0, countUsers).map((chat) => (
               <Avatar key={chat.id} size={60} src={chat.avatar} alt={chat.title} />
             ))}
-            <div className={styles.ChatRecommendationList__icon}>
+            <div className='ChatRecommendationList__icon'>
               <Text align='center' text='+' />
             </div>
           </>

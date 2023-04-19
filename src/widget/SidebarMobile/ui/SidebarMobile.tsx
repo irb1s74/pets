@@ -7,7 +7,7 @@ import Logout from 'shared/assets/icons/logout.svg'
 import Close from 'shared/assets/icons/largeClose.svg'
 import { SidebarMobileNav } from './SidebarMobileNav'
 import classNames from 'classnames'
-import styles from './SidebarMobile.module.scss'
+import './SidebarMobile.scss'
 
 interface SidebarMobileProps {
   className?: string
@@ -27,23 +27,23 @@ export const SidebarMobile = memo((props: SidebarMobileProps) => {
   }
 
   const mod = {
-    [styles.SidebarMobile__menuOpen]: isCollapsed,
+    ['SidebarMobile__menuOpen']: isCollapsed,
   }
   return (
-    <div className={classNames(styles.SidebarMobile, {}, [className])}>
-      <div onClick={handleOpenMenu} className={styles.SidebarMobile__btn}>
-        <div className={styles.bar} />
-        <div className={styles.bar} />
-        <div className={styles.bar} />
+    <div className={classNames('SidebarMobile', {}, [className])}>
+      <div onClick={handleOpenMenu} className='SidebarMobile__btn'>
+        <div className='SidebarMobile__bar' />
+        <div className='SidebarMobile__bar' />
+        <div className='SidebarMobile__bar' />
       </div>
       <Portal>
-        <div className={classNames(styles.SidebarMobile__menu, mod)}>
-          <div onClick={handleCloseMenu} className={styles.closeBtn}>
+        <div className={classNames('SidebarMobile__menu', mod)}>
+          <div onClick={handleCloseMenu} className='SidebarMobile__closeBtn'>
             <Close />
           </div>
           <SidebarMobileNav handleCloseMenu={handleCloseMenu} />
-          <div onClick={handleLogout} className={styles.logout}>
-            <div className={styles.logout__icon}>
+          <div onClick={handleLogout} className='SidebarMobile__logout'>
+            <div className='SidebarMobile__icon'>
               <Logout />
             </div>
             <Text size={16} weight='Bold' text='Logout' />

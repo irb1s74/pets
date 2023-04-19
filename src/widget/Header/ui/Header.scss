@@ -10,26 +10,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
 
-    .arrow {
-      margin-right: 35px;
-      cursor: pointer;
 
-      svg {
-        fill: var(--font-color);
-      }
+  &__arrow {
+    margin-right: 35px;
+    cursor: pointer;
+
+    svg {
+      fill: var(--font-color);
     }
   }
 
   &__actions {
     display: flex;
+  }
 
-    .switcher {
-      margin-right: 30px;
-    }
+  &__switcher {
+    margin-right: 30px;
+  }
 
-    .alertBtn {
-      margin-right: 18px;
-    }
+  &__alertBtn {
+    margin-right: 18px;
   }
 }

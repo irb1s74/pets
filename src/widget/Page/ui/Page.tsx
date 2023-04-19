@@ -1,9 +1,9 @@
 import { memo, ReactNode } from 'react'
+import { motion } from 'framer-motion'
 import { Header } from 'widget/Header'
 import { Sidebar } from 'widget/Sidebar/ui/Sidebar'
 import classNames from 'classnames'
-import styles from './Page.module.scss'
-import { motion } from 'framer-motion'
+import './Page.scss'
 
 interface PageProps {
   className?: string
@@ -26,10 +26,10 @@ export const Page = memo((props: PageProps) => {
       exit={{
         opacity: 0,
       }}
-      className={classNames(styles.Page, {}, [className])}
+      className={classNames('Page', {}, [className])}
     >
       <Sidebar />
-      <div className={styles.Page__container}>
+      <div className='Page__container'>
         <Header useGoBack={useGoBack} pageTitle={title} />
         {children}
       </div>

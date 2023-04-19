@@ -28,7 +28,7 @@ const SignUpForm = memo(({ className }: SignUpFormProps) => {
     },
 
     validationSchema: SignUpValidationSchema,
-    isInitialValid: false,
+    validateOnMount: true,
     onSubmit: async (values) => {
       const result = await dispatch(loginByEmail(values))
       if (result.payload === 'error') {

@@ -1,10 +1,10 @@
 import { memo } from 'react'
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts'
+import { Text } from 'shared/ui/Text'
 import Close from 'shared/assets/icons/close.svg'
 import Ready from 'shared/assets/icons/ready.svg'
-import { Text } from 'shared/ui/Text'
 import classNames from 'classnames'
-import styles from './UserProgress.module.scss'
+import './UserProgress.scss'
 
 interface UserProgressProps {
   className?: string
@@ -21,8 +21,8 @@ export const UserProgress = memo((props: UserProgressProps) => {
   ]
 
   return (
-    <div className={classNames(styles.UserProgress, {}, [className])}>
-      <ResponsiveContainer className={styles.UserProgress__chart} height={234}>
+    <div className={classNames('UserProgress', {}, [className])}>
+      <ResponsiveContainer className='UserProgress__chart' height={234}>
         <PieChart>
           <Pie data={data} innerRadius={60} outerRadius={80} dataKey='value'>
             {data.map((entry, index) => (
@@ -31,11 +31,11 @@ export const UserProgress = memo((props: UserProgressProps) => {
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-      <div className={styles.UserProgress__tasks}>
+      <div className='UserProgress__tasks'>
         <Text weight='bold' size={18} text='Ежедневный прогресс' />
         {data.map((entry, index) => (
-          <div className={styles.task} key={index}>
-            <div style={{ backgroundColor: entry.color }} className={styles.icon}>
+          <div className='UserProgress__task' key={index}>
+            <div className='UserProgress__icon' style={{ backgroundColor: entry.color }}>
               {entry.check ? <Ready /> : <Close />}
             </div>
             <Text size={18} text={entry.name} />
