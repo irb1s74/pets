@@ -1,7 +1,7 @@
 import { Fragment, memo } from 'react'
-import classNames from 'classnames'
-import styles from './CreatePetHeader.module.scss'
 import { Text } from 'shared/ui/Text'
+import classNames from 'classnames'
+import './CreatePetHeader.scss'
 
 interface CreatePetHeaderProps {
   activeStep: number
@@ -13,22 +13,22 @@ export const CreatePetHeader = memo((props: CreatePetHeaderProps) => {
   const steps = [1, 2, 3, 4]
 
   return (
-    <div className={classNames(styles.CreatePetHeader, {}, [className])}>
+    <div className={classNames('CreatePetHeader', {}, [className])}>
       {steps.map((value) => (
         <Fragment key={value}>
           <div
-            className={classNames(styles.CreatePetHeader__step, {
-              [styles.CreatePetHeader__stepActive]: activeStep >= value,
+            className={classNames('CreatePetHeader__step', {
+              ['CreatePetHeader__step-active']: activeStep >= value,
             })}
           >
             <Text size={16} text={`${value}`} />
           </div>
           {value !== steps.length && (
-            <div className={styles.CreatePetHeader__stepBar}>
+            <div className='CreatePetHeader__stepBar'>
               <div
-                className={classNames(styles.progress, {
-                  [styles.progressInProgress]: value === activeStep,
-                  [styles.progressActive]: activeStep > value,
+                className={classNames('CreatePetHeader__progress', {
+                  ['CreatePetHeader__progress-inProgress']: value === activeStep,
+                  ['CreatePetHeader__progress-active']: activeStep > value,
                 })}
               />
             </div>

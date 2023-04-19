@@ -17,7 +17,7 @@
     grid-row-gap: 15px;
     margin-bottom: 15px;
 
-    .img {
+    & > div {
       border-radius: 13px;
       overflow: hidden;
       margin-bottom: 15px;
@@ -35,25 +35,24 @@
     align-items: flex-start;
     justify-content: flex-start;
     margin-bottom: 15px;
+  }
 
+  &__stat {
+    display: flex;
+    align-items: center;
 
-    .stat {
-      display: flex;
-      align-items: center;
+    &:first-child {
+      margin-right: 50px;
+    }
 
-      &:first-child {
-        margin-right: 50px;
-      }
-
-      &:last-child {
-        svg {
-          fill: var(--secondary-color);
-        }
-      }
-
+    &:last-child {
       svg {
-        margin-right: 10px;
+        fill: var(--secondary-color);
       }
+    }
+
+    svg {
+      margin-right: 10px;
     }
   }
 

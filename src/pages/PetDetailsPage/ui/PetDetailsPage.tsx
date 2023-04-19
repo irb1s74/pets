@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { PetDetails, PetImageSwiper, useGetPetQuery } from 'entities/Pet'
 import classNames from 'classnames'
-import styles from './PetDetailsPage.module.scss'
+import './PetDetailsPage.scss'
 
 interface PetDetailsPageProps {
   className?: string
@@ -12,13 +12,13 @@ const PetDetailsPage = (props: PetDetailsPageProps) => {
   const { id } = useParams<{ id: string }>()
   const { data, isLoading } = useGetPetQuery(id)
   return (
-    <div className={classNames(styles.PetDetailsPage, {}, [className])}>
+    <div className={classNames('PetDetailsPage', {}, [className])}>
       <PetImageSwiper
-        className={styles.PetDetailsPage__image}
+        className='PetDetailsPage__image'
         images={data?.images}
         isLoading={isLoading}
       />
-      <PetDetails className={styles.PetDetailsPage__details} data={data} isLoading={isLoading} />
+      <PetDetails className='PetDetailsPage__details' data={data} isLoading={isLoading} />
     </div>
   )
 }

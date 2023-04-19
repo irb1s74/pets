@@ -9,29 +9,30 @@
   align-items: center;
   justify-content: space-between;
 
-  .title {
+  &__title {
     display: flex;
     align-items: center;
 
-    &__arrow {
-      display: none;
-      cursor: pointer;
-      margin-right: 20px;
 
-      svg {
-        fill: #FFF;
-      }
+  }
 
-      @media only screen and (max-width: 1180px) {
-        display: flex;
-      }
+  &__arrow {
+    display: none;
+    cursor: pointer;
+    margin-right: 20px;
+
+    svg {
+      fill: #FFF;
     }
 
-    &__text {
-      color: #FFF;
+    @media only screen and (max-width: 1180px) {
+      display: flex;
     }
   }
 
+  &__text {
+    color: #FFF;
+  }
 
   &__iconBtn {
     width: 16px;

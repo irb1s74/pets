@@ -3,7 +3,7 @@ import { PetListItem } from '../PetListItem/PetListItem'
 import { PetListItemSkeleton } from '../PetListItem/PetListItemSkeleton'
 import { Pet } from '../../model/types/Pet'
 import classNames from 'classnames'
-import styles from './PetGrid.module.scss'
+import './PetGrid.scss'
 
 interface PetGridProps {
   className?: string
@@ -18,14 +18,14 @@ export const PetGrid = memo((props: PetGridProps) => {
     () =>
       new Array(8)
         .fill(0)
-        .map((item, index) => <PetListItemSkeleton className={styles.PetGrid__item} key={index} />),
+        .map((item, index) => <PetListItemSkeleton className='PetGrid__item' key={index} />),
     [],
   )
 
   return (
-    <div className={classNames(styles.PetGrid, {}, [className])}>
+    <div className={classNames('PetGrid', {}, [className])}>
       {data?.map((pet) => (
-        <PetListItem className={styles.PetGrid__item} key={pet.id} data={pet} />
+        <PetListItem className='PetGrid__item' key={pet.id} data={pet} />
       ))}
       {isLoading && getSkeletons}
     </div>

@@ -8,7 +8,7 @@ import {
   useGetArticlesQuery,
 } from 'entities/Article'
 import classNames from 'classnames'
-import styles from './BlogPage.module.scss'
+import './BlogPage.scss'
 
 interface BlogPageProps {
   className?: string
@@ -19,10 +19,10 @@ const BlogPage = (props: BlogPageProps) => {
   const { data, isLoading } = useGetArticlesQuery()
 
   return (
-    <div className={classNames(styles.BlogPage, {}, [className])}>
-      <div className={styles.BlogPage__content}>
-        <CreateArticle className={styles.createForm} />
-        <ArticleGrid className={styles.grid} isLoading={isLoading}>
+    <div className={classNames('BlogPage', {}, [className])}>
+      <div className='BlogPage__content'>
+        <CreateArticle className='BlogPage__createForm' />
+        <ArticleGrid className='BlogPage__grid' isLoading={isLoading}>
           {data?.map((article) => (
             <Card key={article.id}>
               <ArticleHeader article={article} />
