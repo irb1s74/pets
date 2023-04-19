@@ -4,7 +4,7 @@ import { Skeleton } from 'shared/ui/Skeleton'
 import { Text } from 'shared/ui/Text'
 import { Pet } from '../../model/types/Pet'
 import classNames from 'classnames'
-import styles from './PetStats.module.scss'
+import './PetStats.scss'
 
 interface PetStatsProps {
   data: Pet
@@ -18,6 +18,7 @@ export const PetStats = memo((props: PetStatsProps) => {
   if (isLoading) {
     return <Skeleton className={classNames([className])} border='16px' width='100%' height='100%' />
   }
+
   const dataChart = [
     {
       date: '17',
@@ -64,42 +65,42 @@ export const PetStats = memo((props: PetStatsProps) => {
   ]
 
   return (
-    <div className={classNames(styles.PetStats, {}, [className])}>
-      <div className={styles.PetStats__about}>
-        <AppImage className={styles.image} src={data.previewImg} alt={data.previewImg} />
-        <div className={styles.texts}>
+    <div className={classNames('PetStats', {}, [className])}>
+      <div className='PetStats__about'>
+        <AppImage className='PetState__image' src={data.previewImg} alt={data.previewImg} />
+        <div className='PetStats__texts'>
           <Text size={24} text={data.name} />
           <Text size={14} text={`${data.likes} лайка`} />
         </div>
       </div>
-      <div className={styles.PetStats__stats}>
-        <div className={styles.header}>
-          <div className={styles.label}>
+      <div className='PetStats__stats'>
+        <div className='PetStats__header'>
+          <div className='PetStats__label'>
             <Text text='Лайки' />
-            <span className={styles.span} style={{ backgroundColor: '#F16063FF' }} />
+            <span className='PetStats__span' style={{ backgroundColor: '#F16063FF' }} />
           </div>
-          <div className={styles.label}>
+          <div className='PetStats__label'>
             <Text text='Просмотры' />
-            <span className={styles.span} style={{ backgroundColor: '#66CB9F' }} />
+            <span className='PetStats__span' style={{ backgroundColor: '#66CB9F' }} />
           </div>
         </div>
-        <div className={styles.chart}>
+        <div className='PetStats__chart'>
           {dataChart.map((bar, index) => (
-            <div key={index} className={styles.bars}>
+            <div key={index} className='PetStats__bars'>
               <div
-                className={styles.bar}
+                className='PetStats__bar'
                 style={{ height: `${bar.likes}%`, backgroundColor: '#F16063FF' }}
               />
               <div
-                className={styles.bar}
+                className='PetStats__bar'
                 style={{ height: `${bar.views}%`, backgroundColor: '#66CB9F' }}
               />
             </div>
           ))}
         </div>
-        <div className={styles.days}>
+        <div className='PetStats__days'>
           {dataChart.map((data, index) => (
-            <div key={index} className={styles.day}>
+            <div key={index} className='PetStats__day'>
               <Text size={12} text={data.date} />
               <Text color='gray' size={10} text={data.day} />
             </div>

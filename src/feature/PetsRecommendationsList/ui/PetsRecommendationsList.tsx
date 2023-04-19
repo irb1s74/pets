@@ -1,5 +1,5 @@
-import { PetList, useGetPetsQuery } from 'entities/Pet'
 import { memo, useMemo } from 'react'
+import { PetList, useGetPetsQuery } from 'entities/Pet'
 import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
 
 interface PetsRecommendationsListProps {

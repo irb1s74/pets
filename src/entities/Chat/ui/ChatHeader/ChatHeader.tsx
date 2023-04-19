@@ -3,7 +3,7 @@ import { Text } from 'shared/ui/Text'
 import Arrow from 'shared/assets/icons/leftArrow.svg'
 import Trash from 'shared/assets/icons/trash.svg'
 import classNames from 'classnames'
-import styles from './ChatHeader.module.scss'
+import './ChatHeader.scss'
 
 interface ChatHeaderProps {
   title: string
@@ -14,14 +14,14 @@ interface ChatHeaderProps {
 export const ChatHeader = memo((props: ChatHeaderProps) => {
   const { className, title, handleSetMenu } = props
   return (
-    <div className={classNames(styles.ChatHeader, {}, [className])}>
-      <div className={styles.title}>
-        <div onClick={handleSetMenu} className={styles.title__arrow}>
+    <div className={classNames('ChatHeader', {}, [className])}>
+      <div className='ChatHeader__title'>
+        <div onClick={handleSetMenu} className='ChatHeader__arrow'>
           <Arrow />
         </div>
-        <Text weight='bold' size={16} text={title} className={styles.title__text} />
+        <Text weight='bold' size={16} text={title} className='ChatHeader__text' />
       </div>
-      <div className={styles.ChatHeader__iconBtn}>
+      <div className='ChatHeader__iconBtn'>
         <Trash />
       </div>
     </div>

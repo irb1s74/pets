@@ -1,6 +1,6 @@
 import classNames from 'classnames'
-import styles from './PetsPage.module.scss'
 import { PetsFilterList } from 'feature/PetsFilterList'
+import './PetsPage.scss'
 
 interface PetsPageProps {
   className?: string
@@ -9,7 +9,7 @@ interface PetsPageProps {
 const PetsPage = (props: PetsPageProps) => {
   const { className } = props
   return (
-    <div className={classNames(styles.PetsPage, {}, [className])}>
+    <div className={classNames('PetsPage', {}, [className])}>
       <PetsFilterList />
     </div>
   )

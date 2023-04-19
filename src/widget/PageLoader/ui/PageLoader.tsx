@@ -2,7 +2,7 @@ import { memo, useState } from 'react'
 import { motion } from 'framer-motion'
 import Pet from 'shared/assets/icons/pet.svg'
 import classNames from 'classnames'
-import styles from './PageLoader.module.scss'
+import './PageLoader.scss'
 
 interface PageLoaderProps {
   className?: string
@@ -31,10 +31,10 @@ export const PageLoader = memo((props: PageLoaderProps) => {
       exit={{
         opacity: 0,
       }}
-      className={classNames(styles.PageLoader, {}, [className])}
+      className={classNames('PageLoader', {}, [className])}
     >
-      <div className={styles.PageLoader__container}>
-        <Pet className={classNames(styles.PageLoader__pet, { [styles[`pos${posNum}`]]: true })} />
+      <div className='PageLoader__container'>
+        <Pet className={classNames('PageLoader__pet', { [`pos${posNum}`]: true })} />
       </div>
     </motion.div>
   )

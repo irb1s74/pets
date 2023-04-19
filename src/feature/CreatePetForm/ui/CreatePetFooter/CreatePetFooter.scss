@@ -8,13 +8,15 @@
   &__btn {
     max-width: 270px;
     width: 100%;
+
+    &-right {
+      margin-left: auto;
+    }
+    &-auto{
+      margin: 0 auto;
+
+    }
   }
 
-  .mlA {
-    margin-left: auto;
-  }
 
-  .mA {
-    margin: 0 auto;
-  }
 }

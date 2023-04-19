@@ -3,7 +3,7 @@ import { Chat } from '../../model/types/Chat'
 import { ChatListItem } from '../../ui/ChatListItem/ChatListItem'
 import { ChatListItemSkeleton } from '../../ui/ChatListItem/ChatListItemSkeleton'
 import classNames from 'classnames'
-import styles from './ChatList.module.scss'
+import './ChatList.scss'
 
 interface ChatListProps {
   chats: Chat[]
@@ -19,7 +19,7 @@ const getSkeletons = () =>
 export const ChatList = memo((props: ChatListProps) => {
   const { className, chats, isLoading, chatId, handleSetChatId } = props
   return (
-    <div className={classNames(styles.ChatList, {}, [className])}>
+    <div className={classNames('ChatList', {}, [className])}>
       {chats?.map((chat) => (
         <ChatListItem
           key={chat.id}

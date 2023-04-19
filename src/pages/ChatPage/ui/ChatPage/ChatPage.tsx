@@ -2,9 +2,9 @@ import { useCallback, useMemo, useState } from 'react'
 import { ChatMenu } from 'feature/ChatMenu'
 import { ChatMessenger } from 'feature/ChatMessenger'
 import { useGetChatsQuery } from 'entities/Chat'
-import classNames from 'classnames'
-import styles from './ChatPage.module.scss'
 import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
+import classNames from 'classnames'
+import './ChatPage.scss'
 
 interface ChatPageProps {
   className?: string
@@ -30,7 +30,7 @@ const ChatPage = (props: ChatPageProps) => {
   const selectedChat = useMemo(() => data?.find((chat) => chat.id === chatId), [chatId, data])
   if (width <= 1180) {
     return (
-      <div className={classNames(styles.ChatPage, {}, [className])}>
+      <div className={classNames('ChatPage', {}, [className])}>
         {slideMobile ? (
           <ChatMessenger handleSetMenu={handleSetMenu} chat={selectedChat} />
         ) : (
@@ -39,7 +39,7 @@ const ChatPage = (props: ChatPageProps) => {
             chatId={chatId}
             isLoading={isLoading}
             handleSetChatId={handleSetChatId}
-            className={styles.ChatPage__menu}
+            className='ChatPage__menu'
           />
         )}
       </div>
@@ -47,13 +47,13 @@ const ChatPage = (props: ChatPageProps) => {
   }
 
   return (
-    <div className={classNames(styles.ChatPage, {}, [className])}>
+    <div className={classNames('ChatPage', {}, [className])}>
       <ChatMenu
         chats={data}
         chatId={chatId}
         isLoading={isLoading}
         handleSetChatId={handleSetChatId}
-        className={styles.ChatPage__menu}
+        className='ChatPage__menu'
       />
       <ChatMessenger chat={selectedChat} />
     </div>

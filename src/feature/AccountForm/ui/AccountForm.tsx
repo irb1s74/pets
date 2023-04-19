@@ -1,10 +1,10 @@
 import { memo } from 'react'
 import { Text } from 'shared/ui/Text'
-import ImgIcon from 'shared/assets/icons/selectImgIcon.svg'
-import classNames from 'classnames'
-import styles from './AccountForm.module.scss'
 import { Input } from 'shared/ui/Input'
 import { Button } from 'shared/ui/Button'
+import ImgIcon from 'shared/assets/icons/selectImgIcon.svg'
+import classNames from 'classnames'
+import './AccountForm.scss'
 
 interface AccountFormProps {
   className?: string
@@ -13,22 +13,22 @@ interface AccountFormProps {
 export const AccountForm = memo((props: AccountFormProps) => {
   const { className } = props
   return (
-    <div className={classNames(styles.AccountForm, {}, [className])}>
+    <div className={classNames('AccountForm', {}, [className])}>
       <Text size={18} weight='bold' text='Информация' />
-      <div className={styles.AccountForm__avatarInput}>
+      <div className='AccountForm__avatarInput'>
         <ImgIcon />
         <input hidden />
       </div>
-      <div className={styles.AccountForm__groupInput}>
-        <Input className={styles.input} label='Имя' />
-        <Input className={styles.input} label='Дата рождения' type='date' />
-        <Input className={styles.input} label='Статус' />
-        <Input className={styles.input} label='Местоположение' />
+      <div className='AccountForm__groupInput'>
+        <Input className='AccountForm__input' label='Имя' />
+        <Input className='AccountForm__input' label='Дата рождения' type='date' />
+        <Input className='AccountForm__input' label='Статус' />
+        <Input className='AccountForm__input' label='Местоположение' />
       </div>
-      <Text className={styles.title} size={18} weight='bold' text='Безопасность' />
-      <div className={styles.AccountForm__groupInput}>
-        <Input className={styles.input} label='Текущий пароль' type='password' />
-        <Input className={styles.input} label='Новый пароль' type='password' />
+      <Text className='AccountForm__title' size={18} weight='bold' text='Безопасность' />
+      <div className='AccountForm__groupInput'>
+        <Input className='AccountForm__input' label='Текущий пароль' type='password' />
+        <Input className='AccountForm__input' label='Новый пароль' type='password' />
       </div>
       <Button>Сохранить</Button>
     </div>

@@ -1,10 +1,10 @@
+import { useEffect, useState } from 'react'
+import dayjs from 'dayjs'
 import { Text } from 'shared/ui/Text'
 import Clock from 'shared/assets/icons/clock.svg'
 import Calendar from 'shared/assets/icons/calendar.svg'
-import styles from './UserTime.module.scss'
 import classNames from 'classnames'
-import dayjs from 'dayjs'
-import { useEffect, useState } from 'react'
+import './UserTime.scss'
 
 interface UserTimeProps {
   className?: string
@@ -29,24 +29,24 @@ export const UserTime = (props: UserTimeProps) => {
   }, [])
 
   return (
-    <div className={classNames(styles.UserTime, {}, [className])}>
-      <div className={styles.UserTime__data}>
-        <div className={styles.header}>
-          <div className={styles.header__icon}>
+    <div className={classNames('UserTime', {}, [className])}>
+      <div className='UserTime__block'>
+        <div className='UserTime__header'>
+          <div className='UserTime__icon'>
             <Clock />
           </div>
-          <Text className={styles.header__title} size={16} text='На часах у нас' />
+          <Text size={16} text='На часах у нас' />
         </div>
-        <Text className={styles.data} size={32} weight='medium' text={dateTime.time} />
+        <Text className='UserTime__text' size={32} weight='medium' text={dateTime.time} />
       </div>
-      <div className={styles.UserTime__data}>
-        <div className={styles.header}>
-          <div className={styles.header__icon}>
+      <div className='UserTime__block'>
+        <div className='UserTime__header'>
+          <div className='UserTime__icon'>
             <Calendar />
           </div>
-          <Text className={styles.header__title} size={16} text='На календаре у нас' />
+          <Text size={16} text='На календаре у нас' />
         </div>
-        <Text className={styles.data} size={32} weight='medium' text={dateTime.date} />
+        <Text className='UserTime__text' size={32} weight='medium' text={dateTime.date} />
       </div>
     </div>
   )

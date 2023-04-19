@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Chat, ChatContent, ChatEmpty, ChatFooter, ChatHeader } from 'entities/Chat'
 import classNames from 'classnames'
-import styles from './ChatMessenger.module.scss'
+import './ChatMessenger.scss'
 
 interface ChatMessengerProps {
   chat: Chat | null
@@ -14,9 +14,9 @@ export const ChatMessenger = memo((props: ChatMessengerProps) => {
   const { className, chat, handleSetMenu } = props
 
   return (
-    <div className={classNames(styles.ChatMessenger, {}, [className])}>
+    <div className={classNames('ChatMessenger', {}, [className])}>
       {chat ? (
-        <div className={styles.ChatMessenger__container}>
+        <div className='ChatMessenger__container'>
           <ChatHeader handleSetMenu={handleSetMenu} title={chat.title} />
           <ChatContent messages={chat.messages} />
           <ChatFooter />

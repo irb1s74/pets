@@ -4,7 +4,7 @@ import { AccountForm } from 'feature/AccountForm'
 import { SettingsForm } from 'feature/SettingsForm'
 import { CreatePetForm } from 'feature/CreatePetForm'
 import classNames from 'classnames'
-import styles from './ProfilePage.module.scss'
+import './ProfilePage.scss'
 
 interface ProfilePageProps {
   className?: string
@@ -23,9 +23,9 @@ const ProfilePage = (props: ProfilePageProps) => {
   )
 
   return (
-    <div className={classNames(styles.ProfilePage, {}, [className])}>
+    <div className={classNames('ProfilePage', {}, [className])}>
       <ProfileList
-        className={styles.ProfilePage__menu}
+        className='ProfilePage__menu'
         selectedForm={form}
         handleSelectForm={handleSelectForm}
       />

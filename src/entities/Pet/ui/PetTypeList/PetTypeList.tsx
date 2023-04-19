@@ -7,7 +7,7 @@ import Rabbit from 'shared/assets/icons/rabbit.svg'
 import Mouse from 'shared/assets/icons/mouse.svg'
 import Dino from 'shared/assets/icons/dino.svg'
 import classNames from 'classnames'
-import styles from './PetTypeList.module.scss'
+import './PetTypeList.scss'
 
 interface PetTypeListProps {
   className?: string
@@ -49,16 +49,16 @@ export const PetTypeList = memo((props: PetTypeListProps) => {
   ]
 
   return (
-    <div className={classNames(styles.PetTypeList, {}, [className])}>
+    <div className={classNames('PetTypeList', {}, [className])}>
       {types.map((type, index) => (
         <div
           key={index}
-          className={classNames(styles.PetTypeList__item, {
-            [styles.PetTypeList__itemActive]: filter.includes(type.label),
+          className={classNames('PetTypeList__item', {
+            ['PetTypeList__item-active']: filter.includes(type.label),
           })}
           onClick={handleSetSort(type.label)}
         >
-          <div className={styles.icon}>{type.icon}</div>
+          <div className='PetTypeList__icon'>{type.icon}</div>
           <Text size={10} weight='semi' text={type.label} />
         </div>
       ))}

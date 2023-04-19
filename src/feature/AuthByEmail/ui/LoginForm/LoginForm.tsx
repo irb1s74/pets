@@ -28,8 +28,9 @@ const LoginForm = memo((props: LoginFormProps) => {
     },
 
     validationSchema: LoginValidationSchema,
-    isInitialValid: false,
+    validateOnMount: true,
     onSubmit: async (values) => {
+      console.log(values)
       setError('')
       const result = await dispatch(loginByEmail(values))
       if (result.payload === 'error') {

@@ -15,21 +15,21 @@
     width: 100%;
     height: 100%;
 
-    .createForm {
-      margin-bottom: 18px;
-    }
-
-    .grid {
-      @media only screen and (max-width: 1080px) {
-        column-count: 1;
-        & > div {
-          width: 100%;
-        }
-      }
-    }
-
     @media only screen and (max-width: 1080px) {
       align-items: center;
+    }
+  }
+
+  &__createForm {
+    margin-bottom: 18px;
+  }
+
+  &__grid {
+    @media only screen and (max-width: 1080px) {
+      column-count: 1;
+      & > div {
+        width: 100%;
+      }
     }
   }
 }
