@@ -1,13 +1,13 @@
-import styles from './SignUpPage.module.scss'
+import { useMemo } from 'react'
 import { SignUpForm } from 'feature/AuthByEmail'
+import { AppImage } from 'shared/ui/AppImage'
+import { Skeleton } from 'shared/ui/Skeleton'
+import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
 import Bear from 'shared/assets/images/bear.png'
 import Meme from 'shared/assets/images/meme.png'
 import ThreeMouses from 'shared/assets/images/threeMouses.png'
 import TwoCats from 'shared/assets/images/twoCats.png'
-import { AppImage } from 'shared/ui/AppImage'
-import { Skeleton } from 'shared/ui/Skeleton'
-import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
-import { useMemo } from 'react'
+import './SignUpPage.scss'
 
 const SignUpPage = () => {
   const images = [
@@ -21,16 +21,16 @@ const SignUpPage = () => {
   const { width } = useWindowDimensions()
 
   return (
-    <main className={styles.SignUpPage}>
+    <main className='SignUpPage'>
       {width > 1240 && (
         <AppImage
           fallback={<Skeleton height={'100%'} width={selectImages.mw} />}
-          className={styles.image}
+          className='SignUpPage__image'
           src={selectImages.src}
           style={{ maxWidth: selectImages.mw }}
         />
       )}
-      <SignUpForm className={styles.form} />
+      <SignUpForm className='SignUpPage__form' />
     </main>
   )
 }

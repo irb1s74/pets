@@ -1,7 +1,7 @@
 import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef } from 'react'
 import { Text } from 'shared/ui/Text'
 import classNames from 'classnames'
-import styles from './Input.module.scss'
+import './Input.scss'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
@@ -33,8 +33,8 @@ export const Input = memo((props: InputProps) => {
   } = props
   const ref = useRef<HTMLInputElement>(null)
   const mods = {
-    [styles.invalid]: error,
-    [styles.success]: success,
+    ['Input-invalid']: error,
+    ['Input-success']: success,
   }
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export const Input = memo((props: InputProps) => {
   }, [autofocus])
 
   return (
-    <div className={classNames(styles.Input, mods, [className])}>
+    <div className={classNames('Input', mods, [className])}>
       <input
         ref={ref}
         type={type}
@@ -54,9 +54,9 @@ export const Input = memo((props: InputProps) => {
         placeholder=' '
         {...otherProps}
       />
-      <span className={styles.bar} />
-      <label className={styles.label}>{label}</label>
-      <Text className={styles.errorText} text={helperText} color='danger' align='right' size={8} />
+      <span className='Input__bar' />
+      <label className='Input__label'>{label}</label>
+      <Text className='Input__errorText' text={helperText} color='danger' align='right' size={8} />
     </div>
   )
 })

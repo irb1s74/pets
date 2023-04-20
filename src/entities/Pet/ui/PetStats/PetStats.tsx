@@ -67,7 +67,7 @@ export const PetStats = memo((props: PetStatsProps) => {
   return (
     <div className={classNames('PetStats', {}, [className])}>
       <div className='PetStats__about'>
-        <AppImage className='PetState__image' src={data.previewImg} alt={data.previewImg} />
+        <AppImage className='PetStats__image' src={data.previewImg} alt={data.previewImg} />
         <div className='PetStats__texts'>
           <Text size={24} text={data.name} />
           <Text size={14} text={`${data.likes} лайка`} />

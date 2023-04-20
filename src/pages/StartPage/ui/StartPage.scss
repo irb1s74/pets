@@ -1,0 +1,31 @@
+.StartPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  &__wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  &__name{
+    margin-top: 32px;
+  }
+
+  &__description{
+    margin-top: 6px;
+    margin-bottom: 132px;
+    width: 278px;
+  }
+
+  &__question{
+    margin-top: 18px;
+  }
+
+  &__linkToSigIn{
+    margin-top: 5px;
+  }
+}

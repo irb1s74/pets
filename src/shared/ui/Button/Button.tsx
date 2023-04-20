@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, memo } from 'react'
 import classNames from 'classnames'
-import styles from './Button.module.scss'
+import './Button.scss'
 
 export enum ButtonTheme {
   primary = 'primary',
@@ -31,19 +31,19 @@ export const Button = memo((props: ButtonProps) => {
   } = props
 
   const mods = {
-    [styles[size]]: true,
-    [styles[variant]]: true,
-    [styles.loading]: isLoading,
+    [size]: true,
+    [variant]: true,
+    ['Button-loading']: isLoading,
   }
 
   return (
     <button
       type='button'
-      className={classNames(styles.Button, mods, [className])}
+      className={classNames('Button', mods, [className])}
       disabled={disabled}
       {...otherProps}
     >
-      {isLoading ? <span className={styles.loader} /> : children}
+      {isLoading ? <span className='loader' /> : children}
     </button>
   )
 })

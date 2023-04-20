@@ -1,7 +1,7 @@
 import { memo, ReactNode } from 'react'
+import { Skeleton } from 'shared/ui/Skeleton'
 import classNames from 'classnames'
 import styles from './ArticleGrid.module.scss'
-import { Skeleton } from 'shared/ui/Skeleton'
 
 interface ArticleGridProps {
   className?: string
