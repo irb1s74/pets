@@ -1,9 +1,9 @@
 import { memo, SelectHTMLAttributes, useState } from 'react'
-import classNames from 'classnames'
-import Arrow from 'shared/assets/icons/arrow.svg'
-import styles from './Select.module.scss'
 import ClickAwayListener from 'react-click-away-listener'
+import Arrow from 'shared/assets/icons/arrow.svg'
 import { Text } from 'shared/ui/Text'
+import classNames from 'classnames'
+import './Select.scss'
 
 type HTMLSelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, 'onChange'>
 
@@ -24,7 +24,7 @@ export const Select = memo((props: SelectProps) => {
   const [value, setValue] = useState(defaultValue || '')
   const [isOpen, setIsOpen] = useState(false)
   const mod = {
-    [styles.open]: isOpen,
+    ['Select-open']: isOpen,
   }
   const toggling = () => setIsOpen((prevState) => !prevState)
 
@@ -37,28 +37,30 @@ export const Select = memo((props: SelectProps) => {
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
-      <div className={classNames(styles.Select, mod, [className])}>
-        <div onClick={toggling} className={styles.Select__header}>
-          <label className={classNames(styles.name, { [styles.nameTop]: value })}>{label}</label>
+      <div className={classNames('Select', mod, [className])}>
+        <div onClick={toggling} className='Select__header'>
+          <label className={classNames('Select__name', { ['Select__name-top']: value })}>
+            {label}
+          </label>
           {value && (
             <Text
               text={`${options.find((option) => option.value === value)?.label || value}`}
-              className={styles.text}
+              className='Select__text'
             />
           )}
-          <span className={styles.arrow}>
+          <span className='Select__arrow'>
             <Arrow />
           </span>
         </div>
         {isOpen && (
-          <div className={styles.Select__content}>
-            <ul className={styles.list}>
+          <div className='Select__content'>
+            <ul className='Select__list'>
               {options.map(({ label: optionLabel, value: optionValue }, index) => (
                 <li
                   onClick={handleOnChange(optionValue)}
                   key={`${index}_${optionValue}`}
-                  className={classNames(styles.item, {
-                    [styles.itemActive]: value === optionValue,
+                  className={classNames('Select__item', {
+                    ['Select__item-active']: value === optionValue,
                   })}
                 >
                   {optionLabel}

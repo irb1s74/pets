@@ -15,19 +15,21 @@
     object-position: center;
     border-radius: 50%;
   }
+
+  &-online {
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    top: 0;
+    right: 0;
+    background-color: var(--success-color);
+    border: 2.5px solid #FAFAF9;
+    border-radius: 50%;
+  }
 }
 
-.online {
-  position: absolute;
-  content: "";
-  width: 12px;
-  height: 12px;
-  top: 0;
-  right: 0;
-  background-color: var(--success-color);
-  border: 2.5px solid #FAFAF9;
-  border-radius: 50%;
-}
+
 
 .green {
   background-color: var(--green-color);

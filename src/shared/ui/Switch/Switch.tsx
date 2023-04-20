@@ -1,6 +1,6 @@
 import { InputHTMLAttributes, memo } from 'react'
 import classNames from 'classnames'
-import styles from './Switch.module.scss'
+import './Switch.scss'
 
 type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'readOnly'>
 
@@ -11,7 +11,7 @@ interface SwitchProps extends HTMLInputProps {
 export const Switch = memo((props: SwitchProps) => {
   const { className, ...otherProps } = props
   return (
-    <label className={classNames(styles.Switch, {}, [className])}>
+    <label className={classNames('Switch', {}, [className])}>
       <input type='checkbox' {...otherProps} />
       <span />
     </label>

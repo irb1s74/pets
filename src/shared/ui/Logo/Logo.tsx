@@ -3,7 +3,7 @@ import { useTheme } from 'shared/lib/hooks/useTheme/useTheme'
 import Hugs from 'shared/assets/icons/logo.svg'
 import HugsDark from 'shared/assets/icons/logo-dark.svg'
 import classNames from 'classnames'
-import styles from './Logo.module.scss'
+import './Logo.scss'
 
 interface LogoProps {
   className?: string
@@ -14,11 +14,13 @@ export const Logo = memo(({ className, size = 'small' }: LogoProps) => {
   const { theme } = useTheme()
 
   const mods = {
-    [styles[size]]: true,
+    ['Logo-large']: size === 'large',
+    ['Logo-small']: size === 'small',
+    ['Logo-medium']: size === 'medium',
   }
 
   return (
-    <div className={classNames(styles.Logo, mods, [className])}>
+    <div className={classNames('Logo', mods, [className])}>
       {theme === 'app_dark_theme' ? <Hugs /> : <HugsDark />}
     </div>
   )

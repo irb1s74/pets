@@ -1,0 +1,27 @@
+.Logo {
+  width: 100%;
+  height: 100%;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    color: var(--secondary-color);
+    fill: var(--secondary-color) !important;
+  }
+
+  &-small {
+    max-width: 25px;
+    max-height: 25px;
+  }
+
+  &-medium {
+    max-width: 105px;
+    max-height: 95px;
+  }
+
+  &-large {
+    max-width: 185px;
+    max-height: 165px;
+  }
+}
+

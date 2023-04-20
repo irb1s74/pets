@@ -25,16 +25,16 @@ $trans-time: 300ms;
       outline: none;
     }
 
-    &:focus ~ .label {
+    &:focus ~ .Input__label {
       top: -3px;
       font-size: 10px;
     }
 
-    &:focus ~ .bar:before {
+    &:focus ~ .Input__bar:before {
       width: 100%;
     }
 
-    &:not(:placeholder-shown) ~ .label {
+    &:not(:placeholder-shown) ~ .Input__label {
       top: -3px;
       font-size: 10px;
     }
@@ -44,7 +44,7 @@ $trans-time: 300ms;
     }
   }
 
-  .label {
+  &__label {
     font-size: 14px;
     font-weight: normal;
     position: absolute;
@@ -54,7 +54,7 @@ $trans-time: 300ms;
     transition: $trans-time ease all;
   }
 
-  .bar {
+  &__bar {
     position: relative;
     display: block;
     width: 100%;
@@ -71,31 +71,32 @@ $trans-time: 300ms;
     }
   }
 
-  .errorText {
+  &__errorText {
     max-height: 12px;
     min-height: 12px;
     line-height: 12px;
   }
+
+  &-invalid {
+    .Input__label {
+      color: var(--danger-color);
+    }
+
+    .Input__bar:before {
+      width: 100%;
+      background: var(--danger-color);
+    }
+  }
+
+  &-success {
+    .Input__label {
+      color: var(--success-color);
+    }
+
+    .Input__bar:before {
+      width: 100%;
+      background: var(--success-color);
+    }
+  }
 }
 
-.invalid {
-  .label {
-    color: var(--danger-color);
-  }
-
-  .bar:before {
-    width: 100%;
-    background: var(--danger-color);
-  }
-}
-
-.success {
-  .label {
-    color: var(--success-color);
-  }
-
-  .bar:before {
-    width: 100%;
-    background: var(--success-color);
-  }
-}

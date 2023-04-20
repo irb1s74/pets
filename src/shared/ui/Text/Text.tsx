@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import classNames from 'classnames'
-import styles from './Text.module.scss'
+import './Text.scss'
 
 interface TextProps {
   className?: string
@@ -24,13 +24,13 @@ export const Text = memo((props: TextProps) => {
   } = props
 
   const mods = {
-    [styles[align]]: true,
-    [styles[color]]: true,
-    [styles[weight]]: true,
+    [align]: true,
+    [color]: true,
+    [weight]: true,
   }
 
   return (
-    <div className={classNames(styles.Text, mods, [className])}>
+    <div className={classNames('Text', mods, [className])}>
       {title && <h2>{title}</h2>}
       {text && <p style={{ fontSize: `${size}px` }}>{text}</p>}
     </div>

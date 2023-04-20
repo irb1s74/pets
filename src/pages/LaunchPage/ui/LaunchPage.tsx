@@ -1,11 +1,12 @@
-import styles from './LaunchPage.module.scss'
 import { motion } from 'framer-motion'
 import { Logo } from 'shared/ui/Logo'
 import { Text } from 'shared/ui/Text'
+import './LaunchPage.scss'
 
 export const LaunchPage = () => {
   return (
     <motion.div
+      className='LaunchPage'
       initial={{
         opacity: 0,
       }}
@@ -18,10 +19,9 @@ export const LaunchPage = () => {
       exit={{
         opacity: 0,
       }}
-      className={styles.LaunchPage}
     >
-      <Logo size='large' className={styles.LaunchPage__logo} />
-      <Text text='Pets' weight='bold' className={styles.LaunchPage__text} />
+      <Logo className='LaunchPage__logo' size='large' />
+      <Text className='LaunchPage__text' text='Pets' weight='bold' />
     </motion.div>
   )
 }

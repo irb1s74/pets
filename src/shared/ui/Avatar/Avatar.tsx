@@ -3,7 +3,7 @@ import { AppImage } from 'shared/ui/AppImage'
 import { Skeleton } from 'shared/ui/Skeleton'
 import { Text } from 'shared/ui/Text'
 import classNames from 'classnames'
-import cls from './Avatar.module.scss'
+import './Avatar.scss'
 
 interface AvatarProps {
   className?: string
@@ -31,7 +31,7 @@ export const Avatar = memo(
     }, [alt])
 
     const mods = {
-      [cls[backgroundColor]]: true,
+      [backgroundColor]: true,
     }
 
     const stylesAvatar = useMemo<CSSProperties>(
@@ -67,9 +67,9 @@ export const Avatar = memo(
     )
 
     return (
-      <div className={classNames(cls.Avatar, mods, [className])} style={stylesAvatar}>
+      <div className={classNames('Avatar', mods, [className])} style={stylesAvatar}>
         <AppImage fallback={fallback} errorFallback={errorFallback} src={src} alt={alt} />
-        {online && <span className={cls.online} />}
+        {online && <span className={'Avatar-online'} />}
       </div>
     )
   },
