@@ -1,13 +1,13 @@
+import { useMemo } from 'react'
 import { LoginForm } from 'feature/AuthByEmail'
+import { AppImage } from 'shared/ui/AppImage'
+import { Skeleton } from 'shared/ui/Skeleton'
 import Bear from 'shared/assets/images/bear.png'
 import Meme from 'shared/assets/images/meme.png'
 import ThreeMouses from 'shared/assets/images/threeMouses.png'
 import TwoCats from 'shared/assets/images/twoCats.png'
-import styles from './LoginPage.module.scss'
-import { AppImage } from 'shared/ui/AppImage'
-import { Skeleton } from 'shared/ui/Skeleton'
 import { useWindowDimensions } from 'shared/lib/hooks/useWindowDimensions/useWindowDimensions'
-import { useMemo } from 'react'
+import './LoginPage.scss'
 
 const LoginPage = () => {
   const images = [
@@ -21,16 +21,16 @@ const LoginPage = () => {
   const { width } = useWindowDimensions()
 
   return (
-    <main className={styles.LoginPage}>
+    <main className='LoginPage'>
       {width > 1240 && (
         <AppImage
           fallback={<Skeleton height={'100%'} width={selectImages.mw} />}
-          className={styles.image}
+          className='LoginPage__image'
           src={selectImages.src}
           style={{ maxWidth: selectImages.mw }}
         />
       )}
-      <LoginForm className={styles.form} />
+      <LoginForm className='LoginPage__form' />
     </main>
   )
 }

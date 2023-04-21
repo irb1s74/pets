@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import SearchIcon from 'shared/assets/icons/search.svg'
 import classNames from 'classnames'
-import styles from './ChatSearch.module.scss'
+import './ChatSearch.scss'
 
 interface ChatSearchProps {
   className?: string
@@ -10,11 +10,11 @@ interface ChatSearchProps {
 export const ChatSearch = memo((props: ChatSearchProps) => {
   const { className } = props
   return (
-    <div className={classNames(styles.ChatSearch, {}, [className])}>
-      <div className={styles.ChatSearch__icon}>
+    <div className={classNames('ChatSearch', {}, [className])}>
+      <div className='ChatSearch__icon'>
         <SearchIcon />
       </div>
-      <div className={styles.ChatSearch__input}>
+      <div className='ChatSearch__input'>
         <input placeholder='Поиск...' />
       </div>
     </div>

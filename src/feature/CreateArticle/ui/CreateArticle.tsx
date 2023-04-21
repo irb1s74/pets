@@ -1,11 +1,11 @@
 import { createRef, memo, useState } from 'react'
-import { Avatar } from 'shared/ui/Avatar'
 import { useSelector } from 'react-redux'
 import { getUserAuthData } from 'entities/User'
+import { Avatar } from 'shared/ui/Avatar'
+import { AppImage } from 'shared/ui/AppImage'
 import Photo from 'shared/assets/icons/photo.svg'
 import classNames from 'classnames'
-import styles from './CreateArticle.module.scss'
-import { AppImage } from 'shared/ui/AppImage'
+import './CreateArticle.scss'
 
 interface CreateArticleProps {
   className?: string
@@ -28,25 +28,25 @@ export const CreateArticle = memo((props: CreateArticleProps) => {
     filesInput.current.click()
   }
   return (
-    <div className={classNames(styles.CreateArticle, {}, [className])}>
+    <div className={classNames('CreateArticle', {}, [className])}>
       <Avatar src={user.avatar} alt={user.username} size={32} />
-      <div className={styles.CreateArticle__content}>
+      <div className='CreateArticle__content'>
         <textarea rows={4} placeholder='Что у вас нового?' />
       </div>
-      <div className={styles.CreateArticle__images}>
+      <div className='CreateArticle__images'>
         {previewImages ? (
           <>
             {previewImages.map((img, index) => (
-              <div className={styles.img} key={index}>
+              <div className='CreateArticle__img' key={index}>
                 <AppImage src={img} />
               </div>
             ))}
-            <div onClick={handleSelectFiles} className={styles.btn}>
+            <div onClick={handleSelectFiles} className='CreateArticle__btn'>
               +
             </div>
           </>
         ) : (
-          <div onClick={handleSelectFiles} className={styles.icon}>
+          <div onClick={handleSelectFiles} className='CreateArticle__icon'>
             <Photo />
           </div>
         )}

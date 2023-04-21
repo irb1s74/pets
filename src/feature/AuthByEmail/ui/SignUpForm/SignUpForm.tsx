@@ -10,7 +10,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { loginByEmail } from '../../api/loginByEmail'
 import { SignUpValidationSchema } from '../../config/SignUpValidationSchema'
 import classNames from 'classnames'
-import styles from './SignUpForm.module.scss'
+import './SignUpForm.scss'
 
 interface SignUpFormProps {
   className?: string
@@ -38,19 +38,19 @@ const SignUpForm = memo(({ className }: SignUpFormProps) => {
   })
 
   return (
-    <div className={classNames(styles.SignUpForm, {}, [className])}>
-      <form onSubmit={formik.handleSubmit} className={styles.SignUpForm__form}>
+    <div className={classNames('SignUpForm', {}, [className])}>
+      <form onSubmit={formik.handleSubmit} className='SignUpForm__form'>
         <Logo size='medium' />
-        <Text className={styles.SignUpForm__title} size={30} weight='medium' text='Регистрация' />
+        <Text className='SignUpForm__title' size={30} weight='medium' text='Регистрация' />
         <Text
-          className={styles.SignUpForm__subtitle}
+          className='SignUpForm__subtitle'
           size={18}
           text='Зарегистрируйтесь сейчас бесплатно и добавьте своего питомца'
         />
 
         <Input
           id='email'
-          className={styles.SignUpForm__input}
+          className='SignUpForm__input'
           label='Почта'
           type='email'
           value={formik.values.email}
@@ -60,7 +60,7 @@ const SignUpForm = memo(({ className }: SignUpFormProps) => {
         />
         <Input
           id='nickname'
-          className={styles.SignUpForm__input}
+          className='SignUpForm__input'
           label='Никнэйм'
           type='string'
           value={formik.values.nickname}
@@ -70,7 +70,7 @@ const SignUpForm = memo(({ className }: SignUpFormProps) => {
         />
         <Input
           id='password'
-          className={styles.SignUpForm__input}
+          className='SignUpForm__input'
           type='password'
           label='Пароль'
           value={formik.values.password}
@@ -81,19 +81,14 @@ const SignUpForm = memo(({ className }: SignUpFormProps) => {
         <Button
           disabled={!formik.isValid}
           isLoading={formik.isSubmitting}
-          className={styles.SignUpForm__btn}
+          className='SignUpForm__btn'
           type='submit'
         >
           Зарегистрироваться
         </Button>
         {error && <Text align='center' text={error} color='danger' />}
-        <Text
-          className={styles.SignUpForm__question}
-          align='center'
-          size={18}
-          text='Уже есть аккаунт?'
-        />
-        <AppLink className={styles.SignUpForm__loginLink} to={getRouteLogin()}>
+        <Text className='SignUpForm__question' align='center' size={18} text='Уже есть аккаунт?' />
+        <AppLink className='SignUpForm__loginLink' to={getRouteLogin()}>
           <Text align='center' size={18} weight='bold' text='Войти' />
         </AppLink>
       </form>

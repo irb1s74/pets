@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import Alert from 'shared/assets/icons/alert.svg'
 import classNames from 'classnames'
-import styles from './NotificationButton.module.scss'
+import './NotificationButton.scss'
 
 interface NotificationButtonProps {
   className?: string
@@ -11,9 +11,9 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
   const { className } = props
 
   return (
-    <div className={classNames(styles.NotificationButton, {}, [className])}>
-      <Alert className={styles.NotificationButton__icon} />
-      <span className={styles.NotificationButton__span} />
+    <div className={classNames('NotificationButton', {}, [className])}>
+      <Alert className='NotificationButton__icon' />
+      <span className='NotificationButton__span' />
     </div>
   )
 })

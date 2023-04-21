@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
+import { memo, ReactNode } from 'react'
 import { Text } from 'shared/ui/Text'
 import classNames from 'classnames'
-import styles from './ProfileListItem.module.scss'
+import './ProfileListItem.scss'
 
 interface ProfileListItemProps {
   name: string
@@ -11,25 +11,25 @@ interface ProfileListItemProps {
   className?: string
 }
 
-export const ProfileListItem = (props: ProfileListItemProps) => {
+export const ProfileListItem = memo((props: ProfileListItemProps) => {
   const { className, icon, name, onClick, active } = props
 
   const mod = {
-    [styles.ProfileListItemActive]: active,
+    ['ProfileListItem-active']: active,
   }
 
   return (
-    <div onClick={onClick} className={classNames(styles.ProfileListItem, mod, [className])}>
+    <div onClick={onClick} className={classNames('ProfileListItem', mod, [className])}>
       <div
-        className={classNames(styles.ProfileListItem__icon, {
-          [styles.ProfileListItem__iconActive]: active,
+        className={classNames('ProfileListItem__icon', {
+          ['ProfileListItem__icon-active']: active,
         })}
       >
         {icon}
       </div>
       <Text
-        className={classNames(styles.ProfileListItem__name, {
-          [styles.ProfileListItem__nameActive]: active,
+        className={classNames('ProfileListItem__name', {
+          ['ProfileListItem__name-active']: active,
         })}
         size={18}
         weight='bold'
@@ -37,4 +37,4 @@ export const ProfileListItem = (props: ProfileListItemProps) => {
       />
     </div>
   )
-}
+})

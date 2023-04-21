@@ -4,7 +4,7 @@ import Setting from 'shared/assets/icons/setting.svg'
 import AccountIcon from 'shared/assets/icons/account.svg'
 import { ProfileListItem } from '../../ui/ProfileListItem/ProfileListItem'
 import classNames from 'classnames'
-import styles from './ProfileList.module.scss'
+import './ProfileList.scss'
 
 interface ProfileListProps {
   selectedForm: string
@@ -15,7 +15,7 @@ interface ProfileListProps {
 export const ProfileList = memo((props: ProfileListProps) => {
   const { className, handleSelectForm, selectedForm } = props
   return (
-    <div className={classNames(styles.ProfileList, {}, [className])}>
+    <div className={classNames('ProfileList', {}, [className])}>
       <ProfileListItem
         active={selectedForm === 'account'}
         icon={<AccountIcon />}
