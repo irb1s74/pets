@@ -10,7 +10,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { loginByEmail } from '../../api/loginByEmail'
 import { LoginValidationSchema } from '../../config/LoginValidationSchema'
 import classNames from 'classnames'
-import styles from './LoginForm.module.scss'
+import './LoginForm.scss'
 
 interface LoginFormProps {
   className?: string
@@ -40,18 +40,18 @@ const LoginForm = memo((props: LoginFormProps) => {
   })
 
   return (
-    <div className={classNames(styles.LoginForm, {}, [className])}>
-      <form onSubmit={formik.handleSubmit} className={styles.LoginForm__form}>
+    <div className={classNames('LoginForm', {}, [className])}>
+      <form onSubmit={formik.handleSubmit} className='LoginForm__form'>
         <Logo size='medium' />
-        <Text className={styles.LoginForm__title} size={30} weight='medium' text='Вход' />
+        <Text className='LoginForm__title' size={30} weight='medium' text='Вход' />
         <Text
-          className={styles.LoginForm__subtitle}
+          className='LoginForm__subtitle'
           size={18}
           text='Войдите в систему сейчас, чтобы  получить доступ к вашим питомцам'
         />
         <Input
           id='email'
-          className={styles.LoginForm__input}
+          className='LoginForm__input'
           label='Почта'
           type='email'
           value={formik.values.email}
@@ -61,7 +61,7 @@ const LoginForm = memo((props: LoginFormProps) => {
         />
         <Input
           id='password'
-          className={styles.LoginForm__input}
+          className='LoginForm__input'
           type='password'
           label='Пароль'
           value={formik.values.password}
@@ -69,7 +69,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
         />
-        <AppLink className={styles.LoginForm__linkToChgPass} to=''>
+        <AppLink className='LoginForm__linkToChgPass' to=''>
           <Text align='right' text='Забыли пароль?' size={14} />
         </AppLink>
         <Button disabled={!formik.isValid} isLoading={formik.isSubmitting} type='submit'>
@@ -77,12 +77,12 @@ const LoginForm = memo((props: LoginFormProps) => {
         </Button>
         {error && <Text align='center' text={error} color='danger' />}
         <Text
-          className={styles.LoginForm__question}
+          className='LoginForm__question'
           align='center'
           size={18}
           text='У вас ещё нет аккаунта?'
         />
-        <AppLink className={styles.LoginForm__signUpLink} to={getRouteSignUp()}>
+        <AppLink className='LoginForm__signUpLink' to={getRouteSignUp()}>
           <Text align='center' size={18} weight='bold' text='Зарегистрироваться' />
         </AppLink>
       </form>

@@ -4,22 +4,22 @@
   align-items: center;
   justify-content: space-between;
 
-  .image {
+  &__image {
     height: 100%;
     width: 100%;
   }
 
-  .form {
+  &__form {
     width: 50%;
   }
 
   @media only screen and (max-width: 1240px) {
     justify-content: center;
-    .image {
+    &__image {
       display: none;
     }
 
-    .form {
+    &__form {
       width: 90%;
     }
   }

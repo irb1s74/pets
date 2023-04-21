@@ -26,7 +26,7 @@
       fill: var(--secondary-color);
     }
 
-    &Active {
+    &-active {
       svg {
         fill: #FFF;
       }
@@ -39,7 +39,7 @@
 
 
   &__name {
-    &Active {
+    &-active {
       color: #FFF;
     }
 
@@ -48,7 +48,7 @@
     }
   }
 
-  &Active {
+  &-active {
     background-color: var(--primary-color);
   }
 

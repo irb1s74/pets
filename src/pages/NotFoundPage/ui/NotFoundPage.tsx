@@ -4,7 +4,7 @@ import Dragon from 'shared/assets/images/dragon.png'
 import SadCat from 'shared/assets/images/sadCat.png'
 import BrokenCat from 'shared/assets/images/brokenCat.png'
 import SadBae from 'shared/assets/images/sadBae.png'
-import styles from './NotFoundPage.module.scss'
+import './NotFoundPage.scss'
 
 export const NotFoundPage = () => {
   const images = [
@@ -34,21 +34,16 @@ export const NotFoundPage = () => {
 
   return (
     <Page title='404'>
-      <div className={styles.NotFoundPage}>
-        <img className={styles.NotFoundPage__image} src={selectImages.src} alt='dragon' />
+      <div className='NotFoundPage'>
+        <img className='NotFoundPage__image' src={selectImages.src} alt='dragon' />
         <Text
-          className={styles.NotFoundPage__text}
+          className='NotFoundPage__text'
           align='center'
           text={selectImages.title}
           size={48}
           weight='bold'
         />
-        <Text
-          className={styles.NotFoundPage__subtext}
-          align='center'
-          size={24}
-          text={selectImages.text}
-        />
+        <Text className='NotFoundPage__subtext' align='center' size={24} text={selectImages.text} />
       </div>
     </Page>
   )

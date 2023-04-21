@@ -4,7 +4,7 @@ import { Theme } from 'shared/const/theme'
 import Sun from 'shared/assets/icons/sun.svg'
 import Moon from 'shared/assets/icons/moon.svg'
 import classNames from 'classnames'
-import styles from './ThemeSwitcher.module.scss'
+import './ThemeSwitcher.scss'
 
 interface ThemeSwitcherProps {
   className?: string
@@ -15,20 +15,20 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <label onClick={toggleTheme} className={classNames(styles.ThemeSwitcher, {}, [className])}>
+    <label onClick={toggleTheme} className={classNames('ThemeSwitcher', {}, [className])}>
       <Moon
-        className={classNames(styles.ThemeSwitcher__svg, {
-          [styles.darkSvg]: theme === Theme.LIGHT,
+        className={classNames('ThemeSwitcher__svg', {
+          ['ThemeSwitcher__svg-dark']: theme === Theme.LIGHT,
         })}
       />
       <Sun
-        className={classNames(styles.ThemeSwitcher__svg, {
-          [styles.darkSvg]: theme !== Theme.LIGHT,
+        className={classNames('ThemeSwitcher__svg', {
+          ['ThemeSwitcher__svg-dark']: theme !== Theme.LIGHT,
         })}
       />
       <span
-        className={classNames(styles.ThemeSwitcher__span, {
-          [styles.sunActive]: theme === Theme.LIGHT,
+        className={classNames('ThemeSwitcher__span', {
+          ['ThemeSwitcher__span-active']: theme === Theme.LIGHT,
         })}
       />
     </label>

@@ -1,7 +1,7 @@
 import { memo, ReactNode } from 'react'
 import { Skeleton } from 'shared/ui/Skeleton'
 import classNames from 'classnames'
-import styles from './ArticleGrid.module.scss'
+import './ArticleGrid.scss'
 
 interface ArticleGridProps {
   className?: string
@@ -16,7 +16,7 @@ const getSkeletons = () =>
 export const ArticleGrid = memo((props: ArticleGridProps) => {
   const { className, isLoading, children } = props
   return (
-    <div className={classNames(styles.ArticleGrid, {}, [className])}>
+    <div className={classNames('ArticleGrid', {}, [className])}>
       {children}
       {isLoading && getSkeletons()}
     </div>
