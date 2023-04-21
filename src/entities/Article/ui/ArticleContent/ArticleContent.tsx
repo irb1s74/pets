@@ -6,7 +6,7 @@ import { AppImage } from 'shared/ui/AppImage'
 import { Skeleton } from 'shared/ui/Skeleton'
 import { Article } from '../../model/types/Article'
 import classNames from 'classnames'
-import styles from './ArticleContent.scss'
+import './ArticleContent.scss'
 
 interface ArticleContentProps {
   article: Article
@@ -23,9 +23,9 @@ export const ArticleContent = memo((props: ArticleContentProps) => {
         <Text text={article?.body} />
       </div>
       {isHaveImages && (
-        <div className={styles.ArticleContent__images}>
+        <div className='ArticleContent__images'>
           {article.images.map((img, index) => (
-            <div key={index} className={styles.img}>
+            <div key={index}>
               <AppImage
                 src={img}
                 fallback={<Skeleton border='13px' width='100%' height='100%' />}
