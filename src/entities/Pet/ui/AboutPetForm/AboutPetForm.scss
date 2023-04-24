@@ -1,19 +1,22 @@
-.AboutPetForm {
+.about-pet-form {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 
+  &__title {
+    margin-bottom: 50px;
+  }
 
-  &__groupInputSwitch {
+  &__group-input-switch {
     width: 100%;
     display: flex;
     align-items: center;
     margin-bottom: 40px;
   }
 
-  &__inputFullWidth {
+  &__input-full-width {
     max-width: 100%;
     width: 100%;
     margin-right: 40px;
@@ -25,7 +28,7 @@
     margin-bottom: 40px;
   }
 
-  &__groupRadio {
+  &__group-radio {
     width: 100%;
     display: flex;
     align-items: center;

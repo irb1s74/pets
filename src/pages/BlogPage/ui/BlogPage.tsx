@@ -19,10 +19,10 @@ const BlogPage = (props: BlogPageProps) => {
   const { data, isLoading } = useGetArticlesQuery()
 
   return (
-    <div className={classNames('BlogPage', {}, [className])}>
-      <div className='BlogPage__content'>
-        <CreateArticle className='BlogPage__createForm' />
-        <ArticleGrid className='BlogPage__grid' isLoading={isLoading}>
+    <div className={classNames('blog-page', {}, [className])}>
+      <div className='blog-page__content'>
+        <CreateArticle className='blog-page__create-form' />
+        <ArticleGrid className='blog-page__grid' isLoading={isLoading}>
           {data?.map((article) => (
             <Card key={article.id}>
               <ArticleHeader article={article} />

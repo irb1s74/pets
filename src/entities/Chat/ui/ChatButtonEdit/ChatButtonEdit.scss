@@ -1,4 +1,4 @@
-.ChatButtonEdit {
+.chat-button-edit {
   width: 40px;
   height: 40px;
   display: flex;
@@ -17,7 +17,7 @@
     fill: var(--secondary-color);
   }
 
-  &-active {
+  &_active {
     background-color: var(--primary-color);
 
     svg {

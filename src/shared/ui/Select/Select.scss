@@ -1,4 +1,4 @@
-.Select {
+.select {
   position: relative;
   width: 240px;
 
@@ -74,7 +74,6 @@
     margin: 0;
   }
 
-
   &__item {
     color: #334155;
     font-size: 14px;
@@ -98,18 +97,19 @@
       margin-bottom: 8px;
     }
 
-    &-active {
+    &_active {
       color: var(--primary-color);
     }
   }
 
-  &-open {
-    .Select__name {
+  //mods
+  &_open {
+    .select__name {
       font-size: 10px;
       transform: translateY(-10px);
     }
 
-    .Select__arrow {
+    .select__arrow {
       transform: rotate(180deg);
     }
   }

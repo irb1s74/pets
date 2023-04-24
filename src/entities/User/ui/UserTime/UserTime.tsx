@@ -29,24 +29,24 @@ export const UserTime = (props: UserTimeProps) => {
   }, [])
 
   return (
-    <div className={classNames('UserTime', {}, [className])}>
-      <div className='UserTime__block'>
-        <div className='UserTime__header'>
-          <div className='UserTime__icon'>
+    <div className={classNames('user-time', {}, [className])}>
+      <div className='user-time__block'>
+        <div className='user-time__header'>
+          <div className='user-time__icon'>
             <Clock />
           </div>
           <Text size={16} text='На часах у нас' />
         </div>
-        <Text className='UserTime__text' size={32} weight='medium' text={dateTime.time} />
+        <Text className='user-time__text' size={32} weight='medium' text={dateTime.time} />
       </div>
-      <div className='UserTime__block'>
-        <div className='UserTime__header'>
-          <div className='UserTime__icon'>
+      <div className='user-time__block'>
+        <div className='user-time__header'>
+          <div className='user-time__icon'>
             <Calendar />
           </div>
           <Text size={16} text='На календаре у нас' />
         </div>
-        <Text className='UserTime__text' size={32} weight='medium' text={dateTime.date} />
+        <Text className='user-time__text' size={32} weight='medium' text={dateTime.date} />
       </div>
     </div>
   )

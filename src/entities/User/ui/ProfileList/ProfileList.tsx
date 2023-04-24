@@ -15,7 +15,7 @@ interface ProfileListProps {
 export const ProfileList = memo((props: ProfileListProps) => {
   const { className, handleSelectForm, selectedForm } = props
   return (
-    <div className={classNames('ProfileList', {}, [className])}>
+    <div className={classNames('profile-list', {}, [className])}>
       <ProfileListItem
         active={selectedForm === 'account'}
         icon={<AccountIcon />}

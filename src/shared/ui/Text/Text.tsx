@@ -24,13 +24,13 @@ export const Text = memo((props: TextProps) => {
   } = props
 
   const mods = {
-    [align]: true,
-    [color]: true,
-    [weight]: true,
+    [`text_${align}`]: true,
+    [`text_${color}`]: true,
+    [`text_${weight}`]: true,
   }
 
   return (
-    <div className={classNames('Text', mods, [className])}>
+    <div className={classNames('text', mods, [className])}>
       {title && <h2>{title}</h2>}
       {text && <p style={{ fontSize: `${size}px` }}>{text}</p>}
     </div>

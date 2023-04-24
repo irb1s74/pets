@@ -28,7 +28,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   )
 
   return (
-    <div className={classNames('ArticleList', {}, [className])}>
+    <div className={classNames('article-list', {}, [className])}>
       <Swiper spaceBetween={40} slidesPerView={slidesPerView}>
         {articles?.map((item) => (
           <SwiperSlide key={item.id}>

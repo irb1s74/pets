@@ -19,7 +19,7 @@ interface PetImageSwiperProps {
 export const PetImageSwiper = memo((props: PetImageSwiperProps) => {
   const { className, images, isLoading } = props
   return (
-    <div className={classNames('PetImageSwiper', {}, [className])}>
+    <div className={classNames('pet-image-swiper', {}, [className])}>
       <Swiper
         effect='cards'
         navigation={true}
@@ -29,12 +29,12 @@ export const PetImageSwiper = memo((props: PetImageSwiperProps) => {
         modules={[Pagination, Navigation, EffectCards]}
       >
         {images?.map((image, index) => (
-          <SwiperSlide className='PetImageSwiper__slider' key={`image-${index}`}>
+          <SwiperSlide className='pet-image-swiper__slider' key={`image-${index}`}>
             <AppImage width='100%' height='100%' src={image} alt={`image-${index}`} />
           </SwiperSlide>
         ))}
         {isLoading && (
-          <SwiperSlide className='PetImageSwiper__slider'>
+          <SwiperSlide className='pet-image-swiper__slider'>
             <Skeleton border='20px' height='65vh' />
           </SwiperSlide>
         )}

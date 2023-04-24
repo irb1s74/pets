@@ -27,23 +27,23 @@ export const SidebarMobile = memo((props: SidebarMobileProps) => {
   }
 
   const mod = {
-    ['SidebarMobile__menuOpen']: isCollapsed,
+    ['sidebar-mobile__menu-open']: isCollapsed,
   }
   return (
-    <div className={classNames('SidebarMobile', {}, [className])}>
-      <div onClick={handleOpenMenu} className='SidebarMobile__btn'>
-        <div className='SidebarMobile__bar' />
-        <div className='SidebarMobile__bar' />
-        <div className='SidebarMobile__bar' />
+    <div className={classNames('sidebar-mobile', {}, [className])}>
+      <div onClick={handleOpenMenu} className='sidebar-mobile__btn'>
+        <div className='sidebar-mobile__bar' />
+        <div className='sidebar-mobile__bar' />
+        <div className='sidebar-mobile__bar' />
       </div>
       <Portal>
-        <div className={classNames('SidebarMobile__menu', mod)}>
-          <div onClick={handleCloseMenu} className='SidebarMobile__closeBtn'>
+        <div className={classNames('sidebar-mobile__menu', mod)}>
+          <div onClick={handleCloseMenu} className='sidebar-mobile__close-btn'>
             <Close />
           </div>
           <SidebarMobileNav handleCloseMenu={handleCloseMenu} />
-          <div onClick={handleLogout} className='SidebarMobile__logout'>
-            <div className='SidebarMobile__icon'>
+          <div onClick={handleLogout} className='sidebar-mobile__logout'>
+            <div className='sidebar-mobile__icon'>
               <Logout />
             </div>
             <Text size={16} weight='Bold' text='Logout' />

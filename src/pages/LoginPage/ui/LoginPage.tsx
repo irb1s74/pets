@@ -21,16 +21,16 @@ const LoginPage = () => {
   const { width } = useWindowDimensions()
 
   return (
-    <main className='LoginPage'>
+    <main className='login-page'>
       {width > 1240 && (
         <AppImage
           fallback={<Skeleton height={'100%'} width={selectImages.mw} />}
-          className='LoginPage__image'
+          className='login-page__image'
           src={selectImages.src}
           style={{ maxWidth: selectImages.mw }}
         />
       )}
-      <LoginForm className='LoginPage__form' />
+      <LoginForm className='login-page__form' />
     </main>
   )
 }

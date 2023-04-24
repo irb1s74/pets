@@ -30,47 +30,47 @@ export const SidebarNav = memo((props: SidebarNavProps) => {
   }
 
   return (
-    <div className={classNames('Sidebar__nav', {}, [className])}>
+    <div className={classNames('sidebar__nav', {}, [className])}>
       <div
         onClick={handleToNavigate(getRouteMain())}
-        className={classNames('Sidebar__item', {
-          'Sidebar__item-active': getRouteMain() === location,
+        className={classNames('sidebar__item', {
+          ['sidebar__item_active']: getRouteMain() === location,
         })}
       >
-        <Home className='Sidebar__icon' />
+        <Home className='sidebar__icon' />
       </div>
       <div
         onClick={handleToNavigate(getRoutePets())}
-        className={classNames('Sidebar__item', {
-          'Sidebar__item-active':
+        className={classNames('sidebar__item', {
+          ['sidebar__item_active']:
             getRoutePets() === location || getRoutePetDetails(id) === location,
         })}
       >
-        <Pets className='Sidebar__icon' />
+        <Pets className='sidebar__icon' />
       </div>
       <div
         onClick={handleToNavigate(getRouteBlog())}
-        className={classNames('Sidebar__item', {
-          'Sidebar__item-active': getRouteBlog() === location,
+        className={classNames('sidebar__item', {
+          ['sidebar__item_active']: getRouteBlog() === location,
         })}
       >
-        <Blog className='Sidebar__icon' />
+        <Blog className='sidebar__icon' />
       </div>
       <div
         onClick={handleToNavigate(getRouteChat())}
-        className={classNames('Sidebar__item', {
-          'Sidebar__item-active': getRouteChat() === location,
+        className={classNames('sidebar__item', {
+          ['sidebar__item_active']: getRouteChat() === location,
         })}
       >
-        <Chat className='Sidebar__icon' />
+        <Chat className='sidebar__icon' />
       </div>
       <div
         onClick={handleToNavigate(getRouteProfile())}
-        className={classNames('Sidebar__item', {
-          'Sidebar__item-active': getRouteProfile() === location,
+        className={classNames('sidebar__item', {
+          ['sidebar__item_active']: getRouteProfile() === location,
         })}
       >
-        <Person className='Sidebar__icon' />
+        <Person className='sidebar__icon' />
       </div>
     </div>
   )

@@ -14,10 +14,15 @@ interface ChatEditListItemProps {
 export const ChatEditListItem = memo((props: ChatEditListItemProps) => {
   const { className, chat } = props
   return (
-    <div className={classNames('ChatEditListItem', {}, [className])}>
-      <Avatar className='ChatEditListItem__avatar' src={chat.avatar} alt={chat.title} size={32} />
-      <Text className='ChatEditListItem__name' size={18} text={chat.title} />
-      <div className='ChatEditListItem__switch'>
+    <div className={classNames('chat-edit-list-item', {}, [className])}>
+      <Avatar
+        className='chat-edit-list-item__avatar'
+        src={chat.avatar}
+        alt={chat.title}
+        size={32}
+      />
+      <Text className='chat-edit-list-item__name' size={18} text={chat.title} />
+      <div className='chat-edit-list-item__switch'>
         <Switch />
       </div>
     </div>

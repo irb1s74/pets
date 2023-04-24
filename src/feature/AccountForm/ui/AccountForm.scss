@@ -1,4 +1,4 @@
-.AccountForm {
+.account-form {
   max-width: 710px;
   max-height: 680px;
   height: 100%;
@@ -7,7 +7,7 @@
   background-color: var(--alternative-color);
   border-radius: 16px;
 
-  &__avatarInput {
+  &__avatar-input {
     width: 72px;
     height: 72px;
     background-color: var(--primary-color);
@@ -24,7 +24,7 @@
     }
   }
 
-  &__groupInput {
+  &__group-input {
     display: flex;
     align-items: center;
     justify-content: space-between;

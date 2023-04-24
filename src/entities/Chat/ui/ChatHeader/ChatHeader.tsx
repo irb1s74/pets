@@ -14,14 +14,14 @@ interface ChatHeaderProps {
 export const ChatHeader = memo((props: ChatHeaderProps) => {
   const { className, title, handleSetMenu } = props
   return (
-    <div className={classNames('ChatHeader', {}, [className])}>
-      <div className='ChatHeader__title'>
-        <div onClick={handleSetMenu} className='ChatHeader__arrow'>
+    <div className={classNames('chat-header', {}, [className])}>
+      <div className='chat-header__title'>
+        <div onClick={handleSetMenu} className='chat-header__arrow'>
           <Arrow />
         </div>
-        <Text weight='bold' size={16} text={title} className='ChatHeader__text' />
+        <Text weight='bold' size={16} text={title} className='chat-header__text' />
       </div>
-      <div className='ChatHeader__iconBtn'>
+      <div className='chat-header__icon-btn'>
         <Trash />
       </div>
     </div>

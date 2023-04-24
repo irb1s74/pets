@@ -1,4 +1,4 @@
-.PetTypeList {
+.pet-type-list {
   height: 100%;
   max-width: 100%;
   width: 100%;
@@ -21,7 +21,7 @@
     background-color: var(--alternative-color);
     transition: background-color 300ms ease;
 
-    &-active {
+    &_active {
       background-color: var(--primary-color);
 
       p {

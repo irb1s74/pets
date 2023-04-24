@@ -12,18 +12,18 @@ interface ChatFooterProps {
 export const ChatFooter = memo((props: ChatFooterProps) => {
   const { className } = props
   return (
-    <div className={classNames('ChatFooter', {}, [className])}>
-      <div className='ChatFooter__icon'>
+    <div className={classNames('chat-footer', {}, [className])}>
+      <div className='chat-footer__icon'>
         <Clip strokeWidth='0' />
       </div>
-      <div className='ChatFooter__input'>
+      <div className='chat-footer__input'>
         <input placeholder='Написать сообщение...' />
       </div>
-      <div className='ChatFooter__groupIcon'>
-        <div className='ChatFooter__icon'>
+      <div className='chat-footer__group-icon'>
+        <div className='chat-footer__icon'>
           <Sticker strokeWidth='0' />
         </div>
-        <div className='ChatFooter__icon'>
+        <div className='chat-footer__icon'>
           <Send />
         </div>
       </div>

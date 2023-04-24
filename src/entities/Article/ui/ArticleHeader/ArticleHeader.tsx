@@ -15,20 +15,20 @@ interface ArticleHeaderProps {
 export const ArticleHeader = memo((props: ArticleHeaderProps) => {
   const { className, article } = props
   return (
-    <div className={classNames('ArticleHeader', {}, [className])}>
-      <div className='ArticleHeader__author'>
+    <div className={classNames('article-header', {}, [className])}>
+      <div className='article-header__author'>
         <Avatar
-          className='ArticleHeader__avatar'
+          className='article-header__avatar'
           size={48}
           src={article?.avatar}
           alt={article.author}
         />
-        <div className='ArticleHeader__name'>
+        <div className='article-header__name'>
           <Text size={16} weight='bold' text={article?.author} />
           <Text size={14} color='gray' text={article?.status} />
         </div>
       </div>
-      <div className='ArticleHeader__dates'>
+      <div className='article-header__dates'>
         <Text size={14} color='gray' text={dayjs(article.time).locale('ru').format('DD MMMM')} />
         <Text size={14} color='gray' text={dayjs(article.time).format('HH:mm')} />
       </div>

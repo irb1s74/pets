@@ -10,11 +10,11 @@ interface ChatSearchProps {
 export const ChatSearch = memo((props: ChatSearchProps) => {
   const { className } = props
   return (
-    <div className={classNames('ChatSearch', {}, [className])}>
-      <div className='ChatSearch__icon'>
+    <div className={classNames('chat-search', {}, [className])}>
+      <div className='chat-search__icon'>
         <SearchIcon />
       </div>
-      <div className='ChatSearch__input'>
+      <div className='chat-search__input'>
         <input placeholder='Поиск...' />
       </div>
     </div>

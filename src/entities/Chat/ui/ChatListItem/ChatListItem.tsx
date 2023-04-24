@@ -16,17 +16,17 @@ export const ChatListItem = memo((props: ChatListItemProps) => {
   const { className, chat, active, onClick } = props
 
   const mods = {
-    ['ChatListItem-active']: active,
+    ['chat-list-item_active']: active,
   }
 
   return (
-    <div className={classNames('ChatListItem', mods, [className])} onClick={onClick(chat.id)}>
-      <Avatar className='ChatListItem__avatar' src={chat?.avatar} alt={chat?.title} size={48} />
-      <div className='ChatListItem__text'>
+    <div className={classNames('chat-list-item', mods, [className])} onClick={onClick(chat.id)}>
+      <Avatar className='chat-list-item__avatar' src={chat?.avatar} alt={chat?.title} size={48} />
+      <div className='chat-list-item__text'>
         <Text size={16} weight='bold' text={chat?.title} />
         <Text color='gray' size={14} text={chat?.lastMessage} />
       </div>
-      <div className='ChatListItem__time'>
+      <div className='chat-list-item__time'>
         <Text size={14} color='gray' text={chat?.date} />
       </div>
     </div>

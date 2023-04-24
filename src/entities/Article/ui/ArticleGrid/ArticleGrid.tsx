@@ -16,7 +16,7 @@ const getSkeletons = () =>
 export const ArticleGrid = memo((props: ArticleGridProps) => {
   const { className, isLoading, children } = props
   return (
-    <div className={classNames('ArticleGrid', {}, [className])}>
+    <div className={classNames('article-grid', {}, [className])}>
       {children}
       {isLoading && getSkeletons()}
     </div>

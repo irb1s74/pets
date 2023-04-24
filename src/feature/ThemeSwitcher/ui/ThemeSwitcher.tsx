@@ -15,20 +15,20 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
   const { theme, toggleTheme } = useTheme()
 
   return (
-    <label onClick={toggleTheme} className={classNames('ThemeSwitcher', {}, [className])}>
+    <label onClick={toggleTheme} className={classNames('theme-switcher', {}, [className])}>
       <Moon
-        className={classNames('ThemeSwitcher__svg', {
-          ['ThemeSwitcher__svg-dark']: theme === Theme.LIGHT,
+        className={classNames('theme-switcher__svg', {
+          ['theme-switcher__svg_dark']: theme === Theme.LIGHT,
         })}
       />
       <Sun
-        className={classNames('ThemeSwitcher__svg', {
-          ['ThemeSwitcher__svg-dark']: theme !== Theme.LIGHT,
+        className={classNames('theme-switcher__svg', {
+          ['theme-switcher__svg_dark']: theme !== Theme.LIGHT,
         })}
       />
       <span
-        className={classNames('ThemeSwitcher__span', {
-          ['ThemeSwitcher__span-active']: theme === Theme.LIGHT,
+        className={classNames('theme-switcher__span', {
+          ['theme-switcher__span_active']: theme === Theme.LIGHT,
         })}
       />
     </label>

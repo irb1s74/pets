@@ -1,4 +1,4 @@
-.CreatePetFooter {
+.create-pet-footer {
   width: 100%;
   display: flex;
   align-items: center;
@@ -9,10 +9,10 @@
     max-width: 270px;
     width: 100%;
 
-    &-right {
+    &_right {
       margin-left: auto;
     }
-    &-auto{
+    &_auto{
       margin: 0 auto;
 
     }

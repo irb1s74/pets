@@ -12,10 +12,10 @@ interface ChatButtonEditProps {
 export const ChatButtonEdit = memo((props: ChatButtonEditProps) => {
   const { className, onClick, active } = props
   const mod = {
-    ['ChatButtonEdit-active']: active,
+    ['chat-button-edit_active']: active,
   }
   return (
-    <div onClick={onClick} className={classNames('ChatButtonEdit', mod, [className])}>
+    <div onClick={onClick} className={classNames('chat-button-edit', mod, [className])}>
       <Pen />
     </div>
   )

@@ -12,7 +12,7 @@ interface ChatEditListProps {
 export const ChatEditList = memo((props: ChatEditListProps) => {
   const { className, chats } = props
   return (
-    <div className={classNames('ChatEditList', {}, [className])}>
+    <div className={classNames('chat-edit-list', {}, [className])}>
       {chats?.map((chat) => (
         <ChatEditListItem key={chat.id} chat={chat} />
       ))}

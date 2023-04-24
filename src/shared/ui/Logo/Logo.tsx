@@ -14,13 +14,13 @@ export const Logo = memo(({ className, size = 'small' }: LogoProps) => {
   const { theme } = useTheme()
 
   const mods = {
-    ['Logo-large']: size === 'large',
-    ['Logo-small']: size === 'small',
-    ['Logo-medium']: size === 'medium',
+    ['logo_large']: size === 'large',
+    ['logo_small']: size === 'small',
+    ['logo_medium']: size === 'medium',
   }
 
   return (
-    <div className={classNames('Logo', mods, [className])}>
+    <div className={classNames('logo', mods, [className])}>
       {theme === 'app_dark_theme' ? <Hugs /> : <HugsDark />}
     </div>
   )

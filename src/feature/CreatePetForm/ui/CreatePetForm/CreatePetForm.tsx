@@ -19,7 +19,7 @@ const CreatePetForm = memo((props: CreatePetFormProps) => {
   const handlePrevForm = useCallback(() => setStep((prevState) => prevState - 1), [])
 
   return (
-    <div className={classNames('CreatePetForm', {}, [className])}>
+    <div className={classNames('create-pet-form', {}, [className])}>
       <CreatePetHeader activeStep={activeStep} />
       {activeStep === 1 ? (
         <AboutPetForm />
@@ -28,7 +28,7 @@ const CreatePetForm = memo((props: CreatePetFormProps) => {
       ) : activeStep === 3 ? (
         <PetCharacteristicsForm />
       ) : (
-        <div className='CreatePetForm__resultForm'>
+        <div className='create-pet-form__result-form'>
           <div>
             <SuccessIcon />
           </div>

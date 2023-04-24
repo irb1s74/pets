@@ -1,4 +1,4 @@
-.PageLoader {
+.page-loader {
   top: 0;
   left: 0;
   position: absolute;
@@ -8,14 +8,13 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(41, 39, 46, 0.8);
-  z-index: 999;
+  z-index: var(--page-loader-index);
 
   &__container {
     position: relative;
     height: 50px;
     width: 252px;
     transform: rotate(315deg);
-
   }
 
   &__pet {
@@ -23,34 +22,36 @@
     left: 0;
     position: absolute;
     transform: rotate(90deg);
+
+    //mods
+    &_pos1 {
+      top: 100%;
+      left: 20%;
+    }
+
+    &_pos2 {
+      top: 0;
+      left: 40%;
+    }
+
+    &_pos3 {
+      top: 100%;
+      left: 60%;
+    }
+
+    &_pos4 {
+      top: 0;
+      left: 80%;
+    }
+
+    &_pos5 {
+      top: 100%;
+      left: 100%;
+    }
+
+    &_pos6 {
+      display: none;
+    }
   }
 }
 
-.pos1 {
-  top: 100%;
-  left: 20%;
-}
-
-.pos2 {
-  top: 0;
-  left: 40%;
-}
-
-.pos3 {
-  top: 100%;
-  left: 60%;
-}
-
-.pos4 {
-  top: 0;
-  left: 80%;
-}
-
-.pos5 {
-  top: 100%;
-  left: 100%;
-}
-
-.pos6 {
-  display: none;
-}

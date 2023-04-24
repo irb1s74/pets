@@ -49,16 +49,16 @@ export const PetTypeList = memo((props: PetTypeListProps) => {
   ]
 
   return (
-    <div className={classNames('PetTypeList', {}, [className])}>
+    <div className={classNames('pet-type-list', {}, [className])}>
       {types.map((type, index) => (
         <div
           key={index}
-          className={classNames('PetTypeList__item', {
-            ['PetTypeList__item-active']: filter.includes(type.label),
+          className={classNames('pet-type-list__item', {
+            ['pet-type-list__item_active']: filter.includes(type.label),
           })}
           onClick={handleSetSort(type.label)}
         >
-          <div className='PetTypeList__icon'>{type.icon}</div>
+          <div className='pet-type-list__icon'>{type.icon}</div>
           <Text size={10} weight='semi' text={type.label} />
         </div>
       ))}

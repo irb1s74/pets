@@ -1,7 +1,8 @@
-.MainPage {
-  height: calc(100% - 75px);
+.main-page {
+  height: 100%;
   position: relative;
   padding: 80px 30px 30px 30px;
+
   //grid
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -13,11 +14,11 @@
     grid-column: span 6;
   }
 
-  &__userProgress {
+  &__user-progress {
     grid-column: span 4;
   }
 
-  &__dataTime {
+  &__data-time {
     grid-column: span 2;
   }
 
@@ -37,7 +38,7 @@
     grid-column: span 2;
   }
 
-  &__petStats {
+  &__pet-stats {
     grid-column: span 4;
   }
 
@@ -69,10 +70,10 @@
     &__greetings {
       grid-column: span 5;
     }
-    &__userProgress {
+    &__user-progress {
       grid-column: span 5;
     }
-    &__petStats {
+    &__pet-stats {
       grid-row: 2;
       grid-column: 1 / 6;
     }
@@ -93,7 +94,7 @@
       grid-column: span 2;
     }
 
-    &__dataTime {
+    &__data-time {
       grid-column: 9 / 11;
       grid-row: 3;
     }
@@ -108,17 +109,17 @@
       grid-row: 1;
       grid-column: span 5;
     }
-    &__userProgress {
+    &__user-progress {
       grid-row: 2;
       grid-column: span 5;
     }
 
-    &__petStats {
+    &__pet-stats {
       grid-row: 3 / 5;
       grid-column: span 3;
     }
 
-    &__dataTime {
+    &__data-time {
       grid-row: 3;
       grid-column: 4 / 6;
     }
@@ -150,17 +151,17 @@
       grid-column: span 5;
     }
 
-    &__userProgress {
+    &__user-progress {
       grid-row: 2;
       grid-column: span 5;
     }
 
-    &__dataTime {
+    &__data-time {
       grid-row: 3;
       grid-column: span 5;
     }
 
-    &__petStats {
+    &__pet-stats {
       grid-row: 4;
       grid-column: span 5;
     }

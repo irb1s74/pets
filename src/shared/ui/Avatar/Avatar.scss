@@ -1,4 +1,4 @@
-.Avatar {
+.avatar {
   position: relative;
   border-radius: 50%;
   display: flex;
@@ -16,7 +16,8 @@
     border-radius: 50%;
   }
 
-  &-online {
+  //mods
+  &_online {
     position: absolute;
     content: "";
     width: 12px;
@@ -27,30 +28,28 @@
     border: 2.5px solid #FAFAF9;
     border-radius: 50%;
   }
-}
 
+  &_green {
+    background-color: var(--green-color);
+  }
 
+  &_cyan {
+    background-color: var(--cyan-color);
+  }
 
-.green {
-  background-color: var(--green-color);
-}
+  &_indigo {
+    background-color: var(--indigo-color);
+  }
 
-.cyan {
-  background-color: var(--cyan-color);
-}
+  &_amber {
+    background-color: var(--amber-color);
+  }
 
-.indigo {
-  background-color: var(--indigo-color);
-}
+  &_purple {
+    background-color: var(--purple-color);
+  }
 
-.amber {
-  background-color: var(--amber-color);
-}
-
-.purple {
-  background-color: var(--purple-color);
-}
-
-.pink {
-  background-color: var(--pink-color);
+  &_pink {
+    background-color: var(--pink-color);
+  }
 }

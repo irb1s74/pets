@@ -33,8 +33,8 @@ export const Input = memo((props: InputProps) => {
   } = props
   const ref = useRef<HTMLInputElement>(null)
   const mods = {
-    ['Input-invalid']: error,
-    ['Input-success']: success,
+    ['input_invalid']: error,
+    ['input_success']: success,
   }
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export const Input = memo((props: InputProps) => {
   }, [autofocus])
 
   return (
-    <div className={classNames('Input', mods, [className])}>
+    <div className={classNames('input', mods, [className])}>
       <input
         ref={ref}
         type={type}
@@ -54,9 +54,9 @@ export const Input = memo((props: InputProps) => {
         placeholder=' '
         {...otherProps}
       />
-      <span className='Input__bar' />
-      <label className='Input__label'>{label}</label>
-      <Text className='Input__errorText' text={helperText} color='danger' align='right' size={8} />
+      <span className='input__bar' />
+      <label className='input__label'>{label}</label>
+      <Text className='input__errorText' text={helperText} color='danger' align='right' size={8} />
     </div>
   )
 })

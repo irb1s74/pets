@@ -65,42 +65,42 @@ export const PetStats = memo((props: PetStatsProps) => {
   ]
 
   return (
-    <div className={classNames('PetStats', {}, [className])}>
-      <div className='PetStats__about'>
-        <AppImage className='PetStats__image' src={data.previewImg} alt={data.previewImg} />
-        <div className='PetStats__texts'>
+    <div className={classNames('pet-stats', {}, [className])}>
+      <div className='pet-stats__about'>
+        <AppImage className='pet-stats__image' src={data.previewImg} alt={data.previewImg} />
+        <div className='pet-stats__texts'>
           <Text size={24} text={data.name} />
           <Text size={14} text={`${data.likes} лайка`} />
         </div>
       </div>
-      <div className='PetStats__stats'>
-        <div className='PetStats__header'>
-          <div className='PetStats__label'>
+      <div className='pet-stats__stats'>
+        <div className='pet-stats__header'>
+          <div className='pet-stats__label'>
             <Text text='Лайки' />
-            <span className='PetStats__span' style={{ backgroundColor: '#F16063FF' }} />
+            <span className='pet-stats__span' style={{ backgroundColor: '#F16063FF' }} />
           </div>
-          <div className='PetStats__label'>
+          <div className='pet-stats__label'>
             <Text text='Просмотры' />
-            <span className='PetStats__span' style={{ backgroundColor: '#66CB9F' }} />
+            <span className='pet-stats__span' style={{ backgroundColor: '#66CB9F' }} />
           </div>
         </div>
-        <div className='PetStats__chart'>
+        <div className='pet-stats__chart'>
           {dataChart.map((bar, index) => (
-            <div key={index} className='PetStats__bars'>
+            <div key={index} className='pet-stats__bars'>
               <div
-                className='PetStats__bar'
+                className='pet-stats__bar'
                 style={{ height: `${bar.likes}%`, backgroundColor: '#F16063FF' }}
               />
               <div
-                className='PetStats__bar'
+                className='pet-stats__bar'
                 style={{ height: `${bar.views}%`, backgroundColor: '#66CB9F' }}
               />
             </div>
           ))}
         </div>
-        <div className='PetStats__days'>
+        <div className='pet-stats__days'>
           {dataChart.map((data, index) => (
-            <div key={index} className='PetStats__day'>
+            <div key={index} className='pet-stats__day'>
               <Text size={12} text={data.date} />
               <Text color='gray' size={10} text={data.day} />
             </div>

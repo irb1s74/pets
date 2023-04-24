@@ -23,9 +23,9 @@ const ProfilePage = (props: ProfilePageProps) => {
   )
 
   return (
-    <div className={classNames('ProfilePage', {}, [className])}>
+    <div className={classNames('profile-page', {}, [className])}>
       <ProfileList
-        className='ProfilePage__menu'
+        className='profile-page__menu'
         selectedForm={form}
         handleSelectForm={handleSelectForm}
       />

@@ -1,4 +1,4 @@
-.ThemeSwitcher {
+.theme-switcher {
   position: relative;
   width: 110px;
   height: 46px;
@@ -15,7 +15,7 @@
     stroke: #FFF;
     transition: stroke 300ms ease;
 
-    &-dark {
+    &_dark {
       stroke: var(--gray-color);
     }
   }
@@ -31,7 +31,7 @@
     border-radius: 16.3px;
     transition: transform 300ms ease;
 
-    &-active {
+    &_active {
       transform: translateX(45px);
     }
   }

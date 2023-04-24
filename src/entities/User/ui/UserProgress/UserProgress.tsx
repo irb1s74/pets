@@ -21,8 +21,8 @@ export const UserProgress = memo((props: UserProgressProps) => {
   ]
 
   return (
-    <div className={classNames('UserProgress', {}, [className])}>
-      <ResponsiveContainer className='UserProgress__chart' height={234}>
+    <div className={classNames('user-progress', {}, [className])}>
+      <ResponsiveContainer className='user-progress__chart' height={234}>
         <PieChart>
           <Pie data={data} innerRadius={60} outerRadius={80} dataKey='value'>
             {data.map((entry, index) => (
@@ -31,11 +31,11 @@ export const UserProgress = memo((props: UserProgressProps) => {
           </Pie>
         </PieChart>
       </ResponsiveContainer>
-      <div className='UserProgress__tasks'>
+      <div className='user-progress__tasks'>
         <Text weight='bold' size={18} text='Ежедневный прогресс' />
         {data.map((entry, index) => (
-          <div className='UserProgress__task' key={index}>
-            <div className='UserProgress__icon' style={{ backgroundColor: entry.color }}>
+          <div className='user-progress__task' key={index}>
+            <div className='user-progress__icon' style={{ backgroundColor: entry.color }}>
               {entry.check ? <Ready /> : <Close />}
             </div>
             <Text size={18} text={entry.name} />

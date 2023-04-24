@@ -18,8 +18,8 @@ export const ChatMenu = memo((props: ChatMenuProps) => {
   const handleSetEditable = useCallback(() => setEditable((prevState) => !prevState), [])
 
   return (
-    <div className={classNames('ChatMenu', {}, [className])}>
-      <div className='ChatMenu__header'>
+    <div className={classNames('chat-menu', {}, [className])}>
+      <div className='chat-menu__header'>
         <ChatSearch />
         <ChatButtonEdit active={isEditable} onClick={handleSetEditable} />
       </div>
@@ -27,6 +27,7 @@ export const ChatMenu = memo((props: ChatMenuProps) => {
         <ChatEditList chats={chats} />
       ) : (
         <ChatList
+          className='chat-menu__list'
           chats={chats}
           chatId={chatId}
           isLoading={isLoading}

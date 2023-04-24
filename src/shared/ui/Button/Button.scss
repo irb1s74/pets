@@ -1,4 +1,4 @@
-.Button {
+.button {
   position: relative;
   width: 100%;
   height: 100%;
@@ -30,49 +30,49 @@
     }
   }
 
-  &-loading {
+
+  &__loader, &__loader:before, &__loader:after {
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation-fill-mode: both;
+    animation: bblFadInOut 1.8s infinite ease-in-out;
+  }
+
+  &__loader {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 32px 0 #fff, -32px 0 #fff;
+    position: relative;
+    animation: flash 0.5s ease-out infinite alternate;
+  }
+
+  //mods
+  &_loading {
     pointer-events: none;
     cursor: auto;
 
     :hover {
-
     }
   }
-}
 
-.small {
-  max-height: 40px;
-  max-width: 271px;
-  font-size: 14px;
-}
+  &_small {
+    max-height: 40px;
+    max-width: 271px;
+    font-size: 14px;
+  }
 
-.large {
-  max-height: 48px;
-  max-width: 325px;
-  font-size: 18px;
-}
+  &_large {
+    max-height: 48px;
+    max-width: 325px;
+    font-size: 18px;
+  }
 
-.secondary {
-  background-color: rgba(76, 111, 255, 0.8);
-}
-
-
-.loader, .loader:before, .loader:after {
-  border-radius: 50%;
-  width: 2.5em;
-  height: 2.5em;
-  animation-fill-mode: both;
-  animation: bblFadInOut 1.8s infinite ease-in-out;
-}
-
-.loader {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 32px 0 #fff, -32px 0 #fff;
-  position: relative;
-  animation: flash 0.5s ease-out infinite alternate;
+  &_secondary {
+    background-color: rgba(76, 111, 255, 0.8);
+  }
 }
 
 @keyframes flash {

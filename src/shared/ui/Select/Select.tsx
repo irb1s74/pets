@@ -24,7 +24,7 @@ export const Select = memo((props: SelectProps) => {
   const [value, setValue] = useState(defaultValue || '')
   const [isOpen, setIsOpen] = useState(false)
   const mod = {
-    ['Select-open']: isOpen,
+    ['select_open']: isOpen,
   }
   const toggling = () => setIsOpen((prevState) => !prevState)
 
@@ -37,30 +37,30 @@ export const Select = memo((props: SelectProps) => {
 
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
-      <div className={classNames('Select', mod, [className])}>
+      <div className={classNames('select', mod, [className])}>
         <div onClick={toggling} className='Select__header'>
-          <label className={classNames('Select__name', { ['Select__name-top']: value })}>
+          <label className={classNames('select__name', { ['select__name-top']: value })}>
             {label}
           </label>
           {value && (
             <Text
               text={`${options.find((option) => option.value === value)?.label || value}`}
-              className='Select__text'
+              className='select__text'
             />
           )}
-          <span className='Select__arrow'>
+          <span className='select__arrow'>
             <Arrow />
           </span>
         </div>
         {isOpen && (
-          <div className='Select__content'>
-            <ul className='Select__list'>
+          <div className='select__content'>
+            <ul className='select__list'>
               {options.map(({ label: optionLabel, value: optionValue }, index) => (
                 <li
                   onClick={handleOnChange(optionValue)}
                   key={`${index}_${optionValue}`}
-                  className={classNames('Select__item', {
-                    ['Select__item-active']: value === optionValue,
+                  className={classNames('select__item', {
+                    ['select__item_active']: value === optionValue,
                   })}
                 >
                   {optionLabel}

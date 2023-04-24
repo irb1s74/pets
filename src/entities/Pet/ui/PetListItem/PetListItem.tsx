@@ -22,22 +22,22 @@ export const PetListItem = memo((props: PetListItemProps) => {
   }
 
   return (
-    <div onClick={handleToClick} className={classNames('PetListItem', {}, [className])}>
-      <div className='PetListItem__image'>
+    <div onClick={handleToClick} className={classNames('pet-list-item', {}, [className])}>
+      <div className='pet-list-item__image'>
         <AppImage
           src={data.previewImg}
           alt={data.name}
           fallback={<Skeleton width='100%' border='16px' height='220px' />}
         />
       </div>
-      <div className='PetListItem__content'>
-        <div className='PetListItem__about'>
+      <div className='pet-list-item__content'>
+        <div className='pet-list-item__about'>
           <Text size={18} text={data.name} />
-          <Text size={15} text={data.type} className='PetListItem__type' />
+          <Text size={15} text={data.type} className='pet-list-item__type' />
         </div>
-        <div className='PetListItem__actions'>
-          <Text size={15} className='PetListItem__countLikes' text={`${data.likes} лайка`} />
-          <div className='PetListItem__iconBtn'>
+        <div className='pet-list-item__actions'>
+          <Text size={15} className='pet-list-item__count-likes' text={`${data.likes} лайка`} />
+          <div className='pet-list-item__icon-btn'>
             <Heart />
           </div>
         </div>
