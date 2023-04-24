@@ -1,6 +1,5 @@
 import { memo, Suspense, useCallback } from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
 import { Page } from 'widget/Page'
 import { PageLoader } from 'widget/PageLoader'
 import { RequireAuth } from '../ui/RequireAuth'
@@ -10,11 +9,7 @@ import { routeConfig } from '../config/routeConfig'
 
 export const AppRouter = memo(() => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-    const element = (
-      <Suspense fallback={<PageLoader />}>
-        <AnimatePresence>{route.element}</AnimatePresence>
-      </Suspense>
-    )
+    const element = <Suspense fallback={<PageLoader />}>{route.element}</Suspense>
 
     return (
       <Route
