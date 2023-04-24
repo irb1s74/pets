@@ -13,22 +13,22 @@ export const CreatePetHeader = memo((props: CreatePetHeaderProps) => {
   const steps = [1, 2, 3, 4]
 
   return (
-    <div className={classNames('CreatePetHeader', {}, [className])}>
+    <div className={classNames('create-pet-header', {}, [className])}>
       {steps.map((value) => (
         <Fragment key={value}>
           <div
-            className={classNames('CreatePetHeader__step', {
-              ['CreatePetHeader__step-active']: activeStep >= value,
+            className={classNames('create-pet-header__step', {
+              ['create-pet-header__step_active']: activeStep >= value,
             })}
           >
             <Text size={16} text={`${value}`} />
           </div>
           {value !== steps.length && (
-            <div className='CreatePetHeader__stepBar'>
+            <div className='create-pet-header__step-bar'>
               <div
-                className={classNames('CreatePetHeader__progress', {
-                  ['CreatePetHeader__progress-inProgress']: value === activeStep,
-                  ['CreatePetHeader__progress-active']: activeStep > value,
+                className={classNames('create-pet-header__progress', {
+                  ['create-pet-header__progress_in-progress']: value === activeStep,
+                  ['create-pet-header__progress_active']: activeStep > value,
                 })}
               />
             </div>

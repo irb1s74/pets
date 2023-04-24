@@ -2,7 +2,7 @@ import { UserGreetings, UserTime, UserProgress } from 'entities/User'
 import { ArticleRecommendationsList } from 'feature/ArticleRecommendationsList'
 import { PetsRecommendationsList } from 'feature/PetsRecommendationsList'
 import { ChatRecommendationList } from 'feature/ChatRecommendationList'
-import { PetsStatisticList } from 'feature/PetsStatisticList/ui/PetsStatisticList'
+import { PetsStatisticList } from 'feature/PetsStatisticList'
 import './MainPage.scss'
 
 const MainPage = () => {

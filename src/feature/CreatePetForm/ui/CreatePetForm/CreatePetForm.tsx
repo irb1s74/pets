@@ -20,13 +20,13 @@ const CreatePetForm = memo((props: CreatePetFormProps) => {
 
   return (
     <div className={classNames('create-pet-form', {}, [className])}>
-      <CreatePetHeader activeStep={activeStep} />
+      <CreatePetHeader className='create-pet-form__header' activeStep={activeStep} />
       {activeStep === 1 ? (
-        <AboutPetForm />
+        <AboutPetForm className='create-pet-form__form' />
       ) : activeStep === 2 ? (
-        <PetPhotoForm />
+        <PetPhotoForm className='create-pet-form__form' />
       ) : activeStep === 3 ? (
-        <PetCharacteristicsForm />
+        <PetCharacteristicsForm className='create-pet-form__form' />
       ) : (
         <div className='create-pet-form__result-form'>
           <div>
@@ -35,7 +35,12 @@ const CreatePetForm = memo((props: CreatePetFormProps) => {
           <Text size={32} text='Ваш питомец добавлен' />
         </div>
       )}
-      <CreatePetFooter activeStep={activeStep} onBack={handlePrevForm} onWards={handleNextForm} />
+      <CreatePetFooter
+        className='create-pet-form__footer'
+        activeStep={activeStep}
+        onBack={handlePrevForm}
+        onWards={handleNextForm}
+      />
     </div>
   )
 })

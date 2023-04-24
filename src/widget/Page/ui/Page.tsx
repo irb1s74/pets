@@ -28,9 +28,9 @@ export const Page = memo((props: PageProps) => {
       }}
       className={classNames('page', {}, [className])}
     >
-      <Sidebar />
+      <Sidebar className='page__sidebar' />
       <div className='page__container'>
-        <Header useGoBack={useGoBack} pageTitle={title} />
+        <Header className='page__header' useGoBack={useGoBack} pageTitle={title} />
         {children}
       </div>
     </motion.div>

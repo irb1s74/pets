@@ -1,5 +1,5 @@
-import classNames from 'classnames'
 import { PetsFilterList } from 'feature/PetsFilterList'
+import classNames from 'classnames'
 import './PetsPage.scss'
 
 interface PetsPageProps {

@@ -55,7 +55,7 @@ const ChatPage = (props: ChatPageProps) => {
         handleSetChatId={handleSetChatId}
         className='chat-page__menu'
       />
-      <ChatMessenger chat={selectedChat} />
+      <ChatMessenger className='chat-page__messenger' chat={selectedChat} />
     </div>
   )
 }

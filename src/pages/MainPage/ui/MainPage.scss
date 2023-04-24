@@ -1,11 +1,11 @@
 .main-page {
-  height: 100%;
   position: relative;
   padding: 80px 30px 30px 30px;
 
   //grid
   display: grid;
   grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 315px 210px 290px;
   grid-column-gap: 40px;
   grid-row-gap: 40px;
   justify-content: flex-start;
@@ -23,18 +23,15 @@
   }
 
   &__articles {
-    max-height: 210px;
     min-height: 210px;
     grid-column: span 12;
   }
 
   &__pets {
-    max-height: 290px;
     grid-column: span 6;
   }
 
   &__chats {
-    height: 290px;
     grid-column: span 2;
   }
 

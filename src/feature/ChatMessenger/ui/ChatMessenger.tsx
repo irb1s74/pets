@@ -22,7 +22,7 @@ export const ChatMessenger = memo((props: ChatMessengerProps) => {
           <ChatFooter />
         </div>
       ) : (
-        <ChatEmpty />
+        <ChatEmpty className='chat-messenger__empty' />
       )}
     </div>
   )

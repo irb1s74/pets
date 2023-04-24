@@ -1,14 +1,23 @@
 .create-pet-form {
-  max-width: 710px;
-  max-height: 660px;
-  height: 100%;
-  width: 100%;
   border-radius: 16px;
   background-color: var(--alternative-color);
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  &__header {
+    margin-bottom: 30px;
+  }
+
+
+  &__footer {
+    margin-top: 30px;
+  }
+
+  &__form {
+    flex-grow: 1;
+  }
 
   &__result-form {
     height: 100%;
@@ -17,7 +26,6 @@
     align-items: center;
     justify-content: center;
   }
-
 
   @media only screen and (max-width: 650px) {
     height: auto;

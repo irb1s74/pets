@@ -38,8 +38,8 @@ export const Select = memo((props: SelectProps) => {
   return (
     <ClickAwayListener onClickAway={handleClickAway}>
       <div className={classNames('select', mod, [className])}>
-        <div onClick={toggling} className='Select__header'>
-          <label className={classNames('select__name', { ['select__name-top']: value })}>
+        <div onClick={toggling} className='select__header'>
+          <label className={classNames('select__name', { ['select__name_top']: value })}>
             {label}
           </label>
           {value && (

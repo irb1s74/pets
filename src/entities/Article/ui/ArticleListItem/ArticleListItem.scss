@@ -1,7 +1,4 @@
 .article-list-item {
-  max-width: 100%;
-  width: 100%;
-  height: 100%;
   padding: 30px;
   border-radius: 16px;
   background-color: var(--alternative-color);
@@ -28,10 +25,5 @@
 
   &__content {
     margin-top: 15px;
-  }
-
-  @media only screen and (max-width: 1240px) {
-    max-height: 215px;
-    height: 215px;
   }
 }

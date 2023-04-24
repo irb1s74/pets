@@ -25,7 +25,7 @@ const BlogPage = (props: BlogPageProps) => {
         <ArticleGrid className='blog-page__grid' isLoading={isLoading}>
           {data?.map((article) => (
             <Card key={article.id}>
-              <ArticleHeader article={article} />
+              <ArticleHeader className='blog-page__article-header' article={article} />
               <ArticleContent article={article} />
               <ArticleFooter />
             </Card>

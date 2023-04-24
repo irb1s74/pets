@@ -5,6 +5,8 @@
   display: flex;
 
   &__menu {
+    max-width: 410px;
+    width: 100%;
     margin-right: 40px;
 
     @media only screen and (max-width: 1290px) {
@@ -25,8 +27,25 @@
     }
   }
 
-  &__content {
+  &__account-form {
+    max-width: 710px;
+    max-height: 680px;
+    height: 100%;
+    width: 100%;
+  }
 
+  &__setting-form {
+    max-width: 410px;
+    max-height: 339px;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__create-pet-form {
+    height: 100%;
+    width: 100%;
+    max-width: 710px;
+    max-height: 660px;
   }
 
   @media only screen and (max-width: 1290px) {

@@ -32,7 +32,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
       <Swiper spaceBetween={40} slidesPerView={slidesPerView}>
         {articles?.map((item) => (
           <SwiperSlide key={item.id}>
-            <ArticleListItem data={item} />
+            <ArticleListItem className='article-list__item' data={item} />
           </SwiperSlide>
         ))}
         {isLoading && getSkeletons}

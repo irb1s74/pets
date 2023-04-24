@@ -1,7 +1,8 @@
 import { DefinePlugin, WebpackPluginInstance } from 'webpack'
-import { BuildOptions } from './buildTypes'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BuildOptions } from './buildTypes'
+
 
 export const buildPlugins = ({ paths, isDev, apiUrl }: BuildOptions): WebpackPluginInstance[] => {
   const plugins: WebpackPluginInstance[] = [

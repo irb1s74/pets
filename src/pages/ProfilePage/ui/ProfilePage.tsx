@@ -30,12 +30,12 @@ const ProfilePage = (props: ProfilePageProps) => {
         handleSelectForm={handleSelectForm}
       />
       {form === 'account' ? (
-        <AccountForm />
+        <AccountForm className='profile-page__account-form' />
       ) : form === 'setting' ? (
-        <SettingsForm />
+        <SettingsForm className='profile-page__setting-form' />
       ) : (
         <Suspense fallback=''>
-          <CreatePetForm />
+          <CreatePetForm className='profile-page__create-pet-form' />
         </Suspense>
       )}
     </div>

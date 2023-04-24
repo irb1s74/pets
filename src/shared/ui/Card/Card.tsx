@@ -4,11 +4,10 @@ import './Card.scss'
 
 interface CardProps {
   className?: string
-
   children: ReactNode
 }
 
 export const Card = memo((props: CardProps) => {
   const { className, children } = props
-  return <div className={classNames('Card', {}, [className])}>{children}</div>
+  return <div className={classNames('card', {}, [className])}>{children}</div>
 })
