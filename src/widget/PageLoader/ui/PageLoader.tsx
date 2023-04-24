@@ -28,9 +28,6 @@ export const PageLoader = memo((props: PageLoaderProps) => {
       transition={{
         duration: 0.75,
       }}
-      exit={{
-        opacity: 0,
-      }}
       className={classNames('page-loader', {}, [className])}
     >
       <div className='page-loader__container'>

@@ -17,14 +17,12 @@ export const Page = memo((props: PageProps) => {
 
   return (
     <motion.div
+      initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
       }}
       transition={{
         duration: 0.75,
-      }}
-      exit={{
-        opacity: 0,
       }}
       className={classNames('page', {}, [className])}
     >
