@@ -30,7 +30,7 @@ const ChatPage = (props: ChatPageProps) => {
   const selectedChat = useMemo(() => data?.find((chat) => chat.id === chatId), [chatId, data])
   if (width <= 1180) {
     return (
-      <div className={classNames('ChatPage', {}, [className])}>
+      <div className={classNames('chat-page', {}, [className])}>
         {slideMobile ? (
           <ChatMessenger handleSetMenu={handleSetMenu} chat={selectedChat} />
         ) : (
@@ -39,7 +39,7 @@ const ChatPage = (props: ChatPageProps) => {
             chatId={chatId}
             isLoading={isLoading}
             handleSetChatId={handleSetChatId}
-            className='ChatPage__menu'
+            className='chat-page__menu'
           />
         )}
       </div>
@@ -47,13 +47,13 @@ const ChatPage = (props: ChatPageProps) => {
   }
 
   return (
-    <div className={classNames('ChatPage', {}, [className])}>
+    <div className={classNames('chat-page', {}, [className])}>
       <ChatMenu
         chats={data}
         chatId={chatId}
         isLoading={isLoading}
         handleSetChatId={handleSetChatId}
-        className='ChatPage__menu'
+        className='chat-page__menu'
       />
       <ChatMessenger chat={selectedChat} />
     </div>

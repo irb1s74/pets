@@ -12,9 +12,9 @@ export const PetsFilterList = memo((props: PetsFilterListProps) => {
   const { data, isLoading } = useGetPetsQuery()
 
   return (
-    <div className={classNames('PetsFilterList', [className])}>
-      <PetTypeList className='PetsFilterList__filter' />
-      <PetGrid className='PetsFilterList__grid' data={data} isLoading={isLoading} />
+    <div className={classNames('pets-filter-list', [className])}>
+      <PetTypeList className='pets-filter-list__filter' />
+      <PetGrid className='pets-filter-list__grid' data={data} isLoading={isLoading} />
     </div>
   )
 })

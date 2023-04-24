@@ -21,16 +21,16 @@ const SignUpPage = () => {
   const { width } = useWindowDimensions()
 
   return (
-    <main className='SignUpPage'>
+    <main className='signup-page'>
       {width > 1240 && (
         <AppImage
           fallback={<Skeleton height={'100%'} width={selectImages.mw} />}
-          className='SignUpPage__image'
+          className='signup-page__image'
           src={selectImages.src}
           style={{ maxWidth: selectImages.mw }}
         />
       )}
-      <SignUpForm className='SignUpPage__form' />
+      <SignUpForm className='signup-page__form' />
     </main>
   )
 }

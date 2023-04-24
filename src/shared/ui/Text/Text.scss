@@ -1,65 +1,63 @@
-.Text {
-
-
+.text {
   p {
     padding: 0;
     margin: 0;
   }
-}
 
-.light {
-  font-weight: 300;
-}
+  &_light {
+    font-weight: 300;
+  }
 
-.normal {
-  font-weight: 400;
-}
+  &_normal {
+    font-weight: 400;
+  }
 
-.medium {
-  font-weight: 500;
-}
+  &_medium {
+    font-weight: 500;
+  }
 
-.semi {
-  font-weight: 600;
-}
+  &_semi {
+    font-weight: 600;
+  }
 
-.bold {
-  font-weight: 700;
-}
+  &_bold {
+    font-weight: 700;
+  }
 
-.left {
-  text-align: left;
-}
+  &_left {
+    text-align: left;
+  }
 
-.center {
-  text-align: center;
-}
+  &_center {
+    text-align: center;
+  }
 
-.right {
-  text-align: right;
-}
+  &_right {
+    text-align: right;
+  }
 
-.default {
-  color: inherit;
-}
+  &_default {
+    color: inherit;
+  }
 
 
-.primary {
-  color: var(--primary-color);
-}
+  &_primary {
+    color: var(--primary-color);
+  }
 
-.success {
-  color: var(--success-color);
-}
+  &_success {
+    color: var(--success-color);
+  }
 
-.gray {
-  color: var(--gray-color);
-}
+  &_gray {
+    color: var(--gray-color);
+  }
 
-.dark {
-  color: var(--light-dark);
-}
+  &_dark {
+    color: var(--light-dark);
+  }
 
-.danger {
-  color: var(--danger-color);
+  &_danger {
+    color: var(--danger-color);
+  }
 }

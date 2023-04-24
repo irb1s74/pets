@@ -1,4 +1,4 @@
-.ChatContent {
+.chat-content {
   width: 100%;
   height: 100%;
   padding: 15px 30px;
@@ -14,15 +14,16 @@
     width: 100%;
     margin-bottom: 23px;
 
-    &-fromUser {
+    &_from-user {
       justify-content: flex-end;
-      .ChatContent__content {
+
+      .chat-content__content {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
       }
 
-      .ChatContent__text {
+      .chat-content__text {
         padding: 12px;
         background: var(--primary-color);
         border-radius: 13px 13px 0 13px;

@@ -11,11 +11,11 @@ interface ChatEmptyProps {
 export const ChatEmpty = memo((props: ChatEmptyProps) => {
   const { className } = props
   return (
-    <div className={classNames('ChatEmpty', {}, [className])}>
-      <div className='ChatEmpty__icon'>
+    <div className={classNames('chat-empty', {}, [className])}>
+      <div className='chat-empty__icon'>
         <Chats />
       </div>
-      <div className='ChatEmpty__text'>
+      <div className='chat-empty__text'>
         <Text align='center' size={18} text='Выберите чат или' />
         <Text weight='bold' align='center' size={18} text='создайте новую беседу' />
       </div>

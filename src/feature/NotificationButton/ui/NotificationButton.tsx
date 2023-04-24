@@ -11,9 +11,9 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
   const { className } = props
 
   return (
-    <div className={classNames('NotificationButton', {}, [className])}>
-      <Alert className='NotificationButton__icon' />
-      <span className='NotificationButton__span' />
+    <div className={classNames('notification-button', {}, [className])}>
+      <Alert className='notification-button__icon' />
+      <span className='notification-button__span' />
     </div>
   )
 })

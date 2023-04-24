@@ -15,16 +15,16 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   const { className, data } = props
 
   return (
-    <div className={classNames('ArticleListItem', {}, [className])}>
-      <div className='ArticleListItem__header'>
+    <div className={classNames('article-list-item', {}, [className])}>
+      <div className='article-list-item__header'>
         <Avatar src={data.avatar} alt={data.author} size={48} />
-        <div className='ArticleListItem__title'>
+        <div className='article-list-item__title'>
           <Text weight='bold' size={16} text={data.author} />
-          <Text className='ArticleListItem__status' size={14} text={data.status} />
+          <Text className='article-list-item__status' size={14} text={data.status} />
         </div>
-        <Text className='ArticleListItem__time' text={dayjs(data.time).format(' HH:mm')} />
+        <Text className='article-list-item__time' text={dayjs(data.time).format(' HH:mm')} />
       </div>
-      <div className='ArticleListItem__content'>
+      <div className='article-list-item__content'>
         <Text size={14} text={data.body} />
       </div>
     </div>

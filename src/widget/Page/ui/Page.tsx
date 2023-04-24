@@ -26,10 +26,10 @@ export const Page = memo((props: PageProps) => {
       exit={{
         opacity: 0,
       }}
-      className={classNames('Page', {}, [className])}
+      className={classNames('page', {}, [className])}
     >
       <Sidebar />
-      <div className='Page__container'>
+      <div className='page__container'>
         <Header useGoBack={useGoBack} pageTitle={title} />
         {children}
       </div>

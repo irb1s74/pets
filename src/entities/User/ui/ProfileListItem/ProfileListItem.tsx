@@ -15,21 +15,21 @@ export const ProfileListItem = memo((props: ProfileListItemProps) => {
   const { className, icon, name, onClick, active } = props
 
   const mod = {
-    ['ProfileListItem-active']: active,
+    ['profile-list-item_active']: active,
   }
 
   return (
-    <div onClick={onClick} className={classNames('ProfileListItem', mod, [className])}>
+    <div onClick={onClick} className={classNames('profile-list-item', mod, [className])}>
       <div
-        className={classNames('ProfileListItem__icon', {
-          ['ProfileListItem__icon-active']: active,
+        className={classNames('profile-list-item__icon', {
+          ['profile-list-item__icon_active']: active,
         })}
       >
         {icon}
       </div>
       <Text
-        className={classNames('ProfileListItem__name', {
-          ['ProfileListItem__name-active']: active,
+        className={classNames('profile-list-item__name', {
+          ['profile-list-item__name_active']: active,
         })}
         size={18}
         weight='bold'

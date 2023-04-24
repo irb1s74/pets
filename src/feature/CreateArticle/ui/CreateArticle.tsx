@@ -28,25 +28,25 @@ export const CreateArticle = memo((props: CreateArticleProps) => {
     filesInput.current.click()
   }
   return (
-    <div className={classNames('CreateArticle', {}, [className])}>
+    <div className={classNames('create-article', {}, [className])}>
       <Avatar src={user.avatar} alt={user.username} size={32} />
-      <div className='CreateArticle__content'>
+      <div className='create-article__content'>
         <textarea rows={4} placeholder='Что у вас нового?' />
       </div>
-      <div className='CreateArticle__images'>
+      <div className='create-article__images'>
         {previewImages ? (
           <>
             {previewImages.map((img, index) => (
-              <div className='CreateArticle__img' key={index}>
+              <div className='create-article__img' key={index}>
                 <AppImage src={img} />
               </div>
             ))}
-            <div onClick={handleSelectFiles} className='CreateArticle__btn'>
+            <div onClick={handleSelectFiles} className='create-article__btn'>
               +
             </div>
           </>
         ) : (
-          <div onClick={handleSelectFiles} className='CreateArticle__icon'>
+          <div onClick={handleSelectFiles} className='create-article__icon'>
             <Photo />
           </div>
         )}

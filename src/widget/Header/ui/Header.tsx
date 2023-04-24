@@ -28,11 +28,11 @@ export const Header = (props: HeaderProps) => {
   const { width } = useWindowDimensions()
 
   return (
-    <header className={classNames('Header', {}, [className])}>
+    <header className={classNames('header', {}, [className])}>
       {width > 768 ? (
-        <div className='Header__title'>
+        <div className='header__title'>
           {useGoBack && (
-            <div onClick={handleGoBack} className='Header__arrow'>
+            <div onClick={handleGoBack} className='header__arrow'>
               <Arrow />
             </div>
           )}
@@ -41,9 +41,9 @@ export const Header = (props: HeaderProps) => {
       ) : (
         <SidebarMobile />
       )}
-      <div className='Header__actions'>
-        <ThemeSwitcher className='Header__switcher' />
-        <NotificationButton className='Header__alertBtn' />
+      <div className='header__actions'>
+        <ThemeSwitcher className='header__switcher' />
+        <NotificationButton className='header__alert-btn' />
         <Avatar size={45} src={user?.avatar} alt={user?.username} online={true} />
       </div>
     </header>

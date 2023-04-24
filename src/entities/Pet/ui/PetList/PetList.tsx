@@ -21,18 +21,18 @@ export const PetList = memo((props: PetListProps) => {
     () =>
       new Array(2).fill(0).map((item, index) => (
         <SwiperSlide key={index}>
-          <PetListItemSkeleton className='PetList__item' />
+          <PetListItemSkeleton className='pet-list__item' />
         </SwiperSlide>
       )),
     [],
   )
 
   return (
-    <div className={classNames('PetList', {}, [className])}>
+    <div className={classNames('pet-list', {}, [className])}>
       <Swiper spaceBetween={20} slidesPerView={slidesPerView}>
         {data?.map((item) => (
           <SwiperSlide key={item.id}>
-            <PetListItem className='PetList__item' data={item} />
+            <PetListItem className='pet-list__item' data={item} />
           </SwiperSlide>
         ))}
         {isLoading && getSkeletons}

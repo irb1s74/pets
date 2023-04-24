@@ -18,16 +18,16 @@ export const Avatar = memo(
     const backgroundColor = useMemo(() => {
       const altToLower = alt.toLowerCase()
       return altToLower < 'd'
-        ? 'green'
+        ? 'avatar_green'
         : altToLower < 'h'
-        ? 'cyan'
+        ? 'avatar_cyan'
         : altToLower < 'l'
-        ? 'indigo'
+        ? 'avatar_indigo'
         : altToLower < 'p'
-        ? 'amber'
+        ? 'avatar_amber'
         : altToLower < 't'
-        ? 'purple'
-        : 'pink'
+        ? 'avatar_purple'
+        : 'avatar_pink'
     }, [alt])
 
     const mods = {
@@ -67,9 +67,9 @@ export const Avatar = memo(
     )
 
     return (
-      <div className={classNames('Avatar', mods, [className])} style={stylesAvatar}>
+      <div className={classNames('avatar', mods, [className])} style={stylesAvatar}>
         <AppImage fallback={fallback} errorFallback={errorFallback} src={src} alt={alt} />
-        {online && <span className={'Avatar-online'} />}
+        {online && <span className='avatar_online' />}
       </div>
     )
   },

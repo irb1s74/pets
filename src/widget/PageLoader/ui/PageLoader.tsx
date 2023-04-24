@@ -12,11 +12,11 @@ export const PageLoader = memo((props: PageLoaderProps) => {
   const { className } = props
   const [posNum, setPostNum] = useState(0)
 
-  function walk() {
+  const walk = () => {
     setPostNum((prevState) => (prevState === 6 ? 0 : prevState + 1))
   }
-
   setTimeout(walk, 500)
+
   return (
     <motion.div
       initial={{
@@ -31,10 +31,12 @@ export const PageLoader = memo((props: PageLoaderProps) => {
       exit={{
         opacity: 0,
       }}
-      className={classNames('PageLoader', {}, [className])}
+      className={classNames('page-loader', {}, [className])}
     >
-      <div className='PageLoader__container'>
-        <Pet className={classNames('PageLoader__pet', { [`pos${posNum}`]: true })} />
+      <div className='page-loader__container'>
+        <Pet
+          className={classNames('page-loader__pet', { [`page-loader__pet_pos${posNum}`]: true })}
+        />
       </div>
     </motion.div>
   )

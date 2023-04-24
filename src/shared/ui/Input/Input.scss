@@ -1,6 +1,6 @@
 $trans-time: 300ms;
 
-.Input {
+.input {
   position: relative;
   max-width: 240px;
   max-height: 50px;
@@ -25,16 +25,16 @@ $trans-time: 300ms;
       outline: none;
     }
 
-    &:focus ~ .Input__label {
+    &:focus ~ .input__label {
       top: -3px;
       font-size: 10px;
     }
 
-    &:focus ~ .Input__bar:before {
+    &:focus ~ .input__bar:before {
       width: 100%;
     }
 
-    &:not(:placeholder-shown) ~ .Input__label {
+    &:not(:placeholder-shown) ~ .input__label {
       top: -3px;
       font-size: 10px;
     }
@@ -77,23 +77,24 @@ $trans-time: 300ms;
     line-height: 12px;
   }
 
-  &-invalid {
-    .Input__label {
+  //mods
+  &_invalid {
+    .input__label {
       color: var(--danger-color);
     }
 
-    .Input__bar:before {
+    .input__bar:before {
       width: 100%;
       background: var(--danger-color);
     }
   }
 
-  &-success {
-    .Input__label {
+  &_success {
+    .input__label {
       color: var(--success-color);
     }
 
-    .Input__bar:before {
+    .input__bar:before {
       width: 100%;
       background: var(--success-color);
     }

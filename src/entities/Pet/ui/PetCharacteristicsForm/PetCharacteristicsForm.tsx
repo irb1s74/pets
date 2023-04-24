@@ -13,17 +13,17 @@ interface PetCharacteristicsFormProps {
 export const PetCharacteristicsForm = memo((props: PetCharacteristicsFormProps) => {
   const { className } = props
   return (
-    <form className={classNames('PetСharacteristicsForm', {}, [className])}>
+    <form className={classNames('pet-characteristics-form', {}, [className])}>
       <Text
-        className='PetСharacteristicsForm__title'
+        className='pet-characteristics-form__title'
         text='Давайте узнаем больше о вашем питомце'
       />
-      <Text className='PetСharacteristicsForm__subtitle' text='Ваш питомец...' />
-      <div className='PetСharacteristicsForm__config'>
+      <Text className='pet-characteristics-form__subtitle' text='Ваш питомец...' />
+      <div className='pet-characteristics-form__config'>
         <PetTypeList />
-        <div className='PetСharacteristicsForm__inputs'>
+        <div className='pet-characteristics-form__inputs'>
           <Select
-            className='PetСharacteristicsForm__full'
+            className='pet-characteristics-form__full'
             options={[
               { value: 'Макрочел', label: 'Макрочел' },
               { value: 'Гигачел', label: 'Гигачел' },
@@ -33,10 +33,10 @@ export const PetCharacteristicsForm = memo((props: PetCharacteristicsFormProps) 
             ]}
             label='Порода'
           />
-          <Input className='PetСharacteristicsForm__input' label='Дата рождения' type='date' />
-          <Input className='PetСharacteristicsForm__input' label='Вес, кг' type='number' />
-          <Input className='PetСharacteristicsForm__input' label='Страна' />
-          <Input className='PetСharacteristicsForm__input' label='Город' />
+          <Input className='pet-characteristics-form__input' label='Дата рождения' type='date' />
+          <Input className='pet-characteristics-form__input' label='Вес, кг' type='number' />
+          <Input className='pet-characteristics-form__input' label='Страна' />
+          <Input className='pet-characteristics-form__input' label='Город' />
         </div>
       </div>
     </form>

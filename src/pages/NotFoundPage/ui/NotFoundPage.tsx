@@ -34,16 +34,21 @@ export const NotFoundPage = () => {
 
   return (
     <Page title='404'>
-      <div className='NotFoundPage'>
-        <img className='NotFoundPage__image' src={selectImages.src} alt='dragon' />
+      <div className='not-found-page'>
+        <img className='not-found-page__image' src={selectImages.src} alt='dragon' />
         <Text
-          className='NotFoundPage__text'
+          className='not-found-page__text'
           align='center'
           text={selectImages.title}
           size={48}
           weight='bold'
         />
-        <Text className='NotFoundPage__subtext' align='center' size={24} text={selectImages.text} />
+        <Text
+          className='not-found-page__subtext'
+          align='center'
+          size={24}
+          text={selectImages.text}
+        />
       </div>
     </Page>
   )

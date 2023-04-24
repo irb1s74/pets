@@ -6,7 +6,7 @@ import './LaunchPage.scss'
 export const LaunchPage = () => {
   return (
     <motion.div
-      className='LaunchPage'
+      className='launch-page'
       initial={{
         opacity: 0,
       }}
@@ -20,8 +20,8 @@ export const LaunchPage = () => {
         opacity: 0,
       }}
     >
-      <Logo className='LaunchPage__logo' size='large' />
-      <Text className='LaunchPage__text' text='Pets' weight='bold' />
+      <Logo className='launch-page__logo' size='large' />
+      <Text className='launch-page__text' text='Pets' weight='bold' />
     </motion.div>
   )
 }

@@ -26,10 +26,10 @@ export const Sidebar = memo((props: SidebarProps) => {
   }
 
   return (
-    <div className={classNames('Sidebar', {}, [className])}>
-      <Logo className='Sidebar__logo' />
+    <div className={classNames('sidebar', {}, [className])}>
+      <Logo className='sidebar__logo' />
       <SidebarNav />
-      <div onClick={handleLogout} className='Sidebar__logoutBtn'>
+      <div onClick={handleLogout} className='sidebar__logout-btn'>
         <Logout />
       </div>
     </div>

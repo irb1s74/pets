@@ -14,16 +14,16 @@ export const CreatePetFooter = memo((props: CreatePetFooterProps) => {
   const { className, onWards, activeStep, onBack } = props
 
   return (
-    <div className={classNames('CreatePetFooter', {}, [className])}>
+    <div className={classNames('create-pet-footer', {}, [className])}>
       {activeStep > 1 && activeStep < 4 && (
-        <Button onClick={onBack} className='CreatePetFooter__btn'>
+        <Button onClick={onBack} className='create-pet-footer__btn'>
           Назад
         </Button>
       )}
       <Button
-        className={classNames('CreatePetFooter__btn', {
-          ['CreatePetFooter__btn-right']: activeStep < 3,
-          ['CreatePetFooter__btn-auto']: activeStep > 3,
+        className={classNames('create-pet-footer__btn', {
+          ['create-pet-footer__btn_right']: activeStep < 3,
+          ['create-pet-footer__btn_auto']: activeStep > 3,
         })}
         onClick={onWards}
       >

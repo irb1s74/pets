@@ -1,4 +1,4 @@
-.PetListItem {
+.pet-list-item {
   //max-height: 360px;
   height: 100%;
   width: 100%;
@@ -52,7 +52,6 @@
       white-space: pre-wrap;
       overflow: hidden;
       text-overflow: ellipsis;
-
     }
   }
 
@@ -64,12 +63,12 @@
     justify-content: center;
   }
 
-  &__countLikes {
+  &__count-likes {
     white-space: nowrap;
     margin-right: 5px;
   }
 
-  &__iconBtn {
+  &__icon-btn {
     width: 22px;
     height: 22px;
     display: flex;

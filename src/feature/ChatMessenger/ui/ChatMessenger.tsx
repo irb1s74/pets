@@ -14,9 +14,9 @@ export const ChatMessenger = memo((props: ChatMessengerProps) => {
   const { className, chat, handleSetMenu } = props
 
   return (
-    <div className={classNames('ChatMessenger', {}, [className])}>
+    <div className={classNames('chat-messenger', {}, [className])}>
       {chat ? (
-        <div className='ChatMessenger__container'>
+        <div className='chat-messenger__container'>
           <ChatHeader handleSetMenu={handleSetMenu} title={chat.title} />
           <ChatContent messages={chat.messages} />
           <ChatFooter />

@@ -31,14 +31,14 @@ export const ChatRecommendationList = memo((props: ChatRecommendationListProps) 
   const countUsers = useMemo(() => (width > 1680 ? 5 : 3), [width])
 
   return (
-    <div className={classNames('ChatRecommendationList', {}, [className])}>
-      <div className='ChatRecommendationList__users'>
+    <div className={classNames('chat-recommendation-list', {}, [className])}>
+      <div className='chat-recommendation-list__users'>
         {chats && (
           <>
             {chats.slice(0, countUsers).map((chat) => (
               <Avatar key={chat.id} size={60} src={chat.avatar} alt={chat.title} />
             ))}
-            <div className='ChatRecommendationList__icon'>
+            <div className='chat-recommendation-list__icon'>
               <Text align='center' text='+' />
             </div>
           </>

@@ -24,22 +24,22 @@ const StartPage = () => {
   }, [navigate, user])
 
   return (
-    <div className='StartPage'>
-      <div className='StartPage__wrapper'>
+    <div className='start-page'>
+      <div className='start-page__wrapper'>
         <Logo size='large' />
-        <Text className='StartPage__name' text='Pets' size={34} weight='bold' />
+        <Text className='start-page__name' text='Pets' size={34} weight='bold' />
         <Text
-          className='StartPage__description'
+          className='start-page__description'
           text='Лапки. Ушки. Хвостик и доза любви'
           size={20}
           weight='medium'
           align='center'
         />
         <Button onClick={handleClick}>Войти</Button>
-        <Text className='StartPage__question' text='У вас ещё нет аккаунта?' size={18} />
+        <Text className='start-page__question' text='У вас ещё нет аккаунта?' size={18} />
         <AppLink to={getRouteSignUp()}>
           <Text
-            className='StartPage__linkToSigIn'
+            className='start-page__linkToSigIn'
             text='Зарегистрироваться'
             size={18}
             weight='bold'

@@ -1,4 +1,4 @@
-.SettingsForm {
+.settings-form {
   max-width: 410px;
   max-height: 339px;
   height: 100%;
@@ -15,7 +15,7 @@
     margin-bottom: 20px;
   }
 
-  &__groupInputs {
+  &__group-inputs {
     margin-bottom: 25px;
 
     & > * {
@@ -26,6 +26,7 @@
       }
     }
   }
+
   &__input {
     display: flex;
     align-items: center;

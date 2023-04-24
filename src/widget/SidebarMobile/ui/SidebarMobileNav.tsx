@@ -30,33 +30,33 @@ export const SidebarMobileNav = memo((props: Props) => {
   }
 
   return (
-    <div className={classNames('SidebarMobile__nav', {}, [className])}>
-      <div onClick={handleToNavigate(getRouteMain())} className='SidebarMobile__item'>
-        <div className='SidebarMobile__itemIcon'>
+    <div className={classNames('sidebar-mobile__nav', {}, [className])}>
+      <div onClick={handleToNavigate(getRouteMain())} className='sidebar-mobile__item'>
+        <div className='sidebar-mobile__item-icon'>
           <Home />
         </div>
         <Text weight='bold' size={16} text='Home' />
       </div>
-      <div onClick={handleToNavigate(getRoutePets())} className='SidebarMobile__item'>
-        <div className='SidebarMobile__itemIcon'>
+      <div onClick={handleToNavigate(getRoutePets())} className='sidebar-mobile__item'>
+        <div className='sidebar-mobile__item-icon'>
           <Pets />
         </div>
         <Text weight='bold' size={16} text='Pets' />
       </div>
-      <div onClick={handleToNavigate(getRouteBlog())} className='SidebarMobile__item'>
-        <div className='SidebarMobile__itemIcon'>
+      <div onClick={handleToNavigate(getRouteBlog())} className='sidebar-mobile__item'>
+        <div className='sidebar-mobile__item-icon'>
           <Blog />
         </div>
         <Text weight='bold' size={16} text='Blog' />
       </div>
-      <div onClick={handleToNavigate(getRouteChat())} className='SidebarMobile__item'>
-        <div className='SidebarMobile__itemIcon'>
+      <div onClick={handleToNavigate(getRouteChat())} className='sidebar-mobile__item'>
+        <div className='sidebar-mobile__item-icon'>
           <Chat />
         </div>
         <Text weight='bold' size={16} text='Chat' />
       </div>
-      <div onClick={handleToNavigate(getRouteProfile())} className='SidebarMobile__item'>
-        <div className='SidebarMobile__itemIcon'>
+      <div onClick={handleToNavigate(getRouteProfile())} className='sidebar-mobile__item'>
+        <div className='sidebar-mobile__item-icon'>
           <Person />
         </div>
         <Text weight='bold' size={16} text='Person' />

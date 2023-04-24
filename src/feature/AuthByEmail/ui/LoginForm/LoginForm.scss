@@ -1,4 +1,4 @@
-.LoginForm {
+.login-form {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@
     margin-top: 10px;
   }
 
-  &__form {
+  &__content {
     display: flex;
     flex-direction: column;
     max-width: 325px;
@@ -26,11 +26,11 @@
     margin-top: 20px;
   }
 
-  &__signUpLink {
+  &__signup-link {
     margin-top: 5px;
   }
 
-  &__linkToChgPass {
+  &__link-pass {
     margin-top: 10px;
     margin-bottom: 30px;
   }

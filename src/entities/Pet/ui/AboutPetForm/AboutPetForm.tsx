@@ -23,21 +23,19 @@ export const AboutPetForm = memo((props: AboutPetFormProps) => {
     },
     // validationSchema: CreateValidationSchema,
     isInitialValid: false,
-    onSubmit: async (values) => {
-      console.log(values)
-    },
+    onSubmit: (values) => console.log(values),
   })
   return (
-    <form onSubmit={formik.handleSubmit} className={classNames('AboutPetForm', {}, [className])}>
+    <form onSubmit={formik.handleSubmit} className={classNames('about-pet-form', {}, [className])}>
       <Text
-        className='CreatePetForm__title'
+        className='about-pet-form__title'
         size={20}
         text='Давайте узнаем немного о вашем питомце?'
       />
-      <div className='AboutPetForm__groupInputSwitch'>
+      <div className='about-pet-form__group-input-switch'>
         <Input
           id='name'
-          className='AboutPetForm__inputFullWidth'
+          className='about-pet-form__input-full-width'
           label='Имя питомца'
           onChange={formik.handleChange}
           error={formik.touched.name && Boolean(formik.errors.name)}
@@ -48,12 +46,12 @@ export const AboutPetForm = memo((props: AboutPetFormProps) => {
       <Input
         id='about'
         onChange={formik.handleChange}
-        className='AboutPetForm__textarea'
+        className='about-pet-form__textarea'
         label='Опишите вашего питомца'
       />
       <Text text='С какой целью выкладываете питомца?' size={14} />
-      <div className='AboutPetForm__groupRadio'>
-        <div className='AboutPetForm__radio'>
+      <div className='about-pet-form__group-radio'>
+        <div className='about-pet-form__radio'>
           <Radio
             id='goal'
             onChange={formik.handleChange}
@@ -62,7 +60,7 @@ export const AboutPetForm = memo((props: AboutPetFormProps) => {
           />
           <Text weight='semi' size={10} text='Просто показываю' />
         </div>
-        <div className='AboutPetForm__radio'>
+        <div className='about-pet-form__radio'>
           <Radio
             id='goal'
             onChange={formik.handleChange}
@@ -71,7 +69,7 @@ export const AboutPetForm = memo((props: AboutPetFormProps) => {
           />
           <Text weight='semi' size={10} text='Отдаю в добрые руки' />
         </div>
-        <div className='AboutPetForm__radio'>
+        <div className='about-pet-form__radio'>
           <Radio
             id='goal'
             onChange={formik.handleChange}

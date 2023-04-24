@@ -26,11 +26,9 @@ const LoginForm = memo((props: LoginFormProps) => {
       email: '',
       password: '',
     },
-
     validationSchema: LoginValidationSchema,
     validateOnMount: true,
     onSubmit: async (values) => {
-      console.log(values)
       setError('')
       const result = await dispatch(loginByEmail(values))
       if (result.payload === 'error') {
@@ -40,18 +38,18 @@ const LoginForm = memo((props: LoginFormProps) => {
   })
 
   return (
-    <div className={classNames('LoginForm', {}, [className])}>
-      <form onSubmit={formik.handleSubmit} className='LoginForm__form'>
+    <div className={classNames('login-form', {}, [className])}>
+      <form onSubmit={formik.handleSubmit} className='login-form__content'>
         <Logo size='medium' />
-        <Text className='LoginForm__title' size={30} weight='medium' text='Вход' />
+        <Text className='login-form__title' size={30} weight='medium' text='Вход' />
         <Text
-          className='LoginForm__subtitle'
+          className='login-form__subtitle'
           size={18}
           text='Войдите в систему сейчас, чтобы  получить доступ к вашим питомцам'
         />
         <Input
           id='email'
-          className='LoginForm__input'
+          className='login-form__input'
           label='Почта'
           type='email'
           value={formik.values.email}
@@ -61,7 +59,7 @@ const LoginForm = memo((props: LoginFormProps) => {
         />
         <Input
           id='password'
-          className='LoginForm__input'
+          className='login-form__input'
           type='password'
           label='Пароль'
           value={formik.values.password}
@@ -69,7 +67,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
         />
-        <AppLink className='LoginForm__linkToChgPass' to=''>
+        <AppLink className='login-form__link-pass' to=''>
           <Text align='right' text='Забыли пароль?' size={14} />
         </AppLink>
         <Button disabled={!formik.isValid} isLoading={formik.isSubmitting} type='submit'>
@@ -77,12 +75,12 @@ const LoginForm = memo((props: LoginFormProps) => {
         </Button>
         {error && <Text align='center' text={error} color='danger' />}
         <Text
-          className='LoginForm__question'
+          className='login-form__question'
           align='center'
           size={18}
           text='У вас ещё нет аккаунта?'
         />
-        <AppLink className='LoginForm__signUpLink' to={getRouteSignUp()}>
+        <AppLink className='login-form__signup-link' to={getRouteSignUp()}>
           <Text align='center' size={18} weight='bold' text='Зарегистрироваться' />
         </AppLink>
       </form>

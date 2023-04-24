@@ -19,7 +19,7 @@ const getSkeletons = () =>
 export const ChatList = memo((props: ChatListProps) => {
   const { className, chats, isLoading, chatId, handleSetChatId } = props
   return (
-    <div className={classNames('ChatList', {}, [className])}>
+    <div className={classNames('chat-list', {}, [className])}>
       {chats?.map((chat) => (
         <ChatListItem
           key={chat.id}

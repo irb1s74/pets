@@ -18,12 +18,12 @@ export const ArticleContent = memo((props: ArticleContentProps) => {
   const isHaveImages = article.images && article.images.length
 
   return (
-    <div className={classNames('ArticleContent', {}, [className])}>
-      <div className='ArticleContent__text'>
+    <div className={classNames('article-content', {}, [className])}>
+      <div className='article-content__text'>
         <Text text={article?.body} />
       </div>
       {isHaveImages && (
-        <div className='ArticleContent__images'>
+        <div className='article-content__images'>
           {article.images.map((img, index) => (
             <div key={index}>
               <AppImage
@@ -34,17 +34,17 @@ export const ArticleContent = memo((props: ArticleContentProps) => {
           ))}
         </div>
       )}
-      <div className='ArticleContent__stats'>
-        <div className='ArticleContent__stat'>
+      <div className='article-content__stats'>
+        <div className='article-content__stat'>
           <Heart />
           <Text text='324' />
         </div>
-        <div className='ArticleContent__stat'>
+        <div className='article-content__stat'>
           <Comment />
           <Text text='324' />
         </div>
       </div>
-      <div className='ArticleContent__divider' />
+      <div className='article-content__divider' />
     </div>
   )
 })

@@ -12,13 +12,13 @@ const PetDetailsPage = (props: PetDetailsPageProps) => {
   const { id } = useParams<{ id: string }>()
   const { data, isLoading } = useGetPetQuery(id)
   return (
-    <div className={classNames('PetDetailsPage', {}, [className])}>
+    <div className={classNames('pet-details-page', {}, [className])}>
       <PetImageSwiper
-        className='PetDetailsPage__image'
+        className='pet-details-page__image'
         images={data?.images}
         isLoading={isLoading}
       />
-      <PetDetails className='PetDetailsPage__details' data={data} isLoading={isLoading} />
+      <PetDetails className='pet-details-page__content' data={data} isLoading={isLoading} />
     </div>
   )
 }

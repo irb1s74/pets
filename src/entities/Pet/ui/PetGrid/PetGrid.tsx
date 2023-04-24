@@ -18,14 +18,14 @@ export const PetGrid = memo((props: PetGridProps) => {
     () =>
       new Array(8)
         .fill(0)
-        .map((item, index) => <PetListItemSkeleton className='PetGrid__item' key={index} />),
+        .map((item, index) => <PetListItemSkeleton className='pet-grid__item' key={index} />),
     [],
   )
 
   return (
-    <div className={classNames('PetGrid', {}, [className])}>
+    <div className={classNames('pet-grid', {}, [className])}>
       {data?.map((pet) => (
-        <PetListItem className='PetGrid__item' key={pet.id} data={pet} />
+        <PetListItem className='pet-grid__item' key={pet.id} data={pet} />
       ))}
       {isLoading && getSkeletons}
     </div>

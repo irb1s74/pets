@@ -7,14 +7,14 @@ import './MainPage.scss'
 
 const MainPage = () => {
   return (
-    <div className='MainPage'>
-      <UserGreetings className='MainPage__greetings' />
-      <UserProgress className='MainPage__userProgress' />
-      <UserTime className='MainPage__dataTime' />
-      <ArticleRecommendationsList className='MainPage__articles' />
-      <PetsRecommendationsList className='MainPage__pets' />
-      <ChatRecommendationList className='MainPage__chats' />
-      <PetsStatisticList className='MainPage__petStats' />
+    <div className='main-page'>
+      <UserGreetings className='main-page__greetings' />
+      <UserProgress className='main-page__user-progress' />
+      <UserTime className='main-page__data-time' />
+      <ArticleRecommendationsList className='main-page__articles' />
+      <PetsRecommendationsList className='main-page__pets' />
+      <ChatRecommendationList className='main-page__chats' />
+      <PetsStatisticList className='main-page__pet-stats' />
     </div>
   )
 }

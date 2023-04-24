@@ -9,7 +9,7 @@ interface PetsPageProps {
 const PetsPage = (props: PetsPageProps) => {
   const { className } = props
   return (
-    <div className={classNames('PetsPage', {}, [className])}>
+    <div className={classNames('pets-page', {}, [className])}>
       <PetsFilterList />
     </div>
   )

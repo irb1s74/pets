@@ -17,18 +17,18 @@ export const UserGreetings = memo((props: UserGreetingsProps) => {
 
   const { className } = props
   return (
-    <div className={classNames('UserGreetings', {}, [className])}>
-      <div className='UserGreetings__texts'>
+    <div className={classNames('user-greetings', {}, [className])}>
+      <div className='user-greetings__texts'>
         <Text size={24} weight='medium' text={`С возвращением, ${user.username}`} />
         <Text
-          className='UserGreetings__firstRecommendation'
+          className='user-greetings__first-recommendation'
           size={16}
           text='Не забудь покормить своего питомца'
         />
-        <Text className='UserGreetings__secondRecommendation' size={16} text='Хорошего дня!' />
+        <Text className='user-greetings__second-recommendation' size={16} text='Хорошего дня!' />
       </div>
       <AppImage src={HumanWithDog} />
-      <AppImage className='UserGreetings__background' src={BackElements} />
+      <AppImage className='user-greetings__background' src={BackElements} />
     </div>
   )
 })

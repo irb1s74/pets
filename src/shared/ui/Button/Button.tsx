@@ -31,19 +31,19 @@ export const Button = memo((props: ButtonProps) => {
   } = props
 
   const mods = {
-    [size]: true,
-    [variant]: true,
-    ['Button-loading']: isLoading,
+    [`button_${size}`]: true,
+    [`button_${variant}`]: true,
+    ['button_loading']: isLoading,
   }
 
   return (
     <button
       type='button'
-      className={classNames('Button', mods, [className])}
+      className={classNames('button', mods, [className])}
       disabled={disabled}
       {...otherProps}
     >
-      {isLoading ? <span className='loader' /> : children}
+      {isLoading ? <span className='button__loader' /> : children}
     </button>
   )
 })
