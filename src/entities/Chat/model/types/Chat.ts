@@ -1,10 +1,7 @@
-import { Message } from './Message'
+import { User } from 'entities/User'
 
 export interface Chat {
   id: number
-  title: string
-  avatar: string
-  lastMessage: string
-  date: string
-  messages: Message[]
+  createdAt: string
+  users: User[]
 }

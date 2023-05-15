@@ -1,11 +1,12 @@
 import { rtkApi } from 'shared/api/rtkApi'
 import { Chat } from '../model/types/Chat'
+import { User } from 'entities/User'
 
 const articleService = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     getChats: build.query<Chat[], void>({
       query: () => ({
-        url: 'chats',
+        url: 'chat',
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
@@ -17,9 +18,9 @@ const articleService = rtkApi.injectEndpoints({
         { type: 'Chats' as const, id: 'LIST' },
       ],
     }),
-    getChat: build.query<Chat[], number>({
+    getChatMessages: build.query<Chat[], number>({
       query: (chatId) => ({
-        url: `chats/${chatId}`,
+        url: `chat/${chatId}`,
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
@@ -28,7 +29,39 @@ const articleService = rtkApi.injectEndpoints({
       }),
       providesTags: (_result, _err, id) => [{ type: 'Chats', id }],
     }),
+    findUsers: build.query<User[], string>({
+      query: (username) => ({
+        url: 'user/find',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: {
+          username,
+        },
+        method: 'POST',
+      }),
+    }),
+    createDialog: build.mutation<Chat, number>({
+      query: (secondId) => ({
+        url: 'chat/create',
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        body: {
+          secondId,
+        },
+        method: 'POST',
+        invalidatesTags: [{ type: 'Chats', id: 'LIST' }],
+      }),
+    }),
   }),
 })
 
-export const { useGetChatsQuery, useGetChatQuery } = articleService
+export const {
+  useGetChatsQuery,
+  useGetChatMessagesQuery,
+  useLazyFindUsersQuery,
+  useCreateDialogMutation,
+} = articleService

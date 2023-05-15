@@ -24,13 +24,13 @@ export const ChatContent = memo((props: ChatContentProps) => {
             key={message.id}
             className={classNames(
               'chat-content__message',
-              { ['chat-content__message_from-user']: message.author.id === user.id },
+              { ['chat-content__message_from-user']: message.userId === user.id },
               [],
             )}
           >
             <div className='chat-content__content'>
               <Text className='chat-content__text' size={14} text={message.content} />
-              <Text color='gray' size={10} text={dayjs(message.date).format('hh:mm')} />
+              <Text color='gray' size={10} text={dayjs(message.createdAt).format('hh:mm')} />
             </div>
           </div>
         ))}

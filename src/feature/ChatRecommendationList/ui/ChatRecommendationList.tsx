@@ -36,7 +36,12 @@ export const ChatRecommendationList = memo((props: ChatRecommendationListProps) 
         {chats && (
           <>
             {chats.slice(0, countUsers).map((chat) => (
-              <Avatar key={chat.id} size={60} src={chat.avatar} alt={chat.title} />
+              <Avatar
+                key={chat.id}
+                size={60}
+                src={chat.users[0].avatar}
+                alt={chat.users[0].username}
+              />
             ))}
             <div className='chat-recommendation-list__icon'>
               <Text align='center' text='+' />

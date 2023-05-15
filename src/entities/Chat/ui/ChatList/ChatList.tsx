@@ -18,12 +18,13 @@ const getSkeletons = () =>
 
 export const ChatList = memo((props: ChatListProps) => {
   const { className, chats, isLoading, chatId, handleSetChatId } = props
+
   return (
     <div className={classNames('chat-list', {}, [className])}>
       {chats?.map((chat) => (
         <ChatListItem
           key={chat.id}
-          chat={chat}
+          data={chat}
           onClick={handleSetChatId}
           active={chatId === chat.id}
         />

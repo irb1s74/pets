@@ -17,11 +17,11 @@ export const ChatEditListItem = memo((props: ChatEditListItemProps) => {
     <div className={classNames('chat-edit-list-item', {}, [className])}>
       <Avatar
         className='chat-edit-list-item__avatar'
-        src={chat.avatar}
-        alt={chat.title}
+        src={chat.users[0].avatar}
+        alt={chat.users[0].username}
         size={32}
       />
-      <Text className='chat-edit-list-item__name' size={18} text={chat.title} />
+      <Text className='chat-edit-list-item__name' size={18} text={chat.users[0].username} />
       <div className='chat-edit-list-item__switch'>
         <Switch />
       </div>

@@ -14,8 +14,9 @@ const ChatPage = (props: ChatPageProps) => {
   const { className } = props
   const [chatId, setChatId] = useState(null)
   const [slideMobile, setSlideMobile] = useState(0)
-  const { width } = useWindowDimensions()
   const { data, isLoading } = useGetChatsQuery()
+
+  const { width } = useWindowDimensions()
 
   const handleSetChatId = useCallback(
     (chatId: number) => () => {
@@ -28,6 +29,7 @@ const ChatPage = (props: ChatPageProps) => {
   const handleSetMenu = useCallback(() => setSlideMobile(0), [])
 
   const selectedChat = useMemo(() => data?.find((chat) => chat.id === chatId), [chatId, data])
+
   if (width <= 1180) {
     return (
       <div className={classNames('chat-page', {}, [className])}>

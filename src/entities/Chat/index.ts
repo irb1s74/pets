@@ -10,4 +10,9 @@ export { ChatEditList } from './ui/ChatEditList/ChatEditList'
 export { Chat } from './model/types/Chat'
 export { Message } from './model/types/Message'
 
-export { useGetChatsQuery, useGetChatQuery } from './api/chatService'
+export {
+  useGetChatsQuery,
+  useGetChatMessagesQuery,
+  useLazyFindUsersQuery,
+  useCreateDialogMutation,
+} from './api/chatService'

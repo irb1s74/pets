@@ -2,7 +2,7 @@ export { UserGreetings } from './ui/UserGreetings/UserGreetings'
 export { UserTime } from './ui/UserTime/UserTime'
 export { UserProgress } from './ui/UserProgress/UserProgress'
 export { ProfileList } from './ui/ProfileList/ProfileList'
-
+export { UserList } from './ui/UserList/UserList'
 export { initialAuth } from './api/initialAuth'
 
 export { getUserAuthData } from './model/selectors/getUserAuthData'
