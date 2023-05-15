@@ -16,7 +16,7 @@ interface AvatarProps {
 export const Avatar = memo(
   ({ className, src, size, alt = 'image', online = false }: AvatarProps) => {
     const backgroundColor = useMemo(() => {
-      const altToLower = alt.toLowerCase()
+      const altToLower = alt?.toLowerCase()
       return altToLower < 'd'
         ? 'avatar_green'
         : altToLower < 'h'
@@ -68,7 +68,12 @@ export const Avatar = memo(
 
     return (
       <div className={classNames('avatar', mods, [className])} style={stylesAvatar}>
-        <AppImage fallback={fallback} errorFallback={errorFallback} src={src} alt={alt} />
+        <AppImage
+          fallback={fallback}
+          errorFallback={errorFallback}
+          src={`avatars/${src}`}
+          alt={alt}
+        />
         {online && <span className='avatar_online' />}
       </div>
     )

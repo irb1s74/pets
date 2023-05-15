@@ -13,14 +13,14 @@ interface IOptions {
 }
 
 interface SelectProps extends HTMLSelectProps {
-  onChange?: (value: string) => void
+  onChange?: (field: string, value: string) => void
   options: IOptions[] | undefined
   label?: string
   className?: string
 }
 
 export const Select = memo((props: SelectProps) => {
-  const { label, className, options, defaultValue, onChange } = props
+  const { label, className, options, defaultValue, onChange, ...otherProps } = props
   const [value, setValue] = useState(defaultValue || '')
   const [isOpen, setIsOpen] = useState(false)
   const mod = {
@@ -31,7 +31,7 @@ export const Select = memo((props: SelectProps) => {
   const handleOnChange = (value: string) => () => {
     setValue(value)
     setIsOpen(false)
-    onChange && onChange(value)
+    onChange && onChange(otherProps.id, value)
   }
   const handleClickAway = () => setIsOpen(false)
 

@@ -37,12 +37,7 @@ export const Button = memo((props: ButtonProps) => {
   }
 
   return (
-    <button
-      type='button'
-      className={classNames('button', mods, [className])}
-      disabled={disabled}
-      {...otherProps}
-    >
+    <button className={classNames('button', mods, [className])} disabled={disabled} {...otherProps}>
       {isLoading ? <span className='button__loader' /> : children}
     </button>
   )

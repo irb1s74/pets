@@ -5,7 +5,7 @@ const articleService = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     getArticles: build.query<Article[], void>({
       query: () => ({
-        url: 'articles',
+        url: 'blog',
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',

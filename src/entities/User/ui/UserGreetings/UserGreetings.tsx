@@ -27,8 +27,8 @@ export const UserGreetings = memo((props: UserGreetingsProps) => {
         />
         <Text className='user-greetings__second-recommendation' size={16} text='Хорошего дня!' />
       </div>
-      <AppImage src={HumanWithDog} />
-      <AppImage className='user-greetings__background' src={BackElements} />
+      <AppImage inAssets={true} src={HumanWithDog} />
+      <AppImage inAssets={true} className='user-greetings__background' src={BackElements} />
     </div>
   )
 })

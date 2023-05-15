@@ -7,7 +7,7 @@ import classNames from 'classnames'
 import './PetStats.scss'
 
 interface PetStatsProps {
-  data: Pet
+  data: Pet | undefined
   isLoading?: boolean
   className?: string
 }
@@ -15,10 +15,9 @@ interface PetStatsProps {
 export const PetStats = memo((props: PetStatsProps) => {
   const { className, data, isLoading } = props
 
-  if (isLoading) {
+  if (isLoading || !data) {
     return <Skeleton className={classNames([className])} border='16px' width='100%' height='100%' />
   }
-
   const dataChart = [
     {
       date: '17',
@@ -67,9 +66,13 @@ export const PetStats = memo((props: PetStatsProps) => {
   return (
     <div className={classNames('pet-stats', {}, [className])}>
       <div className='pet-stats__about'>
-        <AppImage className='pet-stats__image' src={data.previewImg} alt={data.previewImg} />
+        <AppImage
+          className='pet-stats__image'
+          src={data.images[0] && `imagePets/${data.images[0]}`}
+          alt={data.name}
+        />
         <div className='pet-stats__texts'>
-          <Text size={24} text={data.name} />
+          <Text size={24} text={data.name || ''} />
           <Text size={14} text={`${data.likes} лайка`} />
         </div>
       </div>
@@ -99,10 +102,10 @@ export const PetStats = memo((props: PetStatsProps) => {
           ))}
         </div>
         <div className='pet-stats__days'>
-          {dataChart.map((data, index) => (
+          {dataChart.map((chart, index) => (
             <div key={index} className='pet-stats__day'>
-              <Text size={12} text={data.date} />
-              <Text color='gray' size={10} text={data.day} />
+              <Text size={12} text={chart.date} />
+              <Text color='gray' size={10} text={chart.day} />
             </div>
           ))}
         </div>

@@ -13,7 +13,7 @@ interface ProfilePageProps {
 const ProfilePage = (props: ProfilePageProps) => {
   const { className } = props
 
-  const [form, setForm] = useState('pets')
+  const [form, setForm] = useState('account')
 
   const handleSelectForm = useCallback(
     (form: string) => () => {

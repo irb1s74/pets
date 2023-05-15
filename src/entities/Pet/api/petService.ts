@@ -3,9 +3,9 @@ import { Pet } from '../model/types/Pet'
 
 const petService = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    getPets: build.query<Pet[], void>({
-      query: () => ({
-        url: 'pets',
+    getPets: build.query<Pet[], string>({
+      query: (type) => ({
+        url: type ? `pets?filter=${type}` : 'pets',
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',

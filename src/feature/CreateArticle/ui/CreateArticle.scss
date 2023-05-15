@@ -72,4 +72,14 @@
       fill: var(--font-color);
     }
   }
+
+  &__sendBtn {
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 5px 2px;
+    background: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    color: var(--alternative-color);
+  }
 }

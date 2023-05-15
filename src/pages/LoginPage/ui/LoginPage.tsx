@@ -24,6 +24,7 @@ const LoginPage = () => {
     <main className='login-page'>
       {width > 1240 && (
         <AppImage
+          inAssets={true}
           fallback={<Skeleton height={'100%'} width={selectImages.mw} />}
           className='login-page__image'
           src={selectImages.src}

@@ -30,7 +30,12 @@ export const PetImageSwiper = memo((props: PetImageSwiperProps) => {
       >
         {images?.map((image, index) => (
           <SwiperSlide className='pet-image-swiper__slider' key={`image-${index}`}>
-            <AppImage width='100%' height='100%' src={image} alt={`image-${index}`} />
+            <AppImage
+              width='100%'
+              height='100%'
+              src={`imagePets/${image}`}
+              alt={`image-${index}`}
+            />
           </SwiperSlide>
         ))}
         {isLoading && (

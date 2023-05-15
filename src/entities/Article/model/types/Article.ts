@@ -1,10 +1,11 @@
+import { User } from 'entities/User'
+
 export interface Article {
   id: number
-  body: string
-  time: string
-  author: string
-  status: string
-
+  description: string
   images: string[]
-  avatar: string | null
+  likes: number
+  comments: number
+  createdAt: string
+  author: User
 }

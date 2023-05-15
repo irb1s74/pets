@@ -7,6 +7,6 @@ interface PetsStatisticListProps {
 
 export const PetsStatisticList = memo((props: PetsStatisticListProps) => {
   const { className } = props
-  const { data, isLoading } = useGetPetsQuery()
-  return <PetStats className={className} data={data ? data[3] : undefined} isLoading={isLoading} />
+  const { data, isLoading } = useGetPetsQuery('')
+  return <PetStats className={className} data={data ? data[0] : undefined} isLoading={isLoading} />
 })

@@ -23,11 +23,11 @@ export const PetGrid = memo((props: PetGridProps) => {
   )
 
   return (
-    <div className={classNames('pet-grid', {}, [className])}>
+    <ul className={classNames('pet-grid', {}, [className])}>
       {data?.map((pet) => (
         <PetListItem className='pet-grid__item' key={pet.id} data={pet} />
       ))}
       {isLoading && getSkeletons}
-    </div>
+    </ul>
   )
 })

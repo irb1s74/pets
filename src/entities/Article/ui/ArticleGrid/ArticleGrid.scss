@@ -5,5 +5,7 @@
   & > * {
     max-width: 780px;
     margin-bottom: 40px;
+    grid-template-rows: 1fr auto;
+    break-inside: avoid;
   }
 }

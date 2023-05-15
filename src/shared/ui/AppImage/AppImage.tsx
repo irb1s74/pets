@@ -4,16 +4,27 @@ interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string
   fallback?: ReactElement
   errorFallback?: ReactElement
+  inAssets?: boolean
 }
 
 export const AppImage = memo((props: AppImageProps) => {
-  const { className, src, alt = 'image', errorFallback, fallback, ...otherProps } = props
+  const {
+    className,
+    inAssets = false,
+    src,
+    alt = 'image',
+    errorFallback,
+    fallback,
+    ...otherProps
+  } = props
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
 
+  const srcWithApi = inAssets ? src : `${__API__}${src}`
+
   useLayoutEffect(() => {
     const img = new Image()
-    img.src = src ?? ''
+    img.src = srcWithApi ?? ''
     img.onload = () => {
       setIsLoading(false)
     }
@@ -21,7 +32,7 @@ export const AppImage = memo((props: AppImageProps) => {
       setIsLoading(false)
       setHasError(true)
     }
-  }, [src])
+  }, [srcWithApi])
 
   if (isLoading && fallback) {
     return fallback
@@ -31,5 +42,9 @@ export const AppImage = memo((props: AppImageProps) => {
     return errorFallback
   }
 
-  return <img className={className} src={src} alt={alt} {...otherProps} />
+  if (hasError) {
+    return fallback
+  }
+
+  return <img className={className} src={srcWithApi} alt={alt} {...otherProps} />
 })

@@ -8,11 +8,11 @@ interface CreatePetFooterProps {
   onWards: () => void
   onBack: () => void
   className?: string
+  isFormValid?: boolean
 }
 
 export const CreatePetFooter = memo((props: CreatePetFooterProps) => {
-  const { className, onWards, activeStep, onBack } = props
-
+  const { className, onWards, activeStep, onBack, isFormValid } = props
   return (
     <div className={classNames('create-pet-footer', {}, [className])}>
       {activeStep > 1 && activeStep < 4 && (
@@ -20,15 +20,29 @@ export const CreatePetFooter = memo((props: CreatePetFooterProps) => {
           Назад
         </Button>
       )}
-      <Button
-        className={classNames('create-pet-footer__btn', {
-          ['create-pet-footer__btn_right']: activeStep < 3,
-          ['create-pet-footer__btn_auto']: activeStep > 3,
-        })}
-        onClick={onWards}
-      >
-        {activeStep < 3 ? 'Далее' : activeStep === 3 ? 'Добавить' : 'Завершить'}
-      </Button>
+      {activeStep === 3 ? (
+        <Button
+          type='submit'
+          disabled={!isFormValid}
+          className={classNames('create-pet-footer__btn', {
+            ['create-pet-footer__btn_right']: activeStep < 3,
+            ['create-pet-footer__btn_auto']: activeStep > 3,
+          })}
+        >
+          {!isFormValid ? 'Форма не заполнена' : 'Отправить'}
+        </Button>
+      ) : (
+        <Button
+          type={activeStep === 3 ? 'submit' : 'button'}
+          className={classNames('create-pet-footer__btn', {
+            ['create-pet-footer__btn_right']: activeStep < 3,
+            ['create-pet-footer__btn_auto']: activeStep > 3,
+          })}
+          onClick={onWards}
+        >
+          {activeStep < 3 ? 'Далее' : 'Завершить'}
+        </Button>
+      )}
     </div>
   )
 })
