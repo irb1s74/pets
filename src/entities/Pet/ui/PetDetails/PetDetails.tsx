@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
 import { Theme } from 'shared/const/theme'
 import { useTheme } from 'shared/lib/hooks/useTheme/useTheme'
 import { Button } from 'shared/ui/Button'
@@ -11,6 +11,7 @@ import Money from 'shared/assets/icons/money.svg'
 import { Pet } from '../../model/types/Pet'
 import classNames from 'classnames'
 import './PetDetails.scss'
+import { useLazyLikePetQuery, useLazyUnLikePetQuery } from 'entities/Pet'
 
 interface PetDetailsProps {
   className?: string
@@ -21,11 +22,22 @@ interface PetDetailsProps {
 
 export const PetDetails = memo((props: PetDetailsProps) => {
   const { className, data, isLoading } = props
-
+  const [like] = useLazyLikePetQuery()
+  const [unLike] = useLazyUnLikePetQuery()
+  const [hasLike, setHasLike] = useState(false)
   const { theme } = useTheme()
 
   if (isLoading) {
     return <Skeleton className='pet-details__skeleton' width='100%' height='100%' border='10px' />
+  }
+  const handleLike = () => {
+    if (hasLike) {
+      unLike(data.id)
+      setHasLike(false)
+    } else {
+      like(data.id)
+      setHasLike(true)
+    }
   }
 
   return (
@@ -45,9 +57,9 @@ export const PetDetails = memo((props: PetDetailsProps) => {
           />
         </div>
         <div className='pet-details__stats'>
-          <div className='pet-details__stat'>
+          <div onClick={handleLike} className='pet-details__stat'>
             <Heart />
-            <Text weight='medium' text={`${data?.likes} Лайка`} />
+            <Text weight='medium' text={`${hasLike ? data?.likes + 1 : data?.likes} Лайка`} />
           </div>
           <div className='pet-details__stat'>
             <Money />

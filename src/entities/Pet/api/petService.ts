@@ -28,7 +28,30 @@ const petService = rtkApi.injectEndpoints({
       }),
       providesTags: (_result, _err, id) => [{ type: 'Pets', id }],
     }),
+    likePet: build.query<Pet, number>({
+      query: (id) => ({
+        url: `pets/like/${id}`,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        method: 'GET',
+      }),
+      providesTags: (_result, _err, id) => [{ type: 'Pets', id }],
+    }),
+    unLikePet: build.query<Pet, number>({
+      query: (id) => ({
+        url: `pets/unLike/${id}`,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        method: 'GET',
+      }),
+      providesTags: (_result, _err, id) => [{ type: 'Pets', id }],
+    }),
   }),
 })
 
-export const { useGetPetsQuery, useGetPetQuery } = petService
+export const { useGetPetsQuery, useGetPetQuery, useLazyLikePetQuery, useLazyUnLikePetQuery } =
+  petService

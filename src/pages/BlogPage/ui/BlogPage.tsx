@@ -1,14 +1,9 @@
 import { Card } from 'shared/ui/Card'
 import { CreateArticle } from 'feature/CreateArticle'
-import {
-  ArticleContent,
-  ArticleFooter,
-  ArticleGrid,
-  ArticleHeader,
-  useGetArticlesQuery,
-} from 'entities/Article'
+import { ArticleContent, ArticleGrid, ArticleHeader, useGetArticlesQuery } from 'entities/Article'
 import classNames from 'classnames'
 import './BlogPage.scss'
+import { CreateCommentArticle } from 'feature/CreateCommentArticle/ui/CreateCommentArticle'
 
 interface BlogPageProps {
   className?: string
@@ -27,7 +22,7 @@ const BlogPage = (props: BlogPageProps) => {
             <Card key={article.id}>
               <ArticleHeader className='blog-page__article-header' article={article} />
               <ArticleContent article={article} />
-              <ArticleFooter />
+              <CreateCommentArticle article={article} />
             </Card>
           ))}
         </ArticleGrid>

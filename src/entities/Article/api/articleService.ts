@@ -17,7 +17,45 @@ const articleService = rtkApi.injectEndpoints({
         { type: 'Articles' as const, id: 'LIST' },
       ],
     }),
+    likeArticle: build.query<Article, number>({
+      query: (id) => ({
+        url: `blog/like/${id}`,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        method: 'GET',
+      }),
+      providesTags: (_result, _err, id) => [{ type: 'Articles', id }],
+    }),
+    unLikeArticle: build.query<Article, number>({
+      query: (id) => ({
+        url: `blog/unLike/${id}`,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        method: 'GET',
+      }),
+      providesTags: (_result, _err, id) => [{ type: 'Articles', id }],
+    }),
+    commentArticle: build.query<Article, number>({
+      query: (id) => ({
+        url: `blog/comment/${id}`,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        },
+        method: 'POST',
+      }),
+      providesTags: (_result, _err, id) => [{ type: 'Articles', id }],
+    }),
   }),
 })
 
-export const { useGetArticlesQuery } = articleService
+export const {
+  useGetArticlesQuery,
+  useLazyLikeArticleQuery,
+  useLazyUnLikeArticleQuery,
+  useLazyCommentArticleQuery,
+} = articleService

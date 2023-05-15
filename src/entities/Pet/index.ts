@@ -7,4 +7,9 @@ export { PetTypeList } from './ui/PetTypeList/PetTypeList'
 export { AboutPetForm } from './ui/AboutPetForm/AboutPetForm'
 export { PetPhotoForm } from './ui/PetPhotoForm/PetPhotoForm'
 export { PetCharacteristicsForm } from './ui/PetCharacteristicsForm/PetCharacteristicsForm'
-export { useGetPetsQuery, useGetPetQuery } from './api/petService'
+export {
+  useGetPetsQuery,
+  useGetPetQuery,
+  useLazyLikePetQuery,
+  useLazyUnLikePetQuery,
+} from './api/petService'
