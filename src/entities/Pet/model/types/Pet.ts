@@ -1,15 +1,18 @@
+import { User } from 'entities/User'
+
 export interface Pet {
   id: number
   name: string
-  age: string
-  about: string
-  groupId: number
-  previewImg: string
+  gender: boolean
+  description: string
+  purposeOfPosting: string
   images: string[]
-  likes: number
-  location: string
-  sex: boolean
   type: string
-  weight: string
-  adopt: boolean
+  breed: string
+  dateOfBirth: string
+  weight: number
+  country: string
+  city: string
+  likes: number
+  author: User
 }

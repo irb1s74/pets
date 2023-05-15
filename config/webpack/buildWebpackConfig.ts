@@ -1,5 +1,5 @@
-import { BuildOptions } from './buildTypes'
 import { Configuration } from 'webpack'
+import { BuildOptions } from './buildTypes'
 import { buildDevServer } from './buildDevServer'
 import { buildPlugins } from './buildPlugins'
 import { buildLoaders } from './buildLoaders'
@@ -15,7 +15,7 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
       filename: '[name].[contenthash].js',
       path: paths.build,
       clean: true,
-      publicPath: '/'
+      publicPath: '/',
     },
     plugins: buildPlugins(options),
     module: {

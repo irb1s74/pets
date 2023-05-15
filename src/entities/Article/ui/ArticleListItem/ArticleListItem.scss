@@ -2,6 +2,9 @@
   padding: 30px;
   border-radius: 16px;
   background-color: var(--alternative-color);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 
   &__header {
     display: flex;

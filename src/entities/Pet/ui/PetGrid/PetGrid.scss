@@ -1,9 +1,17 @@
 .pet-grid {
   column-count: 4;
   column-gap: 40px;
+  display: block;
+  list-style: none;
 
   &__item {
+    display: block;
+    position: relative;
+    height: auto;
     width: 335px;
     margin-bottom: 20px;
+
+    grid-template-rows: 1fr auto;
+    break-inside: avoid;
   }
 }

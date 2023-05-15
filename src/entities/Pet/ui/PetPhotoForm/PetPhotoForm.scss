@@ -18,6 +18,14 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    flex-wrap: wrap;
+  }
+
+  &__img {
+    max-width: 125px;
+    max-height: 125px;
+    margin-right: 15px;
+    border-radius: 10px;
   }
 
   &__text {

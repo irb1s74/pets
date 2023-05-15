@@ -3,23 +3,28 @@ import { User, userActions } from 'entities/User'
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage'
 import { ThunkConfig } from 'app/providers/StoreProvider'
 
-export const initialAuth = createAsyncThunk<User, undefined, ThunkConfig<string>>(
-  'user/initialAuthByStorageData',
-  async (props, thunkApi) => {
+interface SignupByEmaoilProps {
+  username: string
+  email: string
+  password: string
+}
+
+export const signupByEmail = createAsyncThunk<User, SignupByEmaoilProps, ThunkConfig<string>>(
+  'login/signupByEmail',
+  async (authData, thunkApi) => {
     const { extra, dispatch, rejectWithValue } = thunkApi
 
     try {
-      const response = await extra.api.get<User>('auth/ref')
+      const response = await extra.api.post<User>('auth/signup', authData)
 
       if (!response.data) {
         throw new Error()
       }
+
+      localStorage.setItem(USER_LOCALSTORAGE_KEY, response.data.token)
       dispatch(userActions.setAuthData(response.data))
-      localStorage.setItem(USER_LOCALSTORAGE_KEY, response.data?.token)
-      dispatch(userActions.setUserInited(true))
       return response.data
     } catch (e) {
-      dispatch(userActions.setUserInited(true))
       return rejectWithValue('error')
     }
   },

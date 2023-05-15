@@ -3,7 +3,10 @@ import { Text } from 'shared/ui/Text'
 import classNames from 'classnames'
 import './Input.scss'
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readOnly' | 'onSubmit'
+>
 
 interface InputProps extends HTMLInputProps {
   className?: string

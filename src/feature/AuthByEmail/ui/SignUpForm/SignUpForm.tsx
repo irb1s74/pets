@@ -7,7 +7,7 @@ import { AppLink } from 'shared/ui/AppLink'
 import { Button } from 'shared/ui/Button'
 import { getRouteLogin } from 'shared/const/router'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { loginByEmail } from '../../api/loginByEmail'
+import { signupByEmail } from '../../api/signupByEmail'
 import { SignUpValidationSchema } from '../../config/SignUpValidationSchema'
 import classNames from 'classnames'
 import './SignUpForm.scss'
@@ -23,16 +23,16 @@ const SignUpForm = memo(({ className }: SignUpFormProps) => {
   const formik = useFormik({
     initialValues: {
       email: '',
-      nickname: '',
+      username: '',
       password: '',
     },
 
     validationSchema: SignUpValidationSchema,
     validateOnMount: true,
     onSubmit: async (values) => {
-      const result = await dispatch(loginByEmail(values))
+      const result = await dispatch(signupByEmail(values))
       if (result.payload === 'error') {
-        setError('Аккаунт с такой почтой уже существует')
+        setError(result.payload)
       }
     },
   })
@@ -59,14 +59,14 @@ const SignUpForm = memo(({ className }: SignUpFormProps) => {
           helperText={formik.touched.email && formik.errors.email}
         />
         <Input
-          id='nickname'
+          id='username'
           className='SignUpForm__input'
           label='Никнэйм'
           type='string'
-          value={formik.values.nickname}
+          value={formik.values.username}
           onChange={formik.handleChange}
-          error={formik.touched.nickname && Boolean(formik.errors.nickname)}
-          helperText={formik.touched.nickname && formik.errors.nickname}
+          error={formik.touched.username && Boolean(formik.errors.username)}
+          helperText={formik.touched.username && formik.errors.username}
         />
         <Input
           id='password'

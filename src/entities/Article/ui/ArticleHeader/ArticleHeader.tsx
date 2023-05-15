@@ -20,17 +20,21 @@ export const ArticleHeader = memo((props: ArticleHeaderProps) => {
         <Avatar
           className='article-header__avatar'
           size={48}
-          src={article?.avatar}
-          alt={article.author}
+          src={`${article.author.avatar}`}
+          alt={article.author.username}
         />
         <div className='article-header__name'>
-          <Text size={16} weight='bold' text={article?.author} />
-          <Text size={14} color='gray' text={article?.status} />
+          <Text size={16} weight='bold' text={article.author.username} />
+          <Text size={14} color='gray' text={article.author.status} />
         </div>
       </div>
       <div className='article-header__dates'>
-        <Text size={14} color='gray' text={dayjs(article.time).locale('ru').format('DD MMMM')} />
-        <Text size={14} color='gray' text={dayjs(article.time).format('HH:mm')} />
+        <Text
+          size={14}
+          color='gray'
+          text={dayjs(article.createdAt).locale('ru').format('DD MMMM')}
+        />
+        <Text size={14} color='gray' text={dayjs(article.createdAt).format('HH:mm')} />
       </div>
     </div>
   )

@@ -24,6 +24,7 @@ const SignUpPage = () => {
     <main className='signup-page'>
       {width > 1240 && (
         <AppImage
+          inAssets={true}
           fallback={<Skeleton height={'100%'} width={selectImages.mw} />}
           className='signup-page__image'
           src={selectImages.src}

@@ -34,7 +34,7 @@ export const PetDetails = memo((props: PetDetailsProps) => {
         <div className='pet-details__info'>
           <Text size={72} weight='bold' color='primary' text={`${data?.name},`} />
           {theme === Theme.LIGHT ? <DarkLocation /> : <Location />}
-          <Text size={72} weight='bold' text={data?.location} />
+          <Text size={72} weight='bold' text={data?.country} />
         </div>
         <div className='pet-details__petType'>
           <Text
@@ -65,15 +65,20 @@ export const PetDetails = memo((props: PetDetailsProps) => {
             weight='500'
             size={32}
             color='gray'
-            text={`${new Date().getFullYear() - new Date(data?.age).getFullYear()} года`}
+            text={`${new Date().getFullYear() - new Date(data?.dateOfBirth).getFullYear()} года`}
           />
           <Text weight='500' size={32} color='gray' text={`${data?.weight} кг`} />
-          <Text weight='500' size={32} color='gray' text={`${data?.sex ? 'Мужской' : 'Женский'}`} />
+          <Text
+            weight='500'
+            size={32}
+            color='gray'
+            text={`${data?.gender ? 'Мужской' : 'Женский'}`}
+          />
         </div>
       </div>
       <div className='pet-details__description'>
         <Text size={32} weight='medium' text='Описание' />
-        <Text weight='light' size={32} text={data?.about} />
+        <Text weight='light' size={32} text={data?.description} />
       </div>
       <Button className='pet-details__btn'>Купить - 5 000 ₽</Button>
     </div>

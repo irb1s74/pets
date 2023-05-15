@@ -8,7 +8,7 @@ interface PetsRecommendationsListProps {
 
 export const PetsRecommendationsList = memo((props: PetsRecommendationsListProps) => {
   const { className } = props
-  const { data, isLoading } = useGetPetsQuery()
+  const { data, isLoading } = useGetPetsQuery('')
   const { width } = useWindowDimensions()
 
   const slidesPerView = useMemo(() => (width >= 768 ? 2 : 1), [width])
