@@ -67,6 +67,7 @@ const LoginForm = memo((props: LoginFormProps) => {
           error={formik.touched.password && Boolean(formik.errors.password)}
           helperText={formik.touched.password && formik.errors.password}
         />
+        <Text align='center' size={12} weight='bold' text='Тест: user@gmail.com,123' />
         <AppLink className='login-form__link-pass' to=''>
           <Text align='right' text='Забыли пароль?' size={14} />
         </AppLink>
